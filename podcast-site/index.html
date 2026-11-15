@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كود العظام | The Bone Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-mode">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo (left in RTL = start) -->
+      <div class="header-logo">
+        <img src="Logo.jpg" alt="MedDuo Logo" class="logo-img" />
+      </div>
+
+      <!-- Site title (center) -->
+      <div class="header-title">
+        <h1 class="site-title">كود العظام</h1>
+        <span class="site-title-en">The Bone Code</span>
+      </div>
+
+      <!-- Controls (right in RTL = end) -->
+      <div class="header-controls">
+        <button id="btn-reading-mode" class="ctrl-btn" title="وضع القراءة">
+          <span class="icon">📖</span>
+          <span class="label">قراءة</span>
+        </button>
+        <button id="btn-dark-mode" class="ctrl-btn" title="الوضع الليلي">
+          <span class="icon">🌙</span>
+          <span class="label">ليلي</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VIEWS -->
+  <main id="app">
+    <!-- Episode Grid View -->
+    <section id="view-grid" class="view active">
+      <div class="grid-header">
+        <h2 class="grid-title">الحلقات</h2>
+        <p class="grid-subtitle">بودكاست الطب الشرعي بلا عُقَد – اضغط على أي حلقة للاستماع والقراءة</p>
+      </div>
+      <div id="episodes-grid" class="episodes-grid"></div>
+    </section>
+
+    <!-- Episode View -->
+    <section id="view-episode" class="view">
+      <div class="episode-header">
+        <button id="btn-back" class="back-btn">
+          <span>→</span> العودة للحلقات
+        </button>
+        <div class="episode-meta">
+          <span id="ep-number-badge" class="ep-badge"></span>
+          <h2 id="ep-title" class="ep-title"></h2>
+          <p id="ep-desc" class="ep-desc"></p>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar" id="toolbar">
+        <div class="toolbar-group filter-group">
+          <span class="toolbar-label">تصفية:</span>
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="dr_tarek">د. طارق فقط</button>
+          <button class="filter-btn" data-filter="atef">عاطف فقط</button>
+        </div>
+        <div class="toolbar-group scroll-group">
+          <span class="toolbar-label">تمرير تلقائي:</span>
+          <button id="btn-autoscroll" class="scroll-btn" title="تشغيل/إيقاف التمرير التلقائي">▶</button>
+          <select id="scroll-speed" class="speed-select">
+            <option value="slow">🐢 بطيء</option>
+            <option value="medium" selected>🚶 متوسط</option>
+            <option value="fast">🏃 سريع</option>
+          </select>
+        </div>
+        <div class="toolbar-group reset-group">
+          <button id="btn-reset-episode" class="reset-btn" title="إعادة ضبط الحلقة">🔄 إعادة ضبط</button>
+        </div>
+      </div>
+
+      <!-- Chat bubbles container -->
+      <div id="dialogue-container" class="dialogue-container"></div>
+
+      <!-- Reading mode container -->
+      <div id="reading-container" class="reading-container" style="display:none;"></div>
+    </section>
+  </main>
+
+  <!-- Add paragraph popup -->
+  <div id="add-popup" class="add-popup" style="display:none;">
+    <div class="add-popup-inner">
+      <p class="add-popup-title">إضافة فقرة</p>
+      <button class="add-choice-btn" data-speaker="dr_tarek">🩺 د. طارق</button>
+      <button class="add-choice-btn" data-speaker="atef">🎙️ عاطف</button>
+      <button class="add-choice-btn" data-speaker="section_header">📌 فاصل</button>
+      <button class="add-popup-cancel">إلغاء</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

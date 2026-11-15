@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bone Code — MedDuo Slides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- PPTXGenJS for real PowerPoint files & html2pdf for direct PDF download -->
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ HEADER ══════════════════════════════════ -->
+<header id="main-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <img src="Logo.jpg" alt="MedDuo Logo" class="header-logo" id="logo-btn" style="cursor:pointer" title="Go Home" />
+      <div class="header-titles">
+        <span class="header-brand">MedDuo</span>
+        <span class="header-sub">The Bone Code — Slides</span>
+      </div>
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <button class="nav-btn" id="btn-home" title="Home">🏠 Home</button>
+      <button class="nav-btn fav-btn" id="btn-favorites" title="Favorites">★ Favorites</button>
+      <button class="nav-btn stash-btn" id="btn-stash" title="Cloned & Stashed Slides">📋 Slide Stash (<span id="stash-count">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════ VIEWS ══════════════════════════════════ -->
+<main id="app">
+
+  <!-- HOME VIEW -->
+  <section id="view-home" class="view active">
+    <div class="home-hero">
+      <div class="hero-ecg" aria-hidden="true">
+        <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+          <polyline points="0,30 60,30 70,10 80,50 90,20 100,40 110,30 400,30"
+            fill="none" stroke="#4DD9E8" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1 class="hero-title">The Bone Code</h1>
+      <p class="hero-sub">Forensic Medicine · 8 Episodes · MedDuo Podcast</p>
+    </div>
+    <div class="episodes-grid" id="episodes-grid"></div>
+  </section>
+
+  <!-- EPISODE VIEW -->
+  <section id="view-episode" class="view">
+    <div class="ep-toolbar" id="ep-toolbar">
+      <div class="ep-toolbar-left">
+        <button class="tool-btn" id="btn-back">← Back</button>
+        <div class="breadcrumb" id="breadcrumb"></div>
+      </div>
+      <div class="ep-toolbar-right">
+        <button class="tool-btn" id="btn-save-deck" title="Save any recent edits">💾 Save</button>
+        <button class="tool-btn" id="btn-overview">⊞ Overview</button>
+        <button class="tool-btn" id="btn-present" title="Press 'F' anytime to toggle presentation">🖥 Present (F)</button>
+        <button class="tool-btn" id="btn-export-html">📄 HTML</button>
+        <button class="tool-btn" id="btn-export-ppt" style="background:#0284C7;color:#fff;font-weight:600">📊 PowerPoint (.pptx)</button>
+        <button class="tool-btn" id="btn-download-pdf" style="background:#EF4444;color:#fff;font-weight:600">📥 Download PDF</button>
+        <button class="tool-btn" id="btn-print">🖨 Print View</button>
+        <button class="tool-btn danger-btn" id="btn-reset-ep">♻ Reset</button>
+      </div>
+    </div>
+
+    <!-- OVERVIEW MODE -->
+    <div id="overview-panel" class="overview-panel hidden">
+      <div class="overview-grid" id="overview-grid"></div>
+    </div>
+
+    <!-- SLIDE VIEWER -->
+    <div id="slide-viewer" class="slide-viewer">
+      <div class="slide-card" id="slide-card">
+        <!-- dynamically rendered -->
+      </div>
+      <div class="slide-nav">
+        <button class="nav-arrow" id="btn-prev">← Prev</button>
+        <span class="slide-counter" id="slide-counter">Slide 1 / 10</span>
+        <button class="nav-arrow" id="btn-next">Next →</button>
+      </div>
+      <div class="add-slide-bar">
+        <button class="add-slide-btn" id="btn-add-slide-end">+ Add Slide</button>
+        <button class="add-slide-btn" id="btn-paste-stash" style="background:#F28CB1;margin-left:8px">📋 Paste from Stash</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAVORITES VIEW -->
+  <section id="view-favorites" class="view">
+    <div class="fav-header">
+      <h2>★ Favorites</h2>
+      <button class="tool-btn" id="btn-export-favs">📥 Export Favorites</button>
+    </div>
+    <div class="fav-grid" id="fav-grid"></div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════ MODALS ══════════════════════════════════ -->
+
+<!-- Add Slide Modal -->
+<div id="modal-add-slide" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h3>Add New Slide</h3>
+    <label>Title<input type="text" id="new-slide-title" placeholder="Slide title…" /></label>
+    <label>Type
+      <select id="new-slide-type">
+        <option value="concept">Concept</option>
+        <option value="case">Case</option>
+        <option value="table">Table</option>
+        <option value="timeline">Timeline</option>
+        <option value="resolution">Resolution</option>
+        <option value="summary">Summary</option>
+        <option value="quiz">Quiz</option>
+        <option value="title">Title</option>
+      </select>
+    </label>
+    <div class="modal-actions">
+      <button class="tool-btn" id="modal-add-confirm">Add</button>
+      <button class="tool-btn" id="modal-add-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Presentation Mode Overlay -->
+<div id="presentation-overlay" class="presentation-overlay hidden">
+  <div class="pres-slide-wrap" id="pres-slide-wrap"></div>
+  <div class="pres-counter" id="pres-counter">1 / 10</div>
+  <div class="pres-nav">
+    <button class="pres-btn" id="pres-prev">←</button>
+    <button class="pres-btn" id="pres-next">→</button>
+    <button class="pres-btn pres-exit" id="pres-exit">✕ Exit</button>
+  </div>
+</div>
+
+<!-- Slide Stash Modal -->
+<div id="modal-stash" class="modal-overlay hidden">
+  <div class="modal-box" style="max-width:650px;max-height:85vh;display:flex;flex-direction:column">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h3 style="margin:0">📋 Cloned & Stashed Slides</h3>
+      <div style="display:flex;gap:8px">
+        <button class="tool-btn" id="btn-export-stash" style="font-size:0.75rem">📥 Export Stash</button>
+        <button class="tool-btn danger-btn" id="btn-clear-stash" style="font-size:0.75rem">Clear All</button>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:#64748B;margin-top:0;margin-bottom:12px">Every slide you clone or favorite is archived here. You can paste any stashed slide into the current deck at any time.</p>
+    <div id="stash-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:10px;padding:4px">
+      <!-- dynamically populated -->
+    </div>
+    <div class="modal-actions" style="margin-top:14px">
+      <button class="tool-btn" id="modal-stash-close">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

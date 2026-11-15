@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedDuo — كود العظام | The Bone Code Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cyan: #4DD9E8;
+      --pink: #F28CB1;
+      --bg: #0F172A;
+      --card-bg: #1E293B;
+      --card-border: #334155;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 20px;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow */
+    .glow-cyan {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(77, 217, 232, 0.12) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-pink {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(242, 140, 177, 0.12) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      margin: auto 0;
+    }
+
+    /* Header */
+    .logo-wrap {
+      margin-bottom: 16px;
+    }
+    .logo-img {
+      width: 105px;
+      height: 105px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(77, 217, 232, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 50px;
+      background: rgba(77, 217, 232, 0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(77, 217, 232, 0.3);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--cyan) 80%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Cards Grid */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .portal-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      h1 { font-size: 2rem; }
+    }
+
+    .portal-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .portal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      transition: height 0.3s ease;
+    }
+    .card-podcast::before { background: linear-gradient(90deg, var(--cyan), #38bdf8); }
+    .card-slides::before { background: linear-gradient(90deg, var(--pink), #ec4899); }
+
+    .portal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+    .card-podcast:hover { border-color: var(--cyan); }
+    .card-slides:hover { border-color: var(--pink); }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .card-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .card-podcast .card-title { color: #E0F2FE; }
+    .card-slides .card-title { color: #FCE7F3; }
+
+    .card-en-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .card-podcast .card-btn {
+      background: rgba(77, 217, 232, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(77, 217, 232, 0.4);
+    }
+    .card-podcast:hover .card-btn {
+      background: var(--cyan);
+      color: #0F172A;
+      box-shadow: 0 4px 15px rgba(77, 217, 232, 0.4);
+    }
+
+    .card-slides .card-btn {
+      background: rgba(242, 140, 177, 0.15);
+      color: var(--pink);
+      border: 1px solid rgba(242, 140, 177, 0.4);
+    }
+    .card-slides:hover .card-btn {
+      background: var(--pink);
+      color: #0F172A;
+      box-shadow: 0 4px 15px rgba(242, 140, 177, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 24px;
+    }
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-cyan"></div>
+  <div class="glow-pink"></div>
+
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="Logo.jpg" alt="MedDuo Logo" class="logo-img" />
+    </div>
+
+    <div class="badge">Forensic Medicine · كلية الطب</div>
+    <h1>كود العظام — MedDuo</h1>
+    <p class="subtitle">
+      سلسلة الاستعراف الطبي الشرعي (Identification) · اختر وجهتك للدخول إما للبودكاست الحواري المصري أو عارض السلايدات الأكاديمي
+    </p>
+
+    <div class="portal-grid">
+      <!-- PODCAST CARD -->
+      <a href="podcast-site/" class="portal-card card-podcast">
+        <div>
+          <div class="card-icon">🎙️</div>
+          <div class="card-title">بودكاست كود العظام</div>
+          <div class="card-en-title">The Bone Code Podcast</div>
+          <p class="card-desc">
+            حوار مصري خفيف الدم بين د. طارق وعاطف · قضايا وألغاز جنائية حقيقية وتثبيت لأرقام الامتحان · قابل للتعديل والتحكم الكامل ووضع القراءة والتمرير الهادئ.
+          </p>
+        </div>
+        <div class="card-btn">
+          <span>دخول البودكاست</span>
+          <span>←</span>
+        </div>
+      </a>
+
+      <!-- SLIDES CARD -->
+      <a href="slides-site/" class="portal-card card-slides">
+        <div>
+          <div class="card-icon">📊</div>
+          <div class="card-title">سلايدات العرض الأكاديمي</div>
+          <div class="card-en-title">Academic Slides Deck</div>
+          <p class="card-desc">
+            عرض تقديمي أكاديمي إنجليزي لـ 8 حلقات · وضع Present بملء الشاشة مع زر (F) · تحميل فوري كـ PowerPoint (.pptx) و PDF · إضافة وتنسيق الصور ومقاطع الفيديو وأرشيف السلايدات.
+          </p>
+        </div>
+        <div class="card-btn">
+          <span>فتح السلايدات</span>
+          <span>←</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      <p>MedDuo Forensic Medicine Series · Made for Medical Students</p>
+      <p style="margin-top: 6px;">
+        <a href="https://github.com/medoo24/MedDuo-ID" target="_blank" rel="noopener">GitHub: medoo24/MedDuo-ID</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
