@@ -1106,6 +1106,179 @@ body {
 }
 
 /* ============================================================
+   SHARED EPISODE BANNER (Colleague Collaboration)
+   ============================================================ */
+.shared-banner {
+  background: linear-gradient(135deg, rgba(77, 217, 232, 0.15), rgba(242, 140, 177, 0.15));
+  border-bottom: 2px solid var(--cyan);
+  padding: 10px 16px;
+  position: sticky;
+  top: 72px;
+  z-index: 95;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.shared-banner-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shared-banner-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.shared-icon {
+  font-size: 1.2rem;
+}
+
+.shared-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.banner-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.banner-btn.save {
+  background: var(--cyan);
+  color: #1A1D23;
+}
+
+.banner-btn.save:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(77, 217, 232, 0.4);
+}
+
+.banner-btn.dismiss {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.banner-btn.dismiss:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+/* ============================================================
+   GRID TOOLS BAR
+   ============================================================ */
+.grid-tools-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.grid-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(77, 217, 232, 0.35);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.grid-tool-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(77, 217, 232, 0.08);
+  transform: translateY(-1px);
+}
+
+.grid-tool-btn.primary {
+  background: rgba(77, 217, 232, 0.15);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.grid-tool-btn.primary:hover {
+  background: var(--cyan);
+  color: #1A1D23;
+}
+
+/* ============================================================
+   SHARE OPTION CARDS (Inside Share Modal)
+   ============================================================ */
+.share-option-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(77, 217, 232, 0.2);
+  margin-bottom: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.share-option-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-1px);
+}
+
+.share-option-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.share-opt-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.share-opt-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.share-opt-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ============================================================
    MOBILE RESPONSIVE
    ============================================================ */
 @media (max-width: 680px) {

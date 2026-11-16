@@ -20,7 +20,10 @@ const jsCodeAfterState = `const state = {
   scrollSpeeds: { slow: 20, medium: 50, fast: 100 },
   modalMode: null,
   targetItemIndex: null,
-  targetInsertIndex: null
+  targetInsertIndex: null,
+  // Shared colleague data
+  sharedData: null,
+  isViewingShared: false
 };
 
 // ─── DOM REFS ────────────────────────────────────────────────
@@ -41,11 +44,23 @@ const $btnReset        = document.getElementById('btn-reset-episode');
 const $filterBtns      = document.querySelectorAll('.filter-btn');
 
 const $btnAddStart     = document.getElementById('btn-add-start');
-const $btnExportMd     = document.getElementById('btn-export-md');
+const $btnShareModal   = document.getElementById('btn-share-modal');
+const $btnImportSingle = document.getElementById('btn-import-single');
 const $btnCopyText     = document.getElementById('btn-copy-text');
 const $btnAddEnd       = document.getElementById('btn-add-end');
 const $btnEditEpMeta   = document.getElementById('btn-edit-ep-meta');
 
+// Grid collaborative toolbar
+const $btnGridExportAllMd   = document.getElementById('btn-grid-export-all-md');
+const $btnGridExportAllJson = document.getElementById('btn-grid-export-all-json');
+const $btnGridImport        = document.getElementById('btn-grid-import');
+
+// Shared Banner
+const $sharedBanner    = document.getElementById('shared-banner');
+const $btnSaveShared   = document.getElementById('btn-save-shared');
+const $btnDismissShared= document.getElementById('btn-dismiss-shared');
+
+// Modals
 const $modalEditMeta   = document.getElementById('modal-edit-meta');
 const $metaTitleInput  = document.getElementById('meta-title-input');
 const $metaDescInput   = document.getElementById('meta-desc-input');
@@ -60,10 +75,33 @@ const $speakerPills    = document.querySelectorAll('.speaker-pill');
 const $customSpeakerWrap = document.getElementById('custom-speaker-wrap');
 const $customSpeakerInput = document.getElementById('custom-speaker-input');
 
+// Share & Export Modal
+const $modalShareExport = document.getElementById('modal-share-export');
+const $btnDoExportMd    = document.getElementById('btn-do-export-md');
+const $btnDoExportJson  = document.getElementById('btn-do-export-json');
+const $btnDoCopyLink    = document.getElementById('btn-do-copy-link');
+
+// Import Modal
+const $modalImport           = document.getElementById('modal-import');
+const $importFileInput       = document.getElementById('import-file-input');
+const $importTextInput       = document.getElementById('import-text-input');
+const $importTargetEpGroup   = document.getElementById('import-target-ep-group');
+const $importTargetEpSelect  = document.getElementById('import-target-ep-select');
+const $btnDoImport           = document.getElementById('btn-do-import');
+
 // ─── LOCALSTORAGE HELPERS ────────────────────────────────────
 function lsKey(epIdx) { return 'medduo_ep_' + epIdx; }
 
 function getEpisodeData(epIdx) {
+  // If actively viewing a colleague's shared version for this episode
+  if (state.isViewingShared && state.sharedData && state.currentEpisode === epIdx) {
+    return {
+      title: state.sharedData.title || EPISODES[epIdx].title,
+      description: state.sharedData.description || EPISODES[epIdx].description,
+      dialogue: state.sharedData.dialogue || deepClone(EPISODES[epIdx].dialogue)
+    };
+  }
+
   try {
     const raw = localStorage.getItem(lsKey(epIdx));
     if (raw) {
@@ -116,10 +154,24 @@ function init() {
   if (savedDark === 'true') setDarkMode(true);
   if (savedReading === 'true') setReadingMode(true);
 
+  populateImportTargetSelect();
   renderGrid();
   bindHeaderControls();
   bindToolbar();
   bindModals();
+  bindGridTools();
+  checkSharedHash();
+}
+
+function populateImportTargetSelect() {
+  if (!$importTargetEpSelect) return;
+  $importTargetEpSelect.innerHTML = '';
+  EPISODES.forEach(ep => {
+    const opt = document.createElement('option');
+    opt.value = ep.index;
+    opt.textContent = 'الحلقة ' + ep.number + ': ' + ep.title;
+    $importTargetEpSelect.appendChild(opt);
+  });
 }
 
 // ─── GRID ────────────────────────────────────────────────────
@@ -144,8 +196,13 @@ function renderGrid() {
 }
 
 // ─── EPISODE VIEW ────────────────────────────────────────────
-function openEpisode(idx) {
+function openEpisode(idx, isShared = false) {
   state.currentEpisode = idx;
+  if (!isShared) {
+    state.isViewingShared = false;
+    if ($sharedBanner) $sharedBanner.style.display = 'none';
+  }
+
   const ep = EPISODES[idx];
   const meta = getEpisodeMeta(idx);
 
@@ -176,7 +233,6 @@ function renderDialogue(idx) {
   const data = getDialogueData(idx);
 
   data.forEach((item, i) => {
-    // Add separator button before each item
     $dialogue.appendChild(makeAddButton(i, idx));
 
     if (item.type === 'section_header') {
@@ -272,7 +328,7 @@ function makeBubble(item, itemIdx, epIdx) {
   else if (item.speaker !== 'dr_tarek') spkLabel = '👤 ' + item.speaker;
   speakerEl.textContent = spkLabel;
 
-  // Actions (Clear, visible buttons for everyone)
+  // Actions (Always visible)
   const actionsDiv = document.createElement('div');
   actionsDiv.className = 'bubble-actions';
 
@@ -307,7 +363,6 @@ function makeBubble(item, itemIdx, epIdx) {
   textEl.className = 'bubble-text';
   textEl.textContent = item.text;
 
-  // Double click as shortcut
   bubble.addEventListener('dblclick', () => {
     openEditItemModal(itemIdx);
   });
@@ -563,12 +618,426 @@ function saveItemModal() {
   if (state.readingMode) renderReading(state.currentEpisode);
 }
 
+// ─── SHARE & EXPORT LOGIC ────────────────────────────────────
+function openShareModal() {
+  if (state.currentEpisode === null) return;
+  if ($modalShareExport) $modalShareExport.style.display = 'flex';
+}
+
+function closeShareModal() {
+  if ($modalShareExport) $modalShareExport.style.display = 'none';
+}
+
+function exportCurrentEpisodeMarkdown() {
+  if (state.currentEpisode === null) return;
+  const epData = getEpisodeData(state.currentEpisode);
+  const epNum = EPISODES[state.currentEpisode].number;
+
+  let md = '# الحلقة ' + epNum + ': ' + epData.title + '\\n\\n';
+  md += '> **الوصف:** ' + epData.description + '\\n\\n';
+  md += '---\\n\\n';
+
+  epData.dialogue.forEach(item => {
+    if (item.type === 'section_header') {
+      md += '\\n## 📌 ' + item.text + '\\n\\n';
+    } else if (item.type === 'sub_header') {
+      md += '\\n### 🔹 ' + item.text + '\\n\\n';
+    } else if (item.type === 'speaker') {
+      const spk = item.speaker === 'dr_tarek' ? 'د. طارق' : (item.speaker === 'atef' ? 'عاطف' : item.speaker);
+      md += '**' + spk + ':** ' + item.text + '\\n\\n';
+    }
+  });
+
+  downloadBlob(md, 'medduo-episode-' + epNum + '-custom.md', 'text/markdown;charset=utf-8');
+}
+
+function exportCurrentEpisodeJson() {
+  if (state.currentEpisode === null) return;
+  const epData = getEpisodeData(state.currentEpisode);
+  const epNum = EPISODES[state.currentEpisode].number;
+
+  const pkg = {
+    app: 'MedDuo-Podcast',
+    version: '2.0',
+    type: 'single_episode',
+    epNumber: epNum,
+    epIndex: state.currentEpisode,
+    exportedAt: new Date().toISOString(),
+    data: epData
+  };
+
+  downloadBlob(JSON.stringify(pkg, null, 2), 'medduo-ep' + epNum + '-share.json', 'application/json');
+}
+
+function copyShareableLink() {
+  if (state.currentEpisode === null) return;
+  const epData = getEpisodeData(state.currentEpisode);
+  const epNum = EPISODES[state.currentEpisode].number;
+
+  const pkg = {
+    epNumber: epNum,
+    epIndex: state.currentEpisode,
+    data: epData
+  };
+
+  try {
+    const jsonStr = JSON.stringify(pkg);
+    const b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+    const url = window.location.origin + window.location.pathname + '#shared=' + encodeURIComponent(b64);
+
+    navigator.clipboard.writeText(url).then(() => {
+      alert('✅ تم نسخ رابط المشاركة بنجاح!\\n\\nيمكنك إرساله لزميلك عبر واتساب أو تيليجرام وسيفتح معه هذا السكربت المعدل مباشرة في المتصفح.');
+      closeShareModal();
+    }).catch(() => {
+      prompt('انسخ رابط المشاركة التالي وأرسله لزميلك:', url);
+    });
+  } catch(e) {
+    alert('تعذر إنشاء رابط المشاركة المباشر بسبب حجم البيانات، يرجى استخدام تنزيل ملف Markdown أو JSON ومشاركته.');
+  }
+}
+
+// ─── IMPORT LOGIC (Colleague Collaboration) ───────────────────
+function openImportModal(targetEpIdx = null) {
+  if ($modalImport) {
+    $modalImport.style.display = 'flex';
+    if ($importFileInput) $importFileInput.value = '';
+    if ($importTextInput) $importTextInput.value = '';
+
+    // Show or hide target ep select
+    if (state.currentEpisode !== null) {
+      if ($importTargetEpGroup) $importTargetEpGroup.style.display = 'none';
+    } else {
+      if ($importTargetEpGroup) {
+        $importTargetEpGroup.style.display = 'block';
+        if (targetEpIdx !== null && $importTargetEpSelect) {
+          $importTargetEpSelect.value = targetEpIdx;
+        }
+      }
+    }
+  }
+}
+
+function closeImportModal() {
+  if ($modalImport) $modalImport.style.display = 'none';
+}
+
+function handleImportAction() {
+  // Check if file chosen
+  if ($importFileInput && $importFileInput.files && $importFileInput.files.length > 0) {
+    const file = $importFileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      processImportContent(e.target.result, file.name);
+    };
+    reader.readAsText(file, 'utf-8');
+  } else if ($importTextInput && $importTextInput.value.trim()) {
+    processImportContent($importTextInput.value.trim(), 'pasted-text');
+  } else {
+    alert('يرجى اختيار ملف أو لصق النص/الكود أولاً!');
+  }
+}
+
+function processImportContent(contentStr, sourceName) {
+  contentStr = contentStr.trim();
+  let targetEpIdx = state.currentEpisode;
+  if (targetEpIdx === null && $importTargetEpSelect) {
+    targetEpIdx = parseInt($importTargetEpSelect.value) || 0;
+  }
+
+  // 1. Try parsing as JSON package
+  try {
+    const obj = JSON.parse(contentStr);
+    // Bundle of all episodes
+    if (obj.type === 'all_episodes' && Array.isArray(obj.episodes)) {
+      obj.episodes.forEach(ep => {
+        if (ep.index !== undefined && ep.data) {
+          saveEpisodeData(ep.index, ep.data);
+        }
+      });
+      alert('🎉 تم استيراد حزمة جميع الحلقات بنجاح من زميلك (' + obj.episodes.length + ' حلقات)!');
+      closeImportModal();
+      renderGrid();
+      if (state.currentEpisode !== null) {
+        openEpisode(state.currentEpisode);
+      }
+      return;
+    }
+
+    // Single episode JSON package
+    if (obj.type === 'single_episode' && obj.data) {
+      const epIdx = (obj.epIndex !== undefined) ? obj.epIndex : targetEpIdx;
+      saveEpisodeData(epIdx, obj.data);
+      alert('🎉 تم استيراد حزمة الحلقة ' + (epIdx + 1) + ' بنجاح من زميلك!');
+      closeImportModal();
+      renderGrid();
+      openEpisode(epIdx);
+      return;
+    }
+
+    // Direct episode data object { title, description, dialogue }
+    if (obj.dialogue && Array.isArray(obj.dialogue)) {
+      const epIdx = (obj.index !== undefined) ? obj.index : targetEpIdx;
+      saveEpisodeData(epIdx, {
+        title: obj.title || EPISODES[epIdx].title,
+        description: obj.description || EPISODES[epIdx].description,
+        dialogue: obj.dialogue
+      });
+      alert('🎉 تم استيراد السكربت بنجاح وتطبيقه على الحلقة ' + (epIdx + 1) + '!');
+      closeImportModal();
+      renderGrid();
+      openEpisode(epIdx);
+      return;
+    }
+  } catch(e) {
+    // Not valid JSON, proceed to Markdown parsing
+  }
+
+  // 2. Parse as Markdown
+  const parsed = parseMarkdownToDialogue(contentStr);
+  if (parsed.dialogue && parsed.dialogue.length > 0) {
+    let epIdx = targetEpIdx;
+    if (parsed.epNumber !== null && parsed.epNumber >= 1 && parsed.epNumber <= EPISODES.length) {
+      epIdx = parsed.epNumber - 1;
+    }
+
+    const currentMeta = getEpisodeMeta(epIdx);
+    const finalData = {
+      title: parsed.metaTitle || currentMeta.title,
+      description: parsed.metaDesc || currentMeta.description,
+      dialogue: parsed.dialogue
+    };
+
+    saveEpisodeData(epIdx, finalData);
+    alert('🎉 تم استيراد وتطبيق ملف Markdown بنجاح على الحلقة ' + (epIdx + 1) + ' (' + parsed.dialogue.length + ' فقرة حوارية)!');
+    closeImportModal();
+    renderGrid();
+    openEpisode(epIdx);
+    return;
+  }
+
+  alert('عذراً، لم يتم التعرف على صيغة المحتوى. يرجى التأكد من اختيار ملف Markdown منسق أو ملف JSON سليم.');
+}
+
+function parseMarkdownToDialogue(mdContent) {
+  const lines = mdContent.split(/\\r?\\n/);
+  const dialogue = [];
+  let currentSpeaker = null;
+  let currentText = '';
+  let metaTitle = '';
+  let metaDesc = '';
+  let epNumber = null;
+
+  function flushSpeaker() {
+    if (currentSpeaker && currentText.trim()) {
+      dialogue.push({
+        type: 'speaker',
+        speaker: currentSpeaker,
+        text: currentText.trim()
+      });
+      currentSpeaker = null;
+      currentText = '';
+    }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) {
+      if (currentSpeaker && currentText) {
+        currentText += ' ';
+      }
+      continue;
+    }
+
+    const titleMatch = line.match(/^#\\s*الحلقة\\s*(\\d+)[:\\s]*(.*)$/);
+    if (titleMatch) {
+      epNumber = parseInt(titleMatch[1]);
+      metaTitle = titleMatch[2].trim();
+      continue;
+    }
+
+    if (line.startsWith('>')) {
+      const cleanDesc = line.replace(/^>\\s*(\\**الوصف:\\**|\\**نبذة عن الحلقة:\\**)?\\s*/, '').trim();
+      if (cleanDesc) metaDesc = cleanDesc;
+      continue;
+    }
+
+    if (line.startsWith('## ')) {
+      flushSpeaker();
+      const title = line.replace(/^##\\s*(📌)?\\s*/, '').trim();
+      dialogue.push({
+        type: 'section_header',
+        text: title
+      });
+      continue;
+    }
+
+    if (line.startsWith('### ') && !line.includes('الشخصيات')) {
+      flushSpeaker();
+      const sub = line.replace(/^###\\s*(🔹)?\\s*/, '').trim();
+      dialogue.push({
+        type: 'sub_header',
+        text: sub
+      });
+      continue;
+    }
+
+    const speakerMatch = line.match(/^(\\**)?([^*:]+)(:\\**|:)\\s*(.*)$/);
+    if (speakerMatch && (speakerMatch[2].includes('طارق') || speakerMatch[2].includes('عاطف') || speakerMatch[1] === '**')) {
+      flushSpeaker();
+      const rawName = speakerMatch[2].trim();
+      const restText = speakerMatch[4].trim();
+
+      let spkKey = 'dr_tarek';
+      if (rawName.includes('عاطف')) spkKey = 'atef';
+      else if (rawName.includes('طارق')) spkKey = 'dr_tarek';
+      else spkKey = rawName;
+
+      currentSpeaker = spkKey;
+      currentText = restText;
+      continue;
+    }
+
+    if (line.startsWith('#') || line.startsWith('---') || line.startsWith('- **')) {
+      continue;
+    }
+
+    if (currentSpeaker) {
+      currentText += (currentText ? ' ' : '') + line;
+    }
+  }
+
+  flushSpeaker();
+  return { epNumber, metaTitle, metaDesc, dialogue };
+}
+
+// ─── GRID COLLABORATIVE TOOLS ────────────────────────────────
+function bindGridTools() {
+  if ($btnGridExportAllMd) {
+    $btnGridExportAllMd.addEventListener('click', () => {
+      let masterMd = '# كود العظام (The Bone Code) — التفريغ الكامل لجميع الحلقات المعدلة\\n\\n';
+      masterMd += '> هذا الملف يضم التفريغات الحوارية الكاملة لبودكاست الطب الشرعي متضمنة جميع تعديلاتك وإضافاتك.\\n\\n---\\n\\n';
+
+      EPISODES.forEach(ep => {
+        const epData = getEpisodeData(ep.index);
+        masterMd += '# الحلقة ' + ep.number + ': ' + epData.title + '\\n\\n';
+        masterMd += '> **الوصف:** ' + epData.description + '\\n\\n';
+        masterMd += '---\\n\\n';
+
+        epData.dialogue.forEach(item => {
+          if (item.type === 'section_header') {
+            masterMd += '\\n## 📌 ' + item.text + '\\n\\n';
+          } else if (item.type === 'sub_header') {
+            masterMd += '\\n### 🔹 ' + item.text + '\\n\\n';
+          } else if (item.type === 'speaker') {
+            const spk = item.speaker === 'dr_tarek' ? 'د. طارق' : (item.speaker === 'atef' ? 'عاطف' : item.speaker);
+            masterMd += '**' + spk + ':** ' + item.text + '\\n\\n';
+          }
+        });
+
+        masterMd += '\\n\\n---\\n\\n';
+      });
+
+      downloadBlob(masterMd, 'medduo-all-episodes-custom.md', 'text/markdown;charset=utf-8');
+    });
+  }
+
+  if ($btnGridExportAllJson) {
+    $btnGridExportAllJson.addEventListener('click', () => {
+      const episodesBundle = EPISODES.map(ep => ({
+        index: ep.index,
+        number: ep.number,
+        data: getEpisodeData(ep.index)
+      }));
+
+      const pkg = {
+        app: 'MedDuo-Podcast',
+        version: '2.0',
+        type: 'all_episodes',
+        exportedAt: new Date().toISOString(),
+        episodes: episodesBundle
+      };
+
+      downloadBlob(JSON.stringify(pkg, null, 2), 'medduo-all-episodes-colleague-package.json', 'application/json');
+    });
+  }
+
+  if ($btnGridImport) {
+    $btnGridImport.addEventListener('click', () => openImportModal(null));
+  }
+}
+
+// ─── CHECK SHARED URL HASH ───────────────────────────────────
+function checkSharedHash() {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#shared=')) {
+    try {
+      const b64 = decodeURIComponent(hash.substring('#shared='.length));
+      const jsonStr = decodeURIComponent(escape(atob(b64)));
+      const parsed = JSON.parse(jsonStr);
+
+      if (parsed.data && parsed.epIndex !== undefined) {
+        state.sharedData = parsed.data;
+        state.isViewingShared = true;
+        if ($sharedBanner) $sharedBanner.style.display = 'block';
+
+        openEpisode(parsed.epIndex, true);
+
+        if ($btnSaveShared) {
+          $btnSaveShared.onclick = function() {
+            saveEpisodeData(parsed.epIndex, parsed.data);
+            state.isViewingShared = false;
+            $sharedBanner.style.display = 'none';
+            alert('✅ تم حفظ نسخة زميلك بنجاح في متصفحك كنسخة دائمة!');
+            // Clean URL hash without reload
+            history.replaceState(null, '', window.location.pathname);
+            renderGrid();
+          };
+        }
+
+        if ($btnDismissShared) {
+          $btnDismissShared.onclick = function() {
+            state.isViewingShared = false;
+            state.sharedData = null;
+            $sharedBanner.style.display = 'none';
+            history.replaceState(null, '', window.location.pathname);
+            openEpisode(parsed.epIndex, false);
+          };
+        }
+      }
+    } catch(e) {
+      console.warn('Failed to parse shared hash', e);
+    }
+  }
+}
+
+function downloadBlob(content, filename, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 function bindModals() {
   if ($btnEditEpMeta) $btnEditEpMeta.addEventListener('click', openEditMetaModal);
   if ($btnSaveMeta) $btnSaveMeta.addEventListener('click', saveEpisodeMeta);
   if ($btnRevertMeta) $btnRevertMeta.addEventListener('click', revertEpisodeMeta);
 
   if ($btnSaveItem) $btnSaveItem.addEventListener('click', saveItemModal);
+
+  // Share & Export modal bindings
+  if ($btnShareModal) $btnShareModal.addEventListener('click', openShareModal);
+  if ($btnDoExportMd) $btnDoExportMd.addEventListener('click', () => { exportCurrentEpisodeMarkdown(); closeShareModal(); });
+  if ($btnDoExportJson) $btnDoExportJson.addEventListener('click', () => { exportCurrentEpisodeJson(); closeShareModal(); });
+  if ($btnDoCopyLink) $btnDoCopyLink.addEventListener('click', copyShareableLink);
+
+  // Import modal bindings
+  if ($btnImportSingle) $btnImportSingle.addEventListener('click', () => openImportModal(state.currentEpisode));
+  if ($btnDoImport) $btnDoImport.addEventListener('click', handleImportAction);
 
   document.querySelectorAll('[data-close]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -578,7 +1047,7 @@ function bindModals() {
     });
   });
 
-  [$modalEditMeta, $modalEditItem].forEach(modal => {
+  [$modalEditMeta, $modalEditItem, $modalShareExport, $modalImport].forEach(modal => {
     if (!modal) return;
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.style.display = 'none';
@@ -650,38 +1119,7 @@ function stopAutoScroll() {
   $btnScroll.classList.remove('playing');
 }
 
-// ─── EXPORT & COPY ───────────────────────────────────────────
-function exportCurrentEpisodeMarkdown() {
-  if (state.currentEpisode === null) return;
-  const epData = getEpisodeData(state.currentEpisode);
-  const epNum = EPISODES[state.currentEpisode].number;
-
-  let md = '# الحلقة ' + epNum + ': ' + epData.title + '\\n\\n';
-  md += '> **الوصف:** ' + epData.description + '\\n\\n';
-  md += '---\\n\\n';
-
-  epData.dialogue.forEach(item => {
-    if (item.type === 'section_header') {
-      md += '\\n## 📌 ' + item.text + '\\n\\n';
-    } else if (item.type === 'sub_header') {
-      md += '\\n### 🔹 ' + item.text + '\\n\\n';
-    } else if (item.type === 'speaker') {
-      const spk = item.speaker === 'dr_tarek' ? 'د. طارق' : (item.speaker === 'atef' ? 'عاطف' : item.speaker);
-      md += '**' + spk + ':** ' + item.text + '\\n\\n';
-    }
-  });
-
-  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'medduo-episode-' + epNum + '-custom.md';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
+// ─── COPY TEXT ───────────────────────────────────────────────
 function copyCurrentEpisodeText() {
   if (state.currentEpisode === null) return;
   const epData = getEpisodeData(state.currentEpisode);
@@ -728,10 +1166,6 @@ function bindToolbar() {
       const epData = getEpisodeData(state.currentEpisode);
       openAddItemModal(epData.dialogue.length);
     });
-  }
-
-  if ($btnExportMd) {
-    $btnExportMd.addEventListener('click', exportCurrentEpisodeMarkdown);
   }
 
   if ($btnCopyText) {
@@ -808,4 +1242,4 @@ init();
 
 const newFullContent = content.substring(0, stateIdx) + jsCodeAfterState;
 fs.writeFileSync(appJsPath, newFullContent, 'utf8');
-console.log('✅ Successfully updated podcast-site/app.js!');
+console.log('✅ Successfully updated podcast-site/app.js with full export/import/collaboration features!');

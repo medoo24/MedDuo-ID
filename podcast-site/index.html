@@ -11,6 +11,20 @@
 </head>
 <body class="light-mode">
 
+  <!-- SHARED BANNER (Shown when viewing a colleague's shared link) -->
+  <div id="shared-banner" class="shared-banner" style="display:none;">
+    <div class="shared-banner-inner">
+      <div class="shared-banner-text">
+        <span class="shared-icon">🎉</span>
+        <span>أنت تعرض الآن <strong>نسخة معدلة شاركها معك زميلك</strong> لهذه الحلقة!</span>
+      </div>
+      <div class="shared-banner-actions">
+        <button id="btn-save-shared" class="banner-btn save">💾 حفظ هذه النسخة في متصفحي</button>
+        <button id="btn-dismiss-shared" class="banner-btn dismiss">✕ إغلاق التنبيه</button>
+      </div>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
@@ -46,6 +60,19 @@
       <div class="grid-header">
         <h2 class="grid-title">الحلقات</h2>
         <p class="grid-subtitle">بودكاست الطب الشرعي بلا عُقَد – اضغط على أي حلقة للاستماع والقراءة والتعديل</p>
+
+        <!-- Global Collaborative Tools Bar -->
+        <div class="grid-tools-bar">
+          <button id="btn-grid-export-all-md" class="grid-tool-btn" title="تنزيل جميع الحلقات المعدلة في ملف Markdown واحد شامل">
+            📄 تنزيل كل الحلقات (Markdown)
+          </button>
+          <button id="btn-grid-export-all-json" class="grid-tool-btn" title="تصدير حزمة التعديلات كاملة لتبادلها مع الزملاء">
+            📦 تصدير حزمة الزملاء (JSON)
+          </button>
+          <button id="btn-grid-import" class="grid-tool-btn primary" title="استيراد ملف معدل من زميل (Markdown أو JSON)">
+            📥 استيراد نسخة زميل
+          </button>
+        </div>
       </div>
       <div id="episodes-grid" class="episodes-grid"></div>
     </section>
@@ -88,7 +115,8 @@
         </div>
         <div class="toolbar-group action-tools-group">
           <button id="btn-add-start" class="tool-btn add-btn" title="إضافة فقرة جديدة في البداية">➕ إضافة فقرة</button>
-          <button id="btn-export-md" class="tool-btn export-btn" title="تنزيل تفريغ الحلقة كملف Markdown معدّل">📥 تصدير</button>
+          <button id="btn-share-modal" class="tool-btn share-btn" title="خيارات التصدير والمشاركة مع الزملاء">📤 تصدير ومشاركة</button>
+          <button id="btn-import-single" class="tool-btn import-btn" title="استيراد ملف معدل من زميل لهذه الحلقة">📥 استيراد نسخة زميل</button>
           <button id="btn-copy-text" class="tool-btn copy-btn" title="نسخ النص الكامل للحافظة">📋 نسخ النص</button>
           <button id="btn-reset-episode" class="tool-btn reset-btn" title="إعادة ضبط الحلقة للأصل">🔄 استعادة الأصل</button>
         </div>
@@ -163,6 +191,105 @@
       <div class="modal-footer">
         <button id="btn-save-item" class="btn-primary">💾 حفظ التعديل</button>
         <button class="btn-cancel" data-close="modal-edit-item">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SHARE & EXPORT (For colleague collaboration) -->
+  <div id="modal-share-export" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">📤 تصدير ومشاركة السكربت مع زملائك</h3>
+        <button class="modal-close" data-close="modal-share-export">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;">
+          اختر الطريقة الأنسب لك لمشاركة نسختك المعدلة من هذا السكربت مع زملائك:
+        </p>
+
+        <!-- Option 1: Markdown Download -->
+        <div class="share-option-card">
+          <div class="share-option-info">
+            <span class="share-opt-icon">📄</span>
+            <div>
+              <strong class="share-opt-title">تنزيل كملف Markdown (.md)</strong>
+              <p class="share-opt-desc">ملف نصي منسق وجاهز للقراءة والتعديل على أي برنامج أو محرر نصوص.</p>
+            </div>
+          </div>
+          <button id="btn-do-export-md" class="btn-primary" style="white-space:nowrap;">📥 تنزيل .md</button>
+        </div>
+
+        <!-- Option 2: JSON Share Package -->
+        <div class="share-option-card">
+          <div class="share-option-info">
+            <span class="share-opt-icon">📦</span>
+            <div>
+              <strong class="share-opt-title">تصدير كحزمة تطبيق (.json)</strong>
+              <p class="share-opt-desc">ملف خفيف يمكن لزميلك رفعه في موقعه بضغطة زر لرؤية نفس نسختك فوراً.</p>
+            </div>
+          </div>
+          <button id="btn-do-export-json" class="btn-primary" style="white-space:nowrap;">📦 تنزيل .json</button>
+        </div>
+
+        <!-- Option 3: Shareable Web Link -->
+        <div class="share-option-card">
+          <div class="share-option-info">
+            <span class="share-opt-icon">🔗</span>
+            <div>
+              <strong class="share-opt-title">نسخ رابط المشاركة المباشر</strong>
+              <p class="share-opt-desc">رابط مباشر ترسله لزميلك على واتساب أو تيليجرام ليفتح نفس نسختك على المتصفح مباشرة!</p>
+            </div>
+          </div>
+          <button id="btn-do-copy-link" class="btn-secondary" style="white-space:nowrap;">🔗 نسخ الرابط</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" data-close="modal-share-export">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: IMPORT (From Colleague) -->
+  <div id="modal-import" class="modal-overlay" style="display:none;">
+    <div class="modal-card modal-card-wide">
+      <div class="modal-header">
+        <h3 class="modal-title">📥 استيراد نسخة أو سكربت من زميل</h3>
+        <button class="modal-close" data-close="modal-import">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:8px;">
+          يمكنك استيراد السكربت الذي أرسله لك زميلك سواء كان ملف <strong>Markdown (.md)</strong> أو ملف حزمة <strong>JSON (.json)</strong> أو لصق النص مباشرة:
+        </p>
+
+        <!-- File picker -->
+        <div class="form-group">
+          <label class="form-label">1. رفع ملف من جهازك (.md أو .json):</label>
+          <input type="file" id="import-file-input" accept=".md,.markdown,.json,.txt" class="form-input" style="padding:8px;" />
+        </div>
+
+        <div style="display:flex; align-items:center; gap:10px; margin:4px 0;">
+          <div style="flex:1; height:1px; background:var(--separator-border);"></div>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:700;">أو</span>
+          <div style="flex:1; height:1px; background:var(--separator-border);"></div>
+        </div>
+
+        <!-- Textarea paste -->
+        <div class="form-group">
+          <label for="import-text-input" class="form-label">2. أو الصق نص السكربت / الكود هنا مباشرة:</label>
+          <textarea id="import-text-input" class="form-textarea" rows="7" placeholder="الصق نص الحلقة المعدلة أو كود الـ JSON هنا..."></textarea>
+        </div>
+
+        <!-- Target episode picker if on grid view -->
+        <div class="form-group" id="import-target-ep-group" style="display:none;">
+          <label for="import-target-ep-select" class="form-label">تطبيق التعديلات على:</label>
+          <select id="import-target-ep-select" class="form-input">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-do-import" class="btn-primary">📥 استيراد وتطبيق الآن</button>
+        <button class="btn-cancel" data-close="modal-import">إلغاء</button>
       </div>
     </div>
   </div>
