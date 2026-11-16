@@ -16,7 +16,7 @@
     <div class="header-inner">
       <!-- Logo (left in RTL = start) -->
       <div class="header-logo">
-        <img src="Logo.jpg" alt="MedDuo Logo" class="logo-img" />
+        <a href="../index.html" title="الرئيسية"><img src="Logo.jpg" alt="MedDuo Logo" class="logo-img" /></a>
       </div>
 
       <!-- Site title (center) -->
@@ -45,7 +45,7 @@
     <section id="view-grid" class="view active">
       <div class="grid-header">
         <h2 class="grid-title">الحلقات</h2>
-        <p class="grid-subtitle">بودكاست الطب الشرعي بلا عُقَد – اضغط على أي حلقة للاستماع والقراءة</p>
+        <p class="grid-subtitle">بودكاست الطب الشرعي بلا عُقَد – اضغط على أي حلقة للاستماع والقراءة والتعديل</p>
       </div>
       <div id="episodes-grid" class="episodes-grid"></div>
     </section>
@@ -57,7 +57,13 @@
           <span>→</span> العودة للحلقات
         </button>
         <div class="episode-meta">
-          <span id="ep-number-badge" class="ep-badge"></span>
+          <div class="ep-meta-top">
+            <span id="ep-number-badge" class="ep-badge"></span>
+            <button id="btn-edit-ep-meta" class="btn-edit-meta" title="تعديل عنوان ووصف الحلقة بحرية">
+              <span class="icon">✏️</span>
+              <span>تعديل عنوان ووصف الحلقة</span>
+            </button>
+          </div>
           <h2 id="ep-title" class="ep-title"></h2>
           <p id="ep-desc" class="ep-desc"></p>
         </div>
@@ -68,8 +74,8 @@
         <div class="toolbar-group filter-group">
           <span class="toolbar-label">تصفية:</span>
           <button class="filter-btn active" data-filter="all">الكل</button>
-          <button class="filter-btn" data-filter="dr_tarek">د. طارق فقط</button>
-          <button class="filter-btn" data-filter="atef">عاطف فقط</button>
+          <button class="filter-btn" data-filter="dr_tarek">🩺 د. طارق فقط</button>
+          <button class="filter-btn" data-filter="atef">🎓 عاطف فقط</button>
         </div>
         <div class="toolbar-group scroll-group">
           <span class="toolbar-label">تمرير تلقائي:</span>
@@ -80,27 +86,84 @@
             <option value="fast">🏃 سريع</option>
           </select>
         </div>
-        <div class="toolbar-group reset-group">
-          <button id="btn-reset-episode" class="reset-btn" title="إعادة ضبط الحلقة">🔄 إعادة ضبط</button>
+        <div class="toolbar-group action-tools-group">
+          <button id="btn-add-start" class="tool-btn add-btn" title="إضافة فقرة جديدة في البداية">➕ إضافة فقرة</button>
+          <button id="btn-export-md" class="tool-btn export-btn" title="تنزيل تفريغ الحلقة كملف Markdown معدّل">📥 تصدير</button>
+          <button id="btn-copy-text" class="tool-btn copy-btn" title="نسخ النص الكامل للحافظة">📋 نسخ النص</button>
+          <button id="btn-reset-episode" class="tool-btn reset-btn" title="إعادة ضبط الحلقة للأصل">🔄 استعادة الأصل</button>
         </div>
       </div>
 
       <!-- Chat bubbles container -->
       <div id="dialogue-container" class="dialogue-container"></div>
 
+      <!-- End Add Container -->
+      <div id="add-end-container" class="add-end-container">
+        <button id="btn-add-end" class="add-end-btn">
+          ➕ إضافة فقرة أو محطة في نهاية الحلقة
+        </button>
+      </div>
+
       <!-- Reading mode container -->
       <div id="reading-container" class="reading-container" style="display:none;"></div>
     </section>
   </main>
 
-  <!-- Add paragraph popup -->
-  <div id="add-popup" class="add-popup" style="display:none;">
-    <div class="add-popup-inner">
-      <p class="add-popup-title">إضافة فقرة</p>
-      <button class="add-choice-btn" data-speaker="dr_tarek">🩺 د. طارق</button>
-      <button class="add-choice-btn" data-speaker="atef">🎙️ عاطف</button>
-      <button class="add-choice-btn" data-speaker="section_header">📌 فاصل</button>
-      <button class="add-popup-cancel">إلغاء</button>
+  <!-- MODAL: EDIT EPISODE TITLE & DESCRIPTION -->
+  <div id="modal-edit-meta" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">✏️ تعديل بيانات الحلقة</h3>
+        <button class="modal-close" data-close="modal-edit-meta">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="meta-title-input" class="form-label">عنوان الحلقة:</label>
+          <input type="text" id="meta-title-input" class="form-input" placeholder="اكتب عنوان الحلقة هنا..." />
+        </div>
+        <div class="form-group">
+          <label for="meta-desc-input" class="form-label">وصف وموجز الحلقة:</label>
+          <textarea id="meta-desc-input" class="form-textarea" rows="3" placeholder="اكتب وصف الحلقة وموضوعها..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-save-meta" class="btn-primary">💾 حفظ التغييرات</button>
+        <button id="btn-revert-meta" class="btn-secondary">🔄 استعادة العنوان الأصلي</button>
+        <button class="btn-cancel" data-close="modal-edit-meta">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EDIT OR ADD DIALOGUE ITEM -->
+  <div id="modal-edit-item" class="modal-overlay" style="display:none;">
+    <div class="modal-card modal-card-wide">
+      <div class="modal-header">
+        <h3 id="item-modal-title" class="modal-title">✏️ تعديل الفقرة الحوارية</h3>
+        <button class="modal-close" data-close="modal-edit-item">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">نوع العنصر / المتحدث:</label>
+          <div class="speaker-pill-group" id="speaker-pill-group">
+            <button type="button" class="speaker-pill active" data-type="speaker" data-speaker="dr_tarek">🩺 د. طارق</button>
+            <button type="button" class="speaker-pill" data-type="speaker" data-speaker="atef">🎓 عاطف</button>
+            <button type="button" class="speaker-pill" data-type="section_header" data-speaker="">📌 عنوان محطة</button>
+            <button type="button" class="speaker-pill" data-type="sub_header" data-speaker="">🔹 عنوان فرعي</button>
+            <button type="button" class="speaker-pill" data-type="speaker" data-speaker="custom">👤 متحدث آخر</button>
+          </div>
+          <div id="custom-speaker-wrap" class="custom-speaker-wrap" style="display:none; margin-top:8px;">
+            <input type="text" id="custom-speaker-input" class="form-input" placeholder="اكتب اسم المتحدث (مثال: وكيل النيابة، القاضي، الشاهد...)" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="item-text-input" class="form-label">نص الحوار أو العنوان:</label>
+          <textarea id="item-text-input" class="form-textarea" rows="6" placeholder="اكتب نص الحوار هنا..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-save-item" class="btn-primary">💾 حفظ التعديل</button>
+        <button class="btn-cancel" data-close="modal-edit-item">إلغاء</button>
+      </div>
     </div>
   </div>
 
