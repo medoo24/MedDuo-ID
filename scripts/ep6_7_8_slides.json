@@ -1,0 +1,564 @@
+[
+  {
+    "title": "Fingerprints & DNA: The Science of Infallible Identity",
+    "description": "Dactylography biology, DNA loci, acid damage truth, and the identical-twins dilemma solved.",
+    "slides": [
+      {
+        "type": "title",
+        "title": "Fingerprints & DNA: The Infallible Witnesses",
+        "content": {
+          "bullets": [
+            "Episode 6 · The Bone Code"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "case",
+        "title": "Case: The Jewellery Heist & Identical Twins",
+        "content": {
+          "bullets": [
+            "Armed robbery of jeweller's villa — safe broken, millions in jewellery stolen",
+            "Thief cuts hand on broken glass → leaves blood drops + bloody fingerprint on safe edge",
+            "Forensic lab: DNA from blood matches a family of identical twins: Essam & Hussam",
+            "Both arrested; Hussam: clean hands, no injuries",
+            "Essam: before arrest, submerges fingertips in concentrated sulfuric acid (miya nar)",
+            "Defense attorney argues: (1) DNA is inconclusive — identical twins share DNA, (2) Fingerprints destroyed by acid — no comparison possible",
+            "Prosecution refers both twins to forensic department"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Fingerprint Biology (Dactylography)",
+        "content": {
+          "bullets": [
+            "Formation: epidermal ridges develop at 4th intrauterine month — before birth",
+            "Structure: skin ridges (papillary lines) + grooves on volar surface of fingers",
+            "Uniqueness: 1 in 64 million probability of two identical fingerprints — even in identical twins",
+            "Permanence: unchanged for life until post-mortem decomposition",
+            "Court standard: >16 comparison points required for positive ID",
+            "Poroscopy: sweat pore size, number, and distribution — adds further comparison points"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "table",
+        "title": "Fingerprint Pattern Types",
+        "content": {
+          "headers": [
+            "Pattern",
+            "Frequency",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Arches",
+              "6%",
+              "Bridge/tent shape — least common"
+            ],
+            [
+              "Ulnar Loops",
+              "65%",
+              "Most common; opens toward ulna (inner wrist)"
+            ],
+            [
+              "Radial Loops",
+              "3%",
+              "Opens toward radius (outer wrist)"
+            ],
+            [
+              "Whorls",
+              "25%",
+              "Closed spiral — 1 in 4 people; commonest after loops"
+            ],
+            [
+              "Composite",
+              "1–2%",
+              "Mixed pattern"
+            ]
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Acid Damage to Fingerprints",
+        "content": {
+          "bullets": [
+            "Skin layers: Epidermis (outer) + Dermis (deep)",
+            "",
+            "If damage limited to Epidermis:",
+            "  → Skin regenerates fully after healing",
+            "  → Ridges return IDENTICAL to original — same fingerprint",
+            "",
+            "If Dermis is destroyed:",
+            "  → Permanent scar tissue forms",
+            "  → BUT scar = new unique identifying feature (additional comparison points)",
+            "  → Creates a distinctive pattern that belongs ONLY to this person",
+            "",
+            "Conclusion: Trying to destroy fingerprints with acid = self-incrimination",
+            "The harder the destruction, the more unique the resulting scar"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "DNA Profiling — Forensic Method",
+        "content": {
+          "bullets": [
+            "Forensic DNA uses non-coding intergenic segments (not genes for traits)",
+            "16 forensic loci analysed (internationally standardised)",
+            "Uniqueness: 1 in 1,000,000,000,000 (one in a trillion)",
+            "",
+            "Amelogenin locus → determines sex (XX = female, XY = male)",
+            "Y-chromosome: paternally inherited — tracks male lineage; used in gang rape (mixed semen)",
+            "",
+            "Mitochondrial DNA (mtDNA): maternally inherited, present in anucleate cells",
+            "  → Found in: RBCs, hair SHAFT, nails (no nucleus needed)",
+            "  → Nuclear DNA: from hair ROOT sheath only",
+            "",
+            "LIMITATION: Identical twins share identical nuclear DNA → cannot distinguish them"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Identical Twins: DNA Limitation & Solution",
+        "content": {
+          "bullets": [
+            "Identical (Monozygotic) twins: same fertilised egg → same nuclear DNA sequence",
+            "→ 16 forensic loci are IDENTICAL between them",
+            "→ DNA CANNOT identify which twin committed the crime",
+            "",
+            "SOLUTION: Fingerprints",
+            "→ Fingerprints develop independently in the womb (influenced by amniotic fluid flow)",
+            "→ Identical twins ALWAYS have different fingerprints",
+            "→ Pattern type, ridge details, and pore positions differ",
+            "",
+            "Practical rule: DNA narrows → Fingerprints confirm"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "resolution",
+        "title": "Case Resolution: The Twin Heist",
+        "content": {
+          "bullets": [
+            "DNA from crime scene blood: matches BOTH twins (identical DNA) → inconclusive for ID",
+            "Crime scene fingerprint: Whorl pattern",
+            "Hussam fingerprint examination: Ulnar loops → NO match to crime scene → Hussam INNOCENT",
+            "Essam fingerprint examination:",
+            "  Acid damaged dermis → permanent scar formed",
+            "  Scar margins show Whorl ridge remnants",
+            "  Scar shape itself = unique identifier",
+            "  >16 comparison points confirmed with crime scene print",
+            "VERDICT: Essam GUILTY — acid treatment created permanent self-incriminating evidence"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "summary",
+        "title": "Episode 6 — Key Points",
+        "content": {
+          "bullets": [
+            "Fingerprints form at 4th intrauterine month; unique even in identical twins (1:64 million)",
+            "Pattern frequency: Loops (68%) > Whorls (25%) > Arches (6%) > Composite (1-2%)",
+            "Acid + Epidermis only = fingerprint fully regenerates",
+            "Acid + Dermis = permanent scar = new unique identifier = worse outcome for criminal",
+            "DNA uses 16 non-coding loci; Amelogenin = sex; mtDNA = maternal lineage",
+            "Critical: Identical twins share DNA → fingerprints are the tiebreaker"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "quiz",
+        "title": "Review Question",
+        "content": {
+          "question": "An identical twin suspect burns his fingertips in acid before arrest. His defence argues: (a) DNA from the crime scene is inconclusive, and (b) fingerprints are destroyed. How does forensic science counter both arguments?",
+          "answer": "(a) DNA limitation acknowledged — identical twins share nuclear DNA. Counter: fingerprints are always different even in identical twins — DNA narrows suspects, fingerprints identify. (b) Acid affecting dermis → permanent scar with Whorl remnants visible at scar margins → new unique identifier with >16 comparison points → fingerprint evidence stands and is stronger than before."
+        },
+        "images": [],
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Race Identification from Skeletal Remains",
+    "description": "Skull shape, nasal features, pterion, and dental markers reveal racial origin from bone alone.",
+    "slides": [
+      {
+        "type": "title",
+        "title": "Race Identification from Skeletal Remains",
+        "content": {
+          "bullets": [
+            "Episode 7 · The Bone Code"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "case",
+        "title": "Case: The Desert Excavation",
+        "content": {
+          "bullets": [
+            "Land reclamation workers discover a secret burial in Western Desert",
+            "Complete but fully skeletonised remains — no soft tissue",
+            "15 years ago, a mining expedition in this region disappeared:",
+            "  • Klaus — German engineer (Caucasoid)",
+            "  • Kim — Chinese geologist (Mongoloid)",
+            "  • Kwame — South African mining expert (Negroid)",
+            "Question: Which of the three does this skeleton belong to?",
+            "Skull and mandible sent to forensic department for racial identification"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Forensic Racial Classification",
+        "content": {
+          "bullets": [
+            "Three classical forensic groups (note: a spectrum, not rigid categories):",
+            "  1. Caucasoid — European, North African, Middle Eastern",
+            "  2. Mongoloid — East Asian, Southeast Asian, Indigenous American",
+            "  3. Negroid — Sub-Saharan African",
+            "Note: Egyptians measure intermediate between Caucasoid and Negroid",
+            "Racial identification from bone uses: skull morphology + dental features",
+            "Accuracy: ~85% from skull alone; combined with dentition improves"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "table",
+        "title": "Skull Racial Characteristics",
+        "content": {
+          "headers": [
+            "Feature",
+            "Caucasoid",
+            "Mongoloid",
+            "Negroid"
+          ],
+          "rows": [
+            [
+              "Skull shape",
+              "Mesocephalic (medium)",
+              "Brachycephalic (round, broad)",
+              "Dolichocephalic (long & narrow)"
+            ],
+            [
+              "Nasal bridge",
+              "Narrow & prominent (leptorrhine)",
+              "Flat & broad (mesorrhine)",
+              "Very flat & wide (platyrrhine)"
+            ],
+            [
+              "Prognathism",
+              "Absent or mild",
+              "Absent",
+              "Marked (jaws protrude forward)"
+            ],
+            [
+              "Frontal suture",
+              "Closes at ~3 years",
+              "Closes at ~3 years",
+              "Persists to ~30 years"
+            ],
+            [
+              "Pterion shape",
+              "H-shaped",
+              "H-shaped",
+              "X-shaped or single point"
+            ],
+            [
+              "Palate",
+              "High arched",
+              "High arched",
+              "Less arched / flat"
+            ],
+            [
+              "Mastoid process",
+              "Well developed",
+              "Medium",
+              "Short"
+            ]
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Negroid Skull — 6 Key Features",
+        "content": {
+          "bullets": [
+            "1. DOLICHOCEPHALIC — skull long & narrow (front to back)",
+            "2. FLAT NASAL BRIDGE — with wide nasal openings (platyrrhine)",
+            "3. PROGNATHISM — upper and lower jaws protrude forward + less arched palate",
+            "4. SHORT MASTOID PROCESS — behind the ear",
+            "5. X-SHAPED PTERION — where 4 skull bones meet at temple; normally H-shaped in other races",
+            "6. PERSISTENT FRONTAL SUTURE — Metopic suture remains visible until age 30 (not 3y)"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Racial Dental Characteristics",
+        "content": {
+          "bullets": [
+            "MONGOLOID — KEY HALLMARK:",
+            "  Shovel-shaped upper incisors (concave on lingual/inner surface)",
+            "  Lateral edges raised like a shovel or spade",
+            "  Most distinctive racial dental feature",
+            "",
+            "NEGROID:",
+            "  Large, strong teeth",
+            "  Ivory-white coloration",
+            "  Excellent alignment (good dentition)",
+            "",
+            "CAUCASOID:",
+            "  No single pathognomonic dental feature",
+            "  Generally medium-sized teeth"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "resolution",
+        "title": "Case Resolution: The Desert Excavation",
+        "content": {
+          "bullets": [
+            "Kim (Mongoloid) EXCLUDED: upper incisors are NOT shovel-shaped → not Mongoloid",
+            "Klaus (Caucasoid) EXCLUDED:",
+            "  • Pterion = X-shaped (Caucasoid has H-shaped)",
+            "  • Frontal suture would have closed at 3y, not persisting",
+            "  • No prognathism, no flat nasal bridge",
+            "All 6 Negroid features confirmed in specimen:",
+            "  ✓ Dolichocephalic skull",
+            "  ✓ Flat nasal bridge + wide openings",
+            "  ✓ Marked prognathism",
+            "  ✓ Short mastoid",
+            "  ✓ X-shaped Pterion",
+            "  ✓ Persistent frontal suture",
+            "VERDICT: Remains belong to Kwame — notify South African embassy"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "summary",
+        "title": "Episode 7 — Key Points",
+        "content": {
+          "bullets": [
+            "Negroid hallmarks: Dolichocephalic, flat nose (platyrrhine), prognathism, short mastoid, X-pterion, persistent metopic suture to 30y",
+            "Mongoloid hallmark: Shovel-shaped upper incisors — most distinctive single dental feature",
+            "Caucasoid: H-shaped Pterion, early metopic closure (3y), no prognathism",
+            "Egyptians: intermediate measurements between Caucasoid and Negroid",
+            "Pterion shape is a quick screening test: H = non-Negroid; X = Negroid",
+            "Metallic poisoning gum lines: Lead=Blue, Mercury=Grey, Copper=Green, Bismuth=Black"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "quiz",
+        "title": "Review Question",
+        "content": {
+          "question": "A skull shows: dolichocephalic shape, X-shaped Pterion, persistent frontal suture visible at estimated age 25y, marked prognathism, flat nasal bridge, and large well-aligned ivory-white teeth. (a) Which racial group? (b) Which three features are most diagnostically specific?",
+          "answer": "(a) Negroid (African) — all 6 key features present. (b) Most specific: X-shaped Pterion (not H-shaped like all other races), Persistent frontal suture to 30y (others close at 3y), Marked prognathism with flat palate. These three alone would be sufficient for diagnosis."
+        },
+        "images": [],
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Stature Estimation: Pearson's Formulae",
+    "description": "From bone length to living height — Pearson's regression equations and a step-by-step calculation.",
+    "slides": [
+      {
+        "type": "title",
+        "title": "Stature Estimation: Pearson's Formulae",
+        "content": {
+          "bullets": [
+            "Episode 8 · The Bone Code",
+            "Final Episode — Identification Complete"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "case",
+        "title": "Case: The Dismembered Remains",
+        "content": {
+          "bullets": [
+            "Stray dogs uncover a plastic bag in an agricultural drainage canal",
+            "Contents: one complete LEFT femur + one complete RIGHT humerus",
+            "Fully decomposed — no soft tissue, no identity",
+            "These are the only remains found",
+            "Two registered missing persons from the area:",
+            "  • Engineer Adel — basketball player, documented height: 192 cm",
+            "  • Teacher Sobhy — short stature, documented height: 160 cm",
+            "Question: Which person do these bones belong to?",
+            "Measurements taken: Femur = 40 cm | Humerus = 28.8 cm"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Living Stature Estimation — The Span Rule",
+        "content": {
+          "bullets": [
+            "For living persons with spinal deformity or inability to stand:",
+            "Arm Span Rule: Height ≈ Arm span (outstretched fingertip to fingertip)",
+            "Useful when direct height measurement is impossible",
+            "Accuracy: within ~2–3 cm in most adults",
+            "Application: elderly patients, kyphosis, scoliosis assessment"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "concept",
+        "title": "Pearson's Formulae — From Dead Bone to Living Height",
+        "content": {
+          "bullets": [
+            "Karl Pearson (mathematician/anthropologist) derived regression equations from cadaver studies",
+            "Key principle: Long bone length = known fixed % of total body height",
+            "",
+            "FEMUR = 25% of total height (1/4 of height)",
+            "→ Formula: Height = Femur length × 4",
+            "",
+            "HUMERUS = 18% of total height",
+            "→ Formula: Height = Humerus length ÷ 0.18",
+            "",
+            "Reliability order: Femur > Tibia > Humerus > Radius/Ulna",
+            "Using 2 bones and cross-checking = higher accuracy"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "table",
+        "title": "Long Bone Height Ratios",
+        "content": {
+          "headers": [
+            "Bone",
+            "% of Total Height",
+            "Formula",
+            "Reliability"
+          ],
+          "rows": [
+            [
+              "Femur (thigh)",
+              "25%",
+              "Length × 4",
+              "Most reliable"
+            ],
+            [
+              "Tibia (shin)",
+              "~22%",
+              "Length ÷ 0.22",
+              "Second"
+            ],
+            [
+              "Humerus (upper arm)",
+              "18%",
+              "Length ÷ 0.18",
+              "Third"
+            ],
+            [
+              "Radius/Ulna (forearm)",
+              "~15%",
+              "Length ÷ 0.15",
+              "Least reliable"
+            ]
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "resolution",
+        "title": "Case Resolution: Calculation — Step by Step",
+        "content": {
+          "calc": [
+            "Given: Femur = 40 cm | Humerus = 28.8 cm",
+            "FROM FEMUR (Pearson):",
+            "  Height = 40 cm × 4 = 160 cm",
+            "FROM HUMERUS (Pearson):",
+            "  Height = 28.8 ÷ 0.18 = 160.0 cm",
+            "BOTH METHODS AGREE: 160 cm",
+            "Engineer Adel = 192 cm → DOES NOT MATCH",
+            "Teacher Sobhy = 160 cm → EXACT MATCH",
+            "VERDICT: Remains identified as Teacher Sobhy (160 cm)",
+            "→ Murder investigation opened"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "summary",
+        "title": "Episode 8 — Key Points & Series Finale",
+        "content": {
+          "bullets": [
+            "Stature estimation: Femur = 25% (×4), Humerus = 18% (÷0.18)",
+            "Two-bone cross-verification increases accuracy significantly",
+            "Pearson's formulae are population-specific but widely accepted in Egyptian forensic practice",
+            "This completes the Identification chapter:",
+            "  Session 1: Bone age (Epiphyseal fusion)",
+            "  Session 2–3: Sex (Skull, Pelvis)",
+            "  Session 4: Neck & Chest (Sternum, Hyoid)",
+            "  Session 5: Teeth & Bite marks",
+            "  Session 6: Fingerprints & DNA",
+            "  Session 7: Race",
+            "  Session 8: Stature → Full identification profile from skeletal remains alone"
+          ]
+        },
+        "images": [],
+        "notes": ""
+      },
+      {
+        "type": "quiz",
+        "title": "Final Review Question",
+        "content": {
+          "question": "A femur measures 48 cm. Using Pearson's formula: (a) Calculate the estimated stature. (b) If a second bone (humerus = 34.56 cm) is available, verify the result. (c) Which of two missing persons (192 cm vs 160 cm) does this identify?",
+          "answer": "(a) Femur: 48 × 4 = 192 cm. (b) Humerus: 34.56 ÷ 0.18 = 192 cm — both confirm 192 cm. (c) Engineer Adel (192 cm) — the basketball player."
+        },
+        "images": [],
+        "notes": ""
+      }
+    ]
+  }
+]
