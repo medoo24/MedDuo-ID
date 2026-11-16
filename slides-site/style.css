@@ -848,28 +848,46 @@ table { border-collapse: collapse; width: 100%; }
 .stash-item-actions { display: flex; gap: 6px; }
 
 /* ════════════════════════════════════
-   PRINT STYLES
+   PRINT STYLES (A4 Landscape, 100% Page Fill)
    ════════════════════════════════════ */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
 @media print {
+  html, body {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+  }
   body > *:not(#medduo-print-area) { display: none !important; }
   #medduo-print-area {
     display: block !important;
-    width: 100% !important;
+    width: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
   }
   .print-slide-card {
-    page-break-after: always;
-    page-break-inside: avoid;
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
     box-shadow: none !important;
-    border: 1px solid #CBD5E1 !important;
-    border-radius: 8px !important;
-    min-height: 220mm;
-    margin-bottom: 20mm;
-    padding: 24px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 297mm !important;
+    height: 210mm !important;
+    max-height: 210mm !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 14mm 20mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
   }
   .print-slide-card .image-zone { display: block !important; }
   .print-slide-card .slide-img-wrap img { max-height: 160px !important; }
@@ -877,5 +895,6 @@ table { border-collapse: collapse; width: 100%; }
   .print-slide-card .slide-notes-area,
   .print-slide-card .slide-img-del,
   .print-slide-card .img-add-btn-bar,
-  .print-slide-card .image-zone-empty { display: none !important; }
+  .print-slide-card .image-zone-empty,
+  .print-slide-card .img-layout-bar { display: none !important; }
 }
