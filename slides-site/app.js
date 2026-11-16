@@ -37,7 +37,12 @@ window.SLIDES_DATA = [
             "Court orders X-rays of elbow, wrist, and knee to determine true biological age"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/el_prince_illustration.jpg",
+            "caption": "المتهم \"البرنس\": بشنب ودقن وبنطلون مسقط في الكلبشات يدعي أنه حدث 15 سنة و9 شهور!"
+          }
+        ],
         "notes": ""
       },
       {
@@ -53,7 +58,12 @@ window.SLIDES_DATA = [
             "4. Horizontal Line (الخط بالعرض): Epiphyseal line union (Growth cessation)"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/dr_shereen_framework.jpg",
+            "caption": "طريقة د. شيرين: الأشكال الهندسية الـ 4 لتقدير السن (دايرة صغيرة، دايرة كبيرة، خط بالطول، خط بالعرض)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -98,7 +108,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/ossification_centers_diagram.jpg",
+            "caption": "مخطط مراكز التعظم: داخل الرحم \"قطرة\" (الكعب 5، تالوس 7، فخذ 8، ركبة 9 وكيوبويد) و\"واحد فوق واتنين تحت\""
+          }
+        ],
         "notes": ""
       },
       {
@@ -116,7 +131,12 @@ window.SLIDES_DATA = [
             "  • Medial epicondyle: 17-18 years ('2 L rule' with Lesser trochanter)"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/upper_limb_epiphysis_diagram.jpg",
+            "caption": "مقص الكوع والطرف العلوي: قمر 14، سن الجمباز 15، مقص 16 و 17، والساعة والشنطة 20 سنة"
+          }
+        ],
         "notes": ""
       },
       {
@@ -151,7 +171,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/lower_limb_epiphysis_diagram.jpg",
+            "caption": "محطات سن التخرج: كفك 18، ركبة وقعدة بيوت 21 (كليات تانية)، والترقوة وقاع الجمجمة 23 (طالب طب)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -168,7 +193,12 @@ window.SLIDES_DATA = [
             "Critical Trap: Never apply the 2-year difference to cranial sutures or dental eruption!"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/pelvis_age_female_rule.jpg",
+            "caption": "القاعدة الشرعية: الفيميل تسبق الميل بسنتين في الهيفات (الأطوال والمشاشات)، ومتسبقوش في الدواير!"
+          }
+        ],
         "notes": ""
       },
       {
@@ -185,7 +215,16 @@ window.SLIDES_DATA = [
             "  • Subject to adult criminal jurisdiction with full responsibility — juvenile motion denied"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/el_prince_realistic.jpg",
+            "caption": "المتهم \"البرنس\" في جلسة التحقيق بالنيابة بعد ثبوت مسؤوليته الجنائية الكاملة"
+          },
+          {
+            "url": "images/knee_xray_growth_plate.jpg",
+            "caption": "أشعة ركبة البرنس: خط المشاشة مفتوح (تحت 21 سنة) بينما رسغه وكوعه ملتحمان تماماً (فوق 18 سنة)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -282,7 +321,12 @@ window.SLIDES_DATA = [
             "Forensic challenge: Determine sex and biological age from skull and mandible alone"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/charred_skull_forensics.jpg",
+            "caption": "جمجمة المشرحة المتفحمة في حريق المخزن مع أدلة وفهارس القياس الجنائي"
+          }
+        ],
         "notes": ""
       },
       {
@@ -339,7 +383,12 @@ window.SLIDES_DATA = [
             "  • 18 months: Completely closed — zero finger admission"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/skull_sutures_diagram.jpg",
+            "caption": "محيط رأس الوليد (13 بوصة)، اليافوخ وقاعدة الـ 3 صوابع، وساعة درزات القبة S-C-L (30-40-50)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -408,7 +457,12 @@ window.SLIDES_DATA = [
             "  • Suture closure ages are identical in both sexes."
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/mandible_age_diagram.jpg",
+            "caption": "تحولات زاوية الفك السفلي: منفرجة 140° في الطفل ➔ قائمة 90-110° في البالغ ➔ منفرجة 140° في العجوز"
+          }
+        ],
         "notes": ""
       },
       {
@@ -551,7 +605,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/pelvis_male_vs_female.jpg",
+            "caption": "المقارنة الجنائية بين حوض الذكر والأنثى (الزاوية تحت العانة، الثلمة الوركية، ومدخل الحوض)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -591,7 +650,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/pelvis_age_female_rule.jpg",
+            "caption": "ساعة الحوض العمرية: أولى ابتدائي 6 سنين، سن الجمباز 15، قعدة البيوت 21، وعرف الحرقفة 23 سنة"
+          }
+        ],
         "notes": ""
       },
       {
@@ -756,7 +820,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/teeth_and_hyoid_sternum.jpg",
+            "caption": "النغمة الموسيقية الأسطورية \"40 - 60 - 40\": اللامي 40 فوق، قبضة القص 60 في النص، الخنجري 40 تحت"
+          }
+        ],
         "notes": ""
       },
       {
@@ -773,7 +842,12 @@ window.SLIDES_DATA = [
             "   • No crescentic fingernail abrasions around larynx"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/hyoid_fracture_biomechanics.jpg",
+            "caption": "ميكانيكا كسر العظمة اللامية: كسر للخارج ونزيف حيوي في الخنق اليدوي مقابل سليم/للداخل في الشنق"
+          }
+        ],
         "notes": ""
       },
       {
@@ -895,7 +969,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/teeth_and_hyoid_sternum.jpg",
+            "caption": "جدول التسنين اللبني (الفار 6، سن التطعيمات 9 و 18 شهر) والدائم (مضاعفات 6 وسن التمييز 7 سنين)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -986,7 +1065,12 @@ window.SLIDES_DATA = [
             "  • 2. Dental silicone cast impressions of suspect's teeth for photographic superimposition"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/bite_mark_forensics.jpg",
+            "caption": "التحليل الجنائي لآثار العض: عضة الإنسان (حلقة بيضاوية) مقابل عضة الكلب (خطان متوازيان)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -1124,7 +1208,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "أنماط بصمات الأصابع (حلقة، دوامة، قوس) وعلامات المينوشيا، مع شفرة الـ DNA ونقاط الـ STR"
+          }
+        ],
         "notes": ""
       },
       {
@@ -1344,7 +1433,12 @@ window.SLIDES_DATA = [
             ]
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/cranial_race_identification.jpg",
+            "caption": "القياسات الجنائية لتحديد العرق: القوقازي (محجر مائل وأنف ضيق)، الزنجي (محجر مربع وبروز فك)، والمغولي (أسنان مجرفية)"
+          }
+        ],
         "notes": ""
       },
       {
@@ -1505,7 +1599,12 @@ window.SLIDES_DATA = [
             "Using 2 bones and cross-checking = higher accuracy"
           ]
         },
-        "images": [],
+        "images": [
+          {
+            "url": "images/osteometric_board_stature.jpg",
+            "caption": "لوح قياس العظام (Osteometric Board) وحساب الطول الحقيقي بالمللي بمعادلات انحدار بيرسون"
+          }
+        ],
         "notes": ""
       },
       {
@@ -1603,11 +1702,6 @@ window.SLIDES_DATA = [
   }
 ];
 
-
-
-/* ════════════════════════════════════
-   STATE
-   ════════════════════════════════════ */
 const state = {
   view: 'home',       // 'home' | 'episode' | 'favorites'
   epIdx: 0,
@@ -1631,33 +1725,91 @@ function saveEpSlides(epIdx, slides) {
   localStorage.setItem(`medduo_slides_edits_${epIdx}`, JSON.stringify(slides));
 }
 
-/* Images */
+/* Images & Captions */
 function getSlideImages(epIdx, slideIdx) {
-  const imgs = [];
+  const customImgs = [];
   let i = 0;
   while (true) {
     const v = localStorage.getItem(`medduo_img_${epIdx}_${slideIdx}_${i}`);
     if (v === null) break;
-    imgs.push(v);
+    const cap = localStorage.getItem(`medduo_cap_${epIdx}_${slideIdx}_${i}`) || '';
+    customImgs.push({ url: v, caption: cap });
     i++;
   }
-  return imgs;
+  if (customImgs.length > 0) return customImgs;
+
+  // Fallback to slide default images from master data
+  const slides = getEpSlides(epIdx);
+  const slide = slides[slideIdx];
+  if (slide && slide.images && slide.images.length > 0) {
+    return slide.images.map((img, idx) => {
+      const savedCap = localStorage.getItem(`medduo_cap_${epIdx}_${slideIdx}_${idx}`);
+      if (typeof img === 'string') {
+        return { url: img, caption: savedCap !== null ? savedCap : '' };
+      }
+      return {
+        url: img.url || img.data || '',
+        caption: savedCap !== null ? savedCap : (img.caption || '')
+      };
+    });
+  }
+  return [];
 }
-function saveSlideImage(epIdx, slideIdx, imgIdx, base64) {
+
+function saveSlideImage(epIdx, slideIdx, imgIdx, base64, caption = '') {
   localStorage.setItem(`medduo_img_${epIdx}_${slideIdx}_${imgIdx}`, base64);
+  if (caption) {
+    localStorage.setItem(`medduo_cap_${epIdx}_${slideIdx}_${imgIdx}`, caption);
+  }
+  // Sync to slide state
+  const slides = getEpSlides(epIdx);
+  if (slides[slideIdx]) {
+    if (!slides[slideIdx].images) slides[slideIdx].images = [];
+    slides[slideIdx].images[imgIdx] = { url: base64, caption };
+    saveEpSlides(epIdx, slides);
+  }
 }
+
+function saveSlideImageCaption(epIdx, slideIdx, imgIdx, caption) {
+  localStorage.setItem(`medduo_cap_${epIdx}_${slideIdx}_${imgIdx}`, caption);
+  // Sync to slide state
+  const slides = getEpSlides(epIdx);
+  if (slides[slideIdx] && slides[slideIdx].images && slides[slideIdx].images[imgIdx]) {
+    if (typeof slides[slideIdx].images[imgIdx] === 'string') {
+      slides[slideIdx].images[imgIdx] = { url: slides[slideIdx].images[imgIdx], caption };
+    } else {
+      slides[slideIdx].images[imgIdx].caption = caption;
+    }
+    saveEpSlides(epIdx, slides);
+  }
+}
+
 function deleteSlideImage(epIdx, slideIdx, imgIdx) {
-  // Remove and compact
-  const imgs = getSlideImages(epIdx, slideIdx);
-  imgs.splice(imgIdx, 1);
-  // Clear all keys for this slide
+  const existing = getSlideImages(epIdx, slideIdx);
+  existing.splice(imgIdx, 1);
+
+  // Clear all localStorage keys for this slide
   let i = 0;
-  while (localStorage.getItem(`medduo_img_${epIdx}_${slideIdx}_${i}`) !== null) {
+  while (localStorage.getItem(`medduo_img_${epIdx}_${slideIdx}_${i}`) !== null || localStorage.getItem(`medduo_cap_${epIdx}_${slideIdx}_${i}`) !== null) {
     localStorage.removeItem(`medduo_img_${epIdx}_${slideIdx}_${i}`);
+    localStorage.removeItem(`medduo_cap_${epIdx}_${slideIdx}_${i}`);
     i++;
   }
-  // Re-save
-  imgs.forEach((b, idx) => localStorage.setItem(`medduo_img_${epIdx}_${slideIdx}_${idx}`, b));
+
+  // Re-save remaining items
+  existing.forEach((item, idx) => {
+    localStorage.setItem(`medduo_img_${epIdx}_${slideIdx}_${idx}`, item.url);
+    if (item.caption) {
+      localStorage.setItem(`medduo_cap_${epIdx}_${slideIdx}_${idx}`, item.caption);
+    }
+  });
+
+  // Sync to slide state
+  const slides = getEpSlides(epIdx);
+  if (slides[slideIdx]) {
+    slides[slideIdx].images = existing;
+    saveEpSlides(epIdx, slides);
+  }
 }
 
 /* Favorites */
@@ -2063,14 +2215,17 @@ function buildImageZone(slideIdx) {
       // Grid of images / videos / gifs
       const grid = document.createElement('div');
       grid.className = 'image-flex-grid';
-      imgs.forEach((b64, imgIdx) => {
+      imgs.forEach((item, imgIdx) => {
         const wrap = document.createElement('div');
         wrap.className = 'slide-img-wrap';
         
+        const src = (typeof item === 'string') ? item : (item.url || '');
+        const cap = (typeof item === 'object' && item.caption) ? item.caption : '';
+
         let mediaEl;
-        if (b64.startsWith('data:video/')) {
+        if (src.startsWith('data:video/') || src.endsWith('.mp4') || src.endsWith('.webm')) {
           mediaEl = document.createElement('video');
-          mediaEl.src = b64;
+          mediaEl.src = src;
           mediaEl.controls = true;
           mediaEl.autoplay = true;
           mediaEl.loop = true;
@@ -2079,10 +2234,40 @@ function buildImageZone(slideIdx) {
           mediaEl.className = 'slide-media-item';
         } else {
           mediaEl = document.createElement('img');
-          mediaEl.src = b64;
-          mediaEl.alt = `Media ${imgIdx+1}`;
+          mediaEl.src = src;
+          mediaEl.alt = cap || `Media ${imgIdx+1}`;
           mediaEl.className = 'slide-media-item';
         }
+
+        // Editable Caption under the media
+        const capEl = document.createElement('div');
+        capEl.className = 'slide-img-caption';
+        capEl.contentEditable = 'true';
+        capEl.title = 'Click to edit caption (Enter or click outside to save)';
+        capEl.setAttribute('data-placeholder', '✏️ Click to add/edit caption…');
+        capEl.textContent = cap || '';
+        if (!cap) capEl.setAttribute('data-empty', 'true');
+
+        capEl.addEventListener('focus', () => {
+          if (capEl.getAttribute('data-empty') === 'true') {
+            capEl.removeAttribute('data-empty');
+          }
+        });
+
+        capEl.addEventListener('blur', () => {
+          const text = capEl.textContent.trim();
+          if (!text) {
+            capEl.setAttribute('data-empty', 'true');
+          }
+          saveSlideImageCaption(epIdx, slideIdx, imgIdx, text);
+        });
+
+        capEl.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            capEl.blur();
+          }
+        });
 
         const del = document.createElement('button');
         del.className = 'slide-img-del';
@@ -2094,7 +2279,9 @@ function buildImageZone(slideIdx) {
           deleteSlideImage(epIdx, slideIdx, imgIdx);
           renderSlide();
         });
+
         wrap.appendChild(mediaEl);
+        wrap.appendChild(capEl);
         wrap.appendChild(del);
         grid.appendChild(wrap);
       });
@@ -2697,13 +2884,31 @@ function exportEpisodePPT() {
         const contentStartY = 1.55;
 
         // Render Image on the right if available
-        if (hasImages && slide.images[0].data) {
+        const slideImgs = getSlideImages(state.epIdx, idx);
+        const hasSlideImgs = slideImgs && slideImgs.length > 0;
+        if (hasSlideImgs) {
+          const firstImg = slideImgs[0];
+          const imgUrl = (typeof firstImg === 'string') ? firstImg : (firstImg.url || '');
+          const imgCap = (typeof firstImg === 'object' && firstImg.caption) ? firstImg.caption : '';
+
           try {
-            s.addImage({
-              data: slide.images[0].data,
-              x: 8.3, y: 1.55, w: 4.2, h: 4.8,
-              sizing: { type: 'contain', w: 4.2, h: 4.8 }
-            });
+            const imgOpts = {
+              x: 8.2, y: 1.55, w: 4.3, h: imgCap ? 4.2 : 4.8,
+              sizing: { type: 'contain', w: 4.3, h: imgCap ? 4.2 : 4.8 }
+            };
+            if (imgUrl.startsWith('data:')) {
+              imgOpts.data = imgUrl;
+            } else {
+              imgOpts.path = imgUrl;
+            }
+            s.addImage(imgOpts);
+
+            if (imgCap) {
+              s.addText(imgCap, {
+                x: 8.2, y: 5.85, w: 4.3, h: 0.9,
+                fontSize: 9.5, italic: true, color: '64748B', align: 'center', fontFace: 'Calibri'
+              });
+            }
           } catch(imgErr) {
             console.warn('Could not add image to PPTX', imgErr);
           }

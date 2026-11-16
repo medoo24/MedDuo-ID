@@ -898,3 +898,56 @@ table { border-collapse: collapse; width: 100%; }
   .print-slide-card .image-zone-empty,
   .print-slide-card .img-layout-bar { display: none !important; }
 }
+
+/* ─── Editable Slide Image Captions ─── */
+.slide-img-caption {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text2);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  text-align: center;
+  cursor: text;
+  transition: all 0.2s ease;
+  max-width: 100%;
+  word-break: break-word;
+  user-select: text;
+}
+.slide-img-caption:hover {
+  border-color: var(--cyan);
+  background: rgba(6, 182, 212, 0.04);
+}
+.slide-img-caption:focus {
+  outline: none;
+  border-color: var(--cyan);
+  border-style: solid;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+  background: #ffffff;
+  color: var(--text1);
+}
+.dark-mode .slide-img-caption:focus {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+.slide-img-caption[data-empty="true"]::before {
+  content: attr(data-placeholder);
+  color: var(--text3);
+  font-style: italic;
+  font-size: 0.75rem;
+}
+.print-slide-card .slide-img-caption {
+  font-size: 0.68rem !important;
+  color: #334155 !important;
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  padding: 3px 6px !important;
+  margin-top: 4px !important;
+  text-align: center !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+.pres-slide-card .slide-img-caption { border: none !important; background: transparent !important; font-size: 0.85rem !important; font-weight: 500 !important; color: var(--text2) !important; cursor: default !important; }

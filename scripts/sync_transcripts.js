@@ -76,6 +76,8 @@ function formatEpisodeMarkdown(ep) {
     } else if (item.type === 'sub_header') {
       const cleanSub = item.text.replace(/^[🔹\s]+/, '');
       md += `\n### 🔹 ${cleanSub}\n\n`;
+    } else if (item.type === 'image') {
+      md += `\n![${item.caption || 'صورة توضيحية'}](${item.url})\n*${item.caption || ''}*\n\n`;
     } else if (item.type === 'speaker') {
       let speakerName = 'د. طارق';
       if (item.speaker === 'atef') speakerName = 'عاطف';

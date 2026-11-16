@@ -89,6 +89,11 @@ const EPISODES = [
         "text": "دايرة صغيرة، ودايرة كبيرة، وخط بالطول، وخط بالعرض.. دي خريطة كنز دي يا دكتور ولا رسم هندسي؟ فسرلي يا غالي!"
       },
       {
+        "type": "image",
+        "url": "images/dr_shereen_framework.jpg",
+        "caption": "طريقة د. شيرين الأصلية: الأشكال الهندسية الـ 4 لتقدير السن (دايرة صغيرة، دايرة كبيرة، خط بالطول، خط بالعرض)"
+      },
+      {
         "type": "speaker",
         "speaker": "dr_tarek",
         "text": "دي خريطة قفل امتحان الطب الشرعي! ركز معايا: ١. الدايرة الصغيرة: دي مراكز التعظم (Ossification Centers) اللي بتظهر في الغضاريف. ٢. الدايرة الكبيرة: دي الجمجمة (The Skull) ومعاها الأسنان والدرزات واليافوخ. ٣. الخط بالطول: ده القناة النخاعية (Medullary Cavity) اللي بتشق العظمة بالطول. ٤. الخط بالعرض: ده خط المشاشة أو التحام المشاش (Epiphyseal Union)."
@@ -200,6 +205,11 @@ const EPISODES = [
         "text": "دلوقتي بقى يا دكتور عاطف، ارجع لقضية المتهم \"البرنس\"؛ محاميه داخل يتبغدد بشهادة ميلاد 15 سنة و9 شهور وعايز يحيله لمحكمة الأحداث ويفلت من حبل المشنقة. تقرير الأشعة بتاعنا من مصلحة الطب الشرعي طلع الآتي: ١. أشعة الكوع: الـ Lateral epicondyle ملتحمة تماماً (Complete Union). ٢. أشعة اليد والرسغ: عظام مشط اليد (Metacarpals) وأسفل الكعبرة ملتحمين بالكامل (Complete Union). ٣. أشعة الركبة: الخط الغضروفي بين أسفل الفخذ وأعلى القصبة مفتوح تماماً ومش لاحم (Non-union). احكم يا قاضي المشرحة!"
       },
       {
+        "type": "image",
+        "url": "images/knee_xray_growth_plate.jpg",
+        "caption": "أشعة ركبة البرنس: خط المشاشة مفتوح (تحت 21 سنة) بينما كوعه ورسغه لاحمين بالكامل (فوق 18 سنة)"
+      },
+      {
         "type": "speaker",
         "speaker": "atef",
         "text": "بسسس! امسك الحرامي المزور واديله حبل المشنقة! • أولاً: كوعه لاحم عند الـ Lateral epicondyle، يبقى معدي سن الجمباز والـ 16 سنة مستريح! • ثانياً: والأخطر والفيصل الجنائي.. كف إيده (Metacarpals) ورسغه ملتحمين بالكامل، يعني قفل سن الـ 18 سنة بالمللي وطبّق كفه! وطالما معدي 18 سنة، يبقى تسقط شهادة الميلاد المزورة ويسقط ادعاء إنه حدث، ويتحاكم أمام محكمة الجنايات العادية بكامل أهليته الجنائية! • ثالثاً: وبما إن ركبته لسه مفتوحة (تحت سن 21 سنة)، هو لسه ما وصلش سن كمال الأهلية المدنية وإدارة الشركات، بس جنائياً هو شحط كامل المسؤولية ولابس في قضية قتل عمد!"
@@ -235,6 +245,11 @@ const EPISODES = [
         "type": "speaker",
         "speaker": "dr_tarek",
         "text": "حريق هائل ولّع في مخزن بضائع مهجور على أطراف القاهرة؛ بعد ما المطافي سيطرت على النيران، عمال الإنقاذ لقوا تحت الردم هيكل عظمي متفحم تماماً وضايع منه كل الأنسجة الرخوة، ومفيش أي أثر للجلد أو بصمات الأصابع أو ملامح الوش. المباحث لقت في سجلات المتغيبين في محيط المنطقة شخصين اختفوا في نفس الليلة: ١. أستاذ فوزي: رجل أعمال عنده 45 سنة. ٢. الآنسة رانيا: محاسبة في المخزن عندها 28 سنة. النيابة بعتت للطب الشرعي عظام الجمجمة ومعاها الفك السفلي وسألت: \"الجثة دي لراجل ولا ست؟ وهل دي جثة أستاذ فوزي ولا الآنسة رانيا؟\""
+      },
+      {
+        "type": "image",
+        "url": "images/charred_skull_forensics.jpg",
+        "caption": "فحص جمجمة المشرحة المتفحمة في حريق المخزن لتحديد الجنس والعمر بالدرزات"
       },
       {
         "type": "speaker",
@@ -372,6 +387,11 @@ const EPISODES = [
         "text": "تعال نثبت الـ 6 فروق الذهبية في الحوض اللي بتدخل بيهم أي لجنة شفوي تقفلها: ١. الزاوية تحت العانة (Subpubic Angle): في الست منفرجة واسعة جداً (90 - 100 درجة) شبه الزاوية بين الإبهام والسبابة، في الراجل حادة وضيقة (60 - 70 درجة) شبه علامة النصر بالصوابع (V-shaped)! ٢. الثلمة الوركية الكبرى (Greater Sciatic Notch): في الست واسعة وعريضة وسطحية (Wide & Shallow)، وفي الراجل ضيقة وعميقة (Narrow & Deep). ٣. مدخل الحوض (Pelvic Inlet): في الست دائري أو بيضاوي عريض (Round / Oval)، وفي الراجل شبه قلب ورق اللعب في الكوتشينة (Heart-shaped) لأن عظمة العجز بارزة لجوه! ٤. عظمة العجز (Sacrum): في الست قصيرة وعريضة ومقعرة لورا عشان تسيب مساحة (Short, Broad & Curved)، وفي الراجل طويلة وضيقة ومستقيمة (Long & Narrow). ٥. التجويف الحقي (Acetabulum): في الراجل تجويف ضخم عشان يشيل رأس الفخذ الكبيرة والوزن الثقيل، وفي الست صغير وأقل عمقاً. ٦. مظهر الحوض العام: في الراجل مخروطي طويل وثقيل، وفي الست أسطواني قصير وعريض وخفيف!"
       },
       {
+        "type": "image",
+        "url": "images/pelvis_male_vs_female.jpg",
+        "caption": "الفروق الجنائية الـ 6 بين حوض الذكر والأنثى (الزاوية تحت العانة، الثلمة الوركية، ومدخل الحوض)"
+      },
+      {
         "type": "speaker",
         "speaker": "atef",
         "text": "يا جمال التقسيمة! حوض الست واسع ومنفرج ومدخله بيضاوي وزاويته قائمة وشبه حرف الـ L، وحوض الراجل ضيق وعميق وقلب كوتشينة وعلامة V! طب بالنسبة للسن من الحوض يا دكتور؟"
@@ -475,6 +495,11 @@ const EPISODES = [
         "text": "ركز في الأهمية الجنائية الفاصلة دي: • قبل سن 40 سنة: العظمة اللامية والقرون بتاعتها غضروفية لينة ومرنة (Elastic Cartilage)، فلو اتعرضت لضغط نادر جداً ما تتكسر لأنها بتمط وتستحمل! • بعد سن 40 سنة: القرون بتلتحم مع الجسم بالكامل وتتحول لعظمة صلبة هشة (Brittle Bone) تتكسر بأقل ضغط! • والأخطر.. اتجاه الكسر (Fracture Direction): ١. في الخنق باليدين (Throttling / Manual Strangulation): القاتل بيطبق صوابعه وإبهامه على رقبة الضحية بقوة، فالضغط بيجي من الجوانب للداخل، فيحصل تباعد للقرون وتتكسر للخارج (Outward Fracture)، ويكون مصحوب بنزيف دموي حيوي كثيف وسحجات هلالية (Crescentic abrasions) مكان أظافر الجاني! ٢. في الشنق (Hanging): الحبل بيشد لفوق وللداخل (Upward & Inward)، فنادراً ما تتكسر العظمة اللامية، ولو اتكسرت بيكون الكسر للداخل (Inward Fracture) وبدون سحجات أظافر!"
       },
       {
+        "type": "image",
+        "url": "images/hyoid_fracture_biomechanics.jpg",
+        "caption": "ميكانيكا كسر العظمة اللامية: كسر للخارج ونزيف حيوي في الخنق اليدوي مقابل سليم/للداخل في الشنق"
+      },
+      {
         "type": "section_header",
         "text": "المحطة الثالثة: فك شفرة \"شنق المليونير\""
       },
@@ -575,6 +600,11 @@ const EPISODES = [
         "type": "speaker",
         "speaker": "dr_tarek",
         "text": "تعال بقى لعضة كتف المتهم \"عنتر\": إزاي تفرق بين عضة إنسان وعضة كلب؟ • عضة الكلب (Dog Bite): فك الكلب مدبب وطويل (Snout)، فلما بيعض بيعمل خطين متوازيين متباعدين من الجروح القطعية العميقة (Two Parallel Lines)! • عضة الإنسان (Human Bite): قوس الأسنان البشري نصف دائري، فالعضة بتظهر على شكل حلقة بيضاوية أو دائرية مفرغة (Elliptical / Circular Ring) عبارة عن كدمات وسحجات متطابقة مع صف القواطع والأنياب! وبناخد مسحة لعاب (Saliva Swab) فوراً من مكان العضة ونطلع منها DNA المعتدى عليه!"
+      },
+      {
+        "type": "image",
+        "url": "images/bite_mark_forensics.jpg",
+        "caption": "التحليل الجنائي لآثار العض: عضة الإنسان (حلقة بيضاوية) مقابل عضة الكلب (خطان متوازيان)"
       },
       {
         "type": "section_header",
@@ -1069,6 +1099,8 @@ function renderDialogue(idx) {
       $dialogue.appendChild(makeSectionHeader(item, i, idx));
     } else if (item.type === 'sub_header') {
       $dialogue.appendChild(makeSubHeader(item, i, idx));
+    } else if (item.type === 'image') {
+      $dialogue.appendChild(makeImageCard(item, i, idx));
     } else {
       $dialogue.appendChild(makeBubble(item, i, idx));
     }
@@ -1135,6 +1167,25 @@ function renderReading(idx) {
       $reading.appendChild(block);
     }
   });
+}
+
+
+// ─── IMAGE CARD FACTORY ──────────────────────────────────────
+function makeImageCard(item, itemIdx, epIdx) {
+  const wrap = document.createElement('div');
+  wrap.className = 'podcast-image-card';
+  wrap.dataset.itemIndex = itemIdx;
+  wrap.style.cssText = 'margin: 18px auto; max-width: 620px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center;';
+  
+  const capHtml = item.caption ? `<div class="podcast-img-caption" style="padding: 10px 16px; font-size: 0.85rem; color: var(--text2); font-weight: 500; border-top: 1px solid var(--border); line-height: 1.45; background: var(--surface);">${escHtml(item.caption)}</div>` : '';
+  
+  wrap.innerHTML = `
+    <div style="background:#0F172A; position:relative; overflow:hidden;">
+      <img src="${escHtml(item.url)}" alt="${escHtml(item.caption || '')}" style="width: 100%; max-height: 420px; object-fit: contain; display: block; margin: 0 auto;" />
+    </div>
+    ${capHtml}
+  `;
+  return wrap;
 }
 
 // ─── BUBBLE FACTORY ──────────────────────────────────────────
