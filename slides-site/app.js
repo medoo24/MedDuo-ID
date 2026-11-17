@@ -166,8 +166,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/identification_hierarchy.jpg",
-            "caption": "The 6-step standard hierarchy of forensic identification from broad racial triage to individualizing peculiar marks"
+            "url": "images/cranial_race_identification.jpg",
+            "caption": "Cranial morphology in the 6-step identification hierarchy: racial craniometry, sexual dimorphism, and cephalic index"
           }
         ],
         "notes": "التسلسل القياسي للاستعراف: العرق، ثم الجنس، ثم السن، ثم القامة، ثم الملامح العامة، وأخيراً العلامات المميزة."
@@ -207,8 +207,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/living_id_situations.jpg",
-            "caption": "Medico-legal classification of living identification: 8 civil situations and 2 criminal situations"
+            "url": "images/osteometric_board_stature.jpg",
+            "caption": "Anthropometric and somatic methods in living identification: verification of civil identity, missing persons, and legal status"
           }
         ],
         "notes": "استعراف الأحياء: 8 مواقف مدنية وموقفان جنائيان من صميم كتاب عين شمس ص 37-38."
@@ -255,8 +255,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/biometrics_comparison.jpg",
-            "caption": "Biometric modalities comparison: anatomical stability of physical markers vs dynamic variability of behavioral traits"
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "Biometric modalities: permanent friction ridges and DNA profiles vs dynamic behavioral patterns"
           }
         ],
         "notes": "القياسات الحيوية: الفيزيائية ثابتة مدى الحياة ولا تتغير، بينما السلوكية تتأثر بالإجهاد والمرض."
@@ -296,8 +296,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/infant_skull_anatomy.jpg",
-            "caption": "Infant skull architecture: 8:1 vault to face ratio, open fontanelles, and the 13-5-4 growth rule"
+            "url": "images/charred_skull_forensics.jpg",
+            "caption": "Infant cranial vault proportions and developmental anatomy: 8:1 vault-to-face ratio and the 13-5-4 growth rule"
           }
         ],
         "notes": "نسبة الجمجمة للوجه عند الولادة 8:1 وفي البالغين 2:1، وقاعدة 13-5-4 للنمو المحيطي."
@@ -344,8 +344,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/fontanelle_finger_rule.jpg",
-            "caption": "Fontanelle closure chronology: the shrinking finger metric from 3 fingers at birth to complete closure at 18-24 months"
+            "url": "images/skull_sutures_diagram.jpg",
+            "caption": "Fontanelle closure chronology: Anterior (Bregma) 1.5–2y shrinking finger metric, and Posterior (Lambda) 2–3m closure"
           }
         ],
         "notes": "اليافوخ الأمامي يقفل عند سنة ونصف إلى سنتين بمقياس الأصابع، واليافوخ الخلفي يقفل عند الولادة إلى شهرين أو 3 أشهر."
@@ -399,8 +399,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/cranial_sutures_clock.jpg",
-            "caption": "Cranial suture closure timeline: Sagittal (30y), Coronal (40y), Lambdoid (50y), and persistent Metopic suture trap"
+            "url": "images/skull_sutures_diagram.jpg",
+            "caption": "Cranial sutures timeline: Sagittal (30y), Coronal (40y), Lambdoid (50y), All (70y), and the persistent Negroid frontal suture"
           }
         ],
         "notes": "دروز الجمجمة: السهمي 30 سنة، الإكليلي 40 سنة، اللامي 50 سنة، وكلها 70 سنة ما عدا الصدغي الجداري. تذكر مصيدة العرق الزنجي في الدرز الجبهي!"
@@ -450,8 +450,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/mandible_metamorphosis.jpg",
-            "caption": "Mandible morphological metamorphosis: infant (obtuse angle, low foramen), adult (right angle, mid foramen), senile (obtuse, high foramen)"
+            "url": "images/mandible_age_diagram.jpg",
+            "caption": "Mandible metamorphosis across age: infant (obtuse angle 140°), adult (right angle 110°), senile (obtuse 140° with alveolar resorption)"
           }
         ],
         "notes": "الفك السفلي: منفرجة عند الرضيع، قائمة عند البالغ، وتعود منفرجة عند المسن، مع تغير موقع الثقب الذقني."
@@ -474,7 +474,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "images": [
           {
             "url": "images/charred_skull_forensics.jpg",
-            "caption": "High-yield summary matrix for skull and personal identification in Ain Shams forensic examinations"
+            "caption": "Summary matrix: skull, sutures, fontanelles, and personal identification criteria for Ain Shams forensic examinations"
           }
         ],
         "notes": "ملخص الأرقام الذهبية للامتحان الشفوي والتحريري لطب عين شمس - الباب الثالث."
@@ -548,8 +548,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/epiphyses_summary_deck.jpg",
-            "caption": "Radiological examination of epiphyses and dental arches in forensic age estimation cases"
+            "url": "images/dr_shereen_framework.jpg",
+            "caption": "Dr. Shereen's 4-geometry framework: small circle (centers), big circle (skull), vertical line (medullary canal), and horizontal line (epiphyses)"
           }
         ],
         "notes": "السيناريوهات الأربعة الكلاسيكية: عمالة الأطفال، سن التمييز، حاجز الـ 18 سنة لتجنب الإعدام، وتحديد سن الجثث المتفحمة."
@@ -609,8 +609,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/deciduous_eruption_ladder.jpg",
-            "caption": "Deciduous dentition eruption ladder: lower centrals (6-8m) to second milk molars (20-24m)"
+            "url": "images/teeth_and_hyoid_sternum.jpg",
+            "caption": "Deciduous dentition eruption ladder: lower centrals (6-8m) to second milk molars (20-24m), with 20 total teeth"
           }
         ],
         "notes": "الأسنان اللبنية: تبدأ عند 6 شهور بالقواطع المركزية السفلية وتنتهي عند سنتين بالضرس اللبني الثاني. تذكر: لا توجد ضواحك في الأسنان اللبنية!"
@@ -681,8 +681,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/permanent_teeth_timeline.jpg",
-            "caption": "Permanent teeth eruption timeline: 6-year molar, incisors (7-8y), premolars (9-10y), canine (11y), 2nd molar (12y), wisdom (18-25y)"
+            "url": "images/teeth_and_hyoid_sternum.jpg",
+            "caption": "Permanent dentition timeline: 6-year molar, incisors (7-8y), premolars (9-10y), canine (11y), 2nd molar (12y), wisdom (18-25y)"
           }
         ],
         "notes": "الأسنان الدائمة: الضرس الأول عند 6 سنين، ثم القواطع والضواحك والأنياب، والضرس الثاني عند 12 سنة، وضرس العقل من 18 إلى 25 سنة."
@@ -742,8 +742,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/ossification_centers_1to6.jpg",
-            "caption": "Chronological appearance of postnatal ossification centers: 1y (major heads) to 6y (head of radius, lower ulna)"
+            "url": "images/ossification_centers_diagram.jpg",
+            "caption": "Chronological appearance of postnatal ossific centers: 1y (heads), 2y (distal radius/tibia), 3y (PATELLA - Exam Trap!), 4y, 5y, 6y"
           }
         ],
         "notes": "مراكز التعظم بعد الولادة: سنة رؤوس، سنتين أطراف سفلية للزند والقصبة، 3 سنين الصابونة (مصيدة!)، 4 سنين رأس الشظية والمدور الكبير، 5 سنين أسفل الشظية، 6 سنين رأس الكعبرة وأسفل الزند."
@@ -781,8 +781,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/elbow_scissors_diagram.jpg",
-            "caption": "The Elbow Scissors (14 to 17 years): sequential epiphyseal fusion at the elbow joint"
+            "url": "images/upper_limb_epiphysis_diagram.jpg",
+            "caption": "Upper limb epiphyseal union: The Elbow Scissors (14y Trochlea-Capitulum, 15y Shaft, 16y Lat Epicondyle, 17y Med Epicondyle)"
           }
         ],
         "notes": "مقص الكوع من 14 إلى 17 سنة: 14 البكرة مع اللقمة، 15 يلتحمان بالجذع، 16 اللقمة الوحشية والأولكرانون، 17 اللقمة الإنسية ورأس الكعبرة."
@@ -841,8 +841,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/epiphyses_summary_deck.jpg",
-            "caption": "Epiphyseal union of pelvis, knee, ankle, and sternal clavicle across juvenile and young adult stages"
+            "url": "images/lower_limb_epiphysis_diagram.jpg",
+            "caption": "Lower limb & axial epiphyseal union: Acetabulum Y-cartilage (16y), ankle (18y), knee (20-21y), clavicle sternal end (21-25y)"
           }
         ],
         "notes": "الحوض يكتمل عند 16 سنة (غضروف الحق)، الكاحل عند 18، الركبة عند 20-21، والطرف القصي للترقوة هو آخر مشاشة وتلتحم من 21 إلى 25 سنة."
@@ -880,8 +880,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/female_lead_rule.jpg",
-            "caption": "The Female Lead Rule: accelerated ossification and epiphyseal closure in females by 1 to 2 years"
+            "url": "images/pelvis_age_female_rule.jpg",
+            "caption": "The Female Lead Rule: accelerated ossification and epiphyseal closure in females by 1 to 2 years ahead of males"
           }
         ],
         "notes": "قاعدة تقدم الإناث بسنة إلى سنتين وأثرها على تقدير السن الجنائي وقانون ظهور والتحام المشاشات."
@@ -933,8 +933,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/mli_pediatric_table.jpg",
-            "caption": "Medico-Legal Importance (MLI) milestones from age 6 (school) to 16 (National ID and hazardous labor prohibition)"
+            "url": "images/wrist_xray_growth_plate.jpg",
+            "caption": "Radiological growth plate assessment for juvenile legal milestones: ages 7, 12, 14, 15, and 16 years"
           }
         ],
         "notes": "جدول الأهمية الطبية الشرعية للأعمار الصغيرة: سن 7 لا مسؤولية جنائية، سن 12 حظر تدريب، سن 14 استحالة الاغتصاب، سن 16 بطاقة الرقم القومي وحظر الأعمال الخطرة."
@@ -986,8 +986,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/mli_adult_table.jpg",
-            "caption": "Adult medico-legal and civic milestones: age 18 (criminal adulthood), 21 (civil majority), 30 (Senate), 60 (pension)"
+            "url": "images/knee_xray_growth_plate.jpg",
+            "caption": "Epiphyseal closure evaluation for adult civil and criminal thresholds: Age 18 (criminal adulthood) and Age 21 (civil majority)"
           }
         ],
         "notes": "الفرق الجوهري بين سن 18 (الرشد الجنائي وإمكانية الإعدام) وسن 21 (الرشد المدني وإدارة الأموال)."
@@ -1008,7 +1008,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/epiphyses_summary_deck.jpg",
+            "url": "images/upper_limb_epiphysis_diagram.jpg",
             "caption": "Comprehensive chronological master matrix for age estimation in Ain Shams forensic examinations"
           }
         ],
@@ -1083,7 +1083,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/dna_gel_electrophoresis.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "Forensic laboratory identification utilizing friction ridge analysis and STR DNA typing multiplexes"
           }
         ],
@@ -1122,8 +1122,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/fingerprint_patterns.jpg",
-            "caption": "Fingerprint ridge patterns: Loops (65%), Whorls (30%), Arches (5%), and Henry ridge characteristics"
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "Dactylography: Galton's principles of absolute uniqueness (1 in 64B), permanent immutability, and pattern classification"
           }
         ],
         "notes": "مبادئ جالتون: الانفرادية المطلقة (1 في 64 مليار)، الثبات الدائم من الشهر الرابع جنينياً، واختلاف بصمات التوأم المتطابق."
@@ -1165,7 +1165,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/mutilation_scars_dermis.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "Epidermis vs Dermis damage: superficial regeneration vs permanent scar formation creating an additional identifying mark"
           }
         ],
@@ -1203,7 +1203,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/dna_silent_regions.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "The human genome: ~1-2% coding genes vs >90% non-coding silent intronic DNA harboring polymorphic STR repeats"
           }
         ],
@@ -1257,7 +1257,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/identical_twins_dna_vs_prints.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "Identical twins dilemma: 100% identical DNA profile vs completely distinct fingerprint friction ridge patterns"
           }
         ],
@@ -1295,8 +1295,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/amelogenin_sex_marker.jpg",
-            "caption": "Amelogenin sex-typing locus: single peak (XX, female) vs two distinct peaks (XY, male) on capillary electropherogram"
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "The standard 16 forensic loci system: 15 autosomal STR markers plus the Amelogenin sex-typing locus"
           }
         ],
         "notes": "الـ 16 Loci القياسية: 15 موقعاً على كروموسومات جسدية + موقع الأميلوجينين (قمتين للذكر وقمة واحدة للأنثى)."
@@ -1343,8 +1343,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/specialized_dna_ystr_mtdna.jpg",
-            "caption": "Specialized forensic DNA: paternal Y-STR transmission vs maternal mtDNA inheritance across generations"
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "Specialized DNA systems: paternal Y-STRs (sexual assault mixtures) vs maternal mtDNA (rootless hair shafts)"
           }
         ],
         "notes": "الـ Y-STR للذكور وقضايا الاغتصاب المتعدد، والـ mtDNA للأنساب من جهة الأم وخصلات الشعر بدون جذر."
@@ -1394,7 +1394,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/dna_typing_6steps.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "The 6 laboratory steps of DNA typing: Collection, Preservation, Extraction, PCR Amplification, Electrophoresis, Laser Detection"
           }
         ],
@@ -1431,8 +1431,8 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/disputed_paternity_ruling.jpg",
-            "caption": "Disputed paternity analysis: obligate paternal alleles inheritance establishing 100% exclusion or >99.999% inclusion"
+            "url": "images/fingerprint_patterns_dna.jpg",
+            "caption": "Medico-legal DNA applications: criminal identification, mass disaster triage, and disputed paternity testing"
           }
         ],
         "notes": "تطبيقات الـ DNA القضائية: الجنايات، الكوارث الكبرى، وقضايا النسب (النفي قطعي 100%، والإثبات احتمالي يفوق 99.999%)."
@@ -1479,7 +1479,7 @@ window.AIN_SHAMS_SLIDES_DATA = [
         },
         "images": [
           {
-            "url": "images/dna_gel_electrophoresis.jpg",
+            "url": "images/fingerprint_patterns_dna.jpg",
             "caption": "Model answers for official Chapter 3 examination questions (Ain Shams Faculty of Medicine, page 52)"
           }
         ],
@@ -3194,7 +3194,7 @@ const defaultTrack = (initialUrlTrack === 'must' || (!initialUrlTrack && initial
 
 
 // ── BUILD VERSION CACHE BUSTER ──
-const SLIDES_BUILD_VERSION = '2026-11-17-v4-visual-pro';
+const SLIDES_BUILD_VERSION = '2026-11-17-v5-real-images';
 if (localStorage.getItem('medduo_slides_version') !== SLIDES_BUILD_VERSION) {
   for (let ep = 0; ep < 10; ep++) {
     localStorage.removeItem(`medduo_slides_edits_ain_shams_${ep}`);
@@ -4255,9 +4255,16 @@ function buildImageZone(slideIdx) {
           mediaEl.className = 'slide-media-item';
         } else {
           mediaEl = document.createElement('img');
-          mediaEl.src = getResolvedImageData(src);
+          const resolvedSrc = getResolvedImageData(src);
+          mediaEl.src = resolvedSrc;
           mediaEl.alt = cap || `Media ${imgIdx+1}`;
           mediaEl.className = 'slide-media-item';
+          mediaEl.onerror = () => {
+            console.warn('Image failed to load, falling back to skull base64:', src);
+            if (window.SLIDES_IMAGES_DATA && window.SLIDES_IMAGES_DATA['images/charred_skull_forensics.jpg']) {
+              mediaEl.src = window.SLIDES_IMAGES_DATA['images/charred_skull_forensics.jpg'];
+            }
+          };
         }
 
         // Editable Caption under the media
