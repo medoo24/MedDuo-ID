@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- PPTXGenJS for real PowerPoint files & html2pdf for direct PDF download -->
+  <!-- PPTXGenJS for real PowerPoint files & html2canvas / jsPDF for pristine PDF presentation download -->
   <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
@@ -61,11 +63,10 @@
         <button class="tool-btn" id="btn-save-deck" title="Save any recent edits">💾 Save</button>
         <button class="tool-btn" id="btn-overview">⊞ Overview</button>
         <button class="tool-btn" id="btn-present" title="Press 'F' anytime to toggle presentation">🖥 Present (F)</button>
-        <button class="tool-btn" id="btn-export-html">📄 HTML</button>
-        <button class="tool-btn" id="btn-export-ppt" style="background:#0284C7;color:#fff;font-weight:600">📊 PowerPoint (.pptx)</button>
-        <button class="tool-btn" id="btn-download-pdf" style="background:#EF4444;color:#fff;font-weight:600">📥 Download PDF</button>
-        <button class="tool-btn" id="btn-print">🖨 Print View</button>
-        <button class="tool-btn danger-btn" id="btn-reset-ep">♻ Reset</button>
+        <button class="tool-btn" id="btn-export-ppt" style="background:#0284C7;color:#fff;font-weight:700" title="Export Genuine 16:9 PowerPoint with all diagrams, formatted tables & speaker notes">📊 PowerPoint (.pptx)</button>
+        <button class="tool-btn" id="btn-download-pdf" style="background:#EF4444;color:#fff;font-weight:700" title="Download High-Resolution A4 Landscape Presentation PDF with all diagrams & zero empty notes">📥 Download PDF</button>
+        <button class="tool-btn" id="btn-print" title="Direct browser print preview (A4 Landscape)">🖨 Print View</button>
+        <button class="tool-btn danger-btn" id="btn-reset-ep" title="Reset this episode to the latest official version with all diagrams and mnemonics">♻ Reset to Latest</button>
       </div>
     </div>
 
@@ -159,6 +160,23 @@
   </div>
 </div>
 
+<!-- Forensic Image Gallery Modal -->
+<div id="modal-gallery" class="modal-overlay hidden">
+  <div class="modal-box" style="max-width:850px;width:95vw;max-height:88vh;display:flex;flex-direction:column">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #E2E8F0;padding-bottom:10px">
+      <div>
+        <h3 style="margin:0;font-family:Poppins,sans-serif;color:#0F172A">🖼 Forensic Medical Image Gallery</h3>
+        <span style="font-size:0.8rem;color:#64748B">Click any diagram to attach it to the current slide with its pre-formatted caption.</span>
+      </div>
+      <button class="tool-btn" id="modal-gallery-close">✕ Close</button>
+    </div>
+    <div id="gallery-container" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:18px;padding-right:6px">
+      <!-- dynamically populated -->
+    </div>
+  </div>
+</div>
+
+<script src="images_data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

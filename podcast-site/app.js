@@ -950,6 +950,20 @@ const $importTargetEpSelect  = document.getElementById('import-target-ep-select'
 const $btnDoImport           = document.getElementById('btn-do-import');
 
 // ─── LOCALSTORAGE HELPERS ────────────────────────────────────
+const PODCAST_APP_VERSION = 'v2.2_mnemonics_and_images_2026';
+(function checkPodcastVersion() {
+  try {
+    const cur = localStorage.getItem('medduo_podcast_version');
+    if (cur !== PODCAST_APP_VERSION) {
+      console.log('[MedDuo Podcast] Upgrading podcast cache to ' + PODCAST_APP_VERSION);
+      for (let i = 0; i < 8; i++) {
+        localStorage.removeItem('medduo_ep_' + i);
+      }
+      localStorage.setItem('medduo_podcast_version', PODCAST_APP_VERSION);
+    }
+  } catch(e) {}
+})();
+
 function lsKey(epIdx) { return 'medduo_ep_' + epIdx; }
 
 function getEpisodeData(epIdx) {

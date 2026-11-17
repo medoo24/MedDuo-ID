@@ -1,3 +1,39 @@
+const SLIDES_APP_VERSION = 'v2.2_mnemonics_and_images_2026';
+(function checkSlidesVersion() {
+  try {
+    const cur = localStorage.getItem('medduo_slides_version');
+    if (cur !== SLIDES_APP_VERSION) {
+      console.log('[MedDuo Slides] Upgrading cache to ' + SLIDES_APP_VERSION);
+      for (let i = 0; i < 8; i++) {
+        localStorage.removeItem(`medduo_slides_edits_${i}`);
+      }
+      localStorage.setItem('medduo_slides_version', SLIDES_APP_VERSION);
+    }
+  } catch(e) {}
+})();
+
+function getResolvedImageData(url) {
+  if (!url || typeof url !== 'string') return '';
+  if (url.startsWith('data:')) return url;
+  if (window.SLIDES_IMAGES_DATA) {
+    if (window.SLIDES_IMAGES_DATA[url]) return window.SLIDES_IMAGES_DATA[url];
+    const clean = url.replace(/^(\.\/|\/)?(images\/)?/, '');
+    if (window.SLIDES_IMAGES_DATA['images/' + clean]) return window.SLIDES_IMAGES_DATA['images/' + clean];
+    if (window.SLIDES_IMAGES_DATA[clean]) return window.SLIDES_IMAGES_DATA[clean];
+  }
+  return url;
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 /* ══════════════════════════════════════════════════════════════════
    MedDuo Slides — app.js
    The Bone Code · Pure JS, no frameworks
@@ -1738,7 +1774,7 @@ function getSlideImages(epIdx, slideIdx) {
   }
   if (customImgs.length > 0) return customImgs;
 
-  // Fallback to slide default images from master data
+  // Fallback to slide default images from current slides or master data
   const slides = getEpSlides(epIdx);
   const slide = slides[slideIdx];
   if (slide && slide.images && slide.images.length > 0) {
@@ -1752,6 +1788,23 @@ function getSlideImages(epIdx, slideIdx) {
         caption: savedCap !== null ? savedCap : (img.caption || '')
       };
     });
+  }
+
+  // Double fallback to window.SLIDES_DATA master data
+  if (window.SLIDES_DATA && window.SLIDES_DATA[epIdx] && window.SLIDES_DATA[epIdx].slides && window.SLIDES_DATA[epIdx].slides[slideIdx]) {
+    const masterSlide = window.SLIDES_DATA[epIdx].slides[slideIdx];
+    if (masterSlide.images && masterSlide.images.length > 0) {
+      return masterSlide.images.map((img, idx) => {
+        const savedCap = localStorage.getItem(`medduo_cap_${epIdx}_${slideIdx}_${idx}`);
+        if (typeof img === 'string') {
+          return { url: img, caption: savedCap !== null ? savedCap : '' };
+        }
+        return {
+          url: img.url || img.data || '',
+          caption: savedCap !== null ? savedCap : (img.caption || '')
+        };
+      });
+    }
   }
   return [];
 }
@@ -2152,6 +2205,208 @@ function buildCalc(steps) {
 /* ════════════════════════════════════
    IMAGE ZONE
    ════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   FORENSIC IMAGE GALLERY (23 DIAGRAMS)
+   ════════════════════════════════════ */
+const FORENSIC_IMAGE_GALLERY = [
+  {
+    category: "The 'El-Prince' Case & Suspect Illustrations",
+    items: [
+      {
+        url: "images/el_prince_illustration.jpg",
+        name: "El-Prince: Thug in Handcuffs (Cartoon)",
+        caption: "المتهم \"البرنس\": بشنب ودقن وبنطلون مسقط في الكلبشات يدعي أنه حدث 15 سنة و9 شهور!"
+      },
+      {
+        url: "images/el_prince_realistic.jpg",
+        name: "El-Prince: Realistic Suspect Inspection",
+        caption: "فحص المتهم \"البرنس\": غياب خط النمو بالركبة (Knee Union) يؤكد بلوغه 21 سنة وكذب شهادة الميلاد!"
+      }
+    ]
+  },
+  {
+    category: "Bone Age Estimation & Epiphyseal Milestones",
+    items: [
+      {
+        url: "images/dr_shereen_framework.jpg",
+        name: "Dr. Shereen Framework (4 Geometries)",
+        caption: "طريقة د. شيرين: الأشكال الهندسية الـ 4 لتقدير السن (دايرة صغيرة، دايرة كبيرة، خط بالطول، خط بالعرض)"
+      },
+      {
+        url: "images/ossification_centers_diagram.jpg",
+        name: "Ossification Centers (Qatra & Infancy)",
+        caption: "مخطط مراكز التعظم: داخل الرحم \"قطرة\" (الكعب 5، تالوس 7، فخذ 8، ركبة 9 وكيوبويد) و\"واحد فوق واتنين تحت\""
+      },
+      {
+        url: "images/upper_limb_epiphysis_diagram.jpg",
+        name: "Upper Limb & Elbow Scissors Rule",
+        caption: "مقص الكوع والطرف العلوي: قمر 14، سن الجمباز 15، مقص 16 و 17، والساعة والشنطة 20 سنة"
+      },
+      {
+        url: "images/lower_limb_epiphysis_diagram.jpg",
+        name: "Lower Limb & Milestone Ages",
+        caption: "أعمار مفصلية: كفك 18 سنة، الساعة والشنطة 20 سنة، سن التخرج 21 سنة، وتخرج طب 23-25 سنة"
+      },
+      {
+        url: "images/knee_xray_growth_plate.jpg",
+        name: "Knee X-ray & Physis Growth Plate",
+        caption: "أشعة سينية لمفصل الركبة توضح خط النمو الغضروفي (Epiphyseal Plate) قبل الالتحام التام"
+      },
+      {
+        url: "images/wrist_xray_growth_plate.jpg",
+        name: "Wrist & Hand X-ray (Age 18 Milestone)",
+        caption: "أشعة عظام الرسغ واليد لتقدير السن الجنائي: التحام مشط اليد عند سن 18 سنة"
+      },
+      {
+        url: "images/medullary_cavity_structure.jpg",
+        name: "Medullary Cavity Expansion",
+        caption: "التجويف النخاعي (Medullary Cavity): يمتد للعنق الجراحي عند 30 سنة والعنق التشريحي عند 33 سنة"
+      },
+      {
+        url: "images/long_bone_anatomy_diagram.jpg",
+        name: "Long Bone Anatomy & Zones",
+        caption: "تشريح العظام الطويلة: المشاش (Epiphysis)، صفيحة النمو (Physis)، والعمود العظمي (Diaphysis)"
+      },
+      {
+        url: "images/femur_physis_diagram.jpg",
+        name: "Femur Epiphysis & Histology",
+        caption: "مخطط صفيحة النمو في رأس الفخذ والتحامها التام عند سن 18 سنة"
+      },
+      {
+        url: "images/femur_head_epiphyseal_line.jpg",
+        name: "Femur Head Epiphyseal Line",
+        caption: "صورة ماكروسكوبية لرأس عظمة الفخذ توضح خط الالتحام العظمي التام"
+      }
+    ]
+  },
+  {
+    category: "The Skull, Mandible & Sutures",
+    items: [
+      {
+        url: "images/charred_skull_forensics.jpg",
+        name: "Charred Skull Autopsy (Kafr El-Sheikh)",
+        caption: "الجثة المتفحمة في كفر الشيخ: فحص الجمجمة، الأسنان، ودرزات العظام لتحديد السن والهوية"
+      },
+      {
+        url: "images/skull_sutures_diagram.jpg",
+        name: "Skull Sutures Fusion (Sagittal, Coronal, Lambdoid)",
+        caption: "درزات الجمجمة: السهمي (Sagittal 25-30)، الإكليلي (Coronal 40)، واللامي (Lambdoid 50)"
+      },
+      {
+        url: "images/mandible_age_diagram.jpg",
+        name: "Mandible Angle & Age Changes",
+        caption: "تغيرات زاوية الفك السفلي عبر العمر: منفرجة 140° في حديث الولادة والمسنين، وقائمة 110° في البالغين"
+      }
+    ]
+  },
+  {
+    category: "The Pelvis, Hyoid & Strangulation",
+    items: [
+      {
+        url: "images/pelvis_male_vs_female.jpg",
+        name: "Pelvis: Male vs Female Differences",
+        caption: "الفروق الجنسية في الحوض: الزاوية العانية (Subpubic Angle)، المدخل الكلوي مقابل البيضاوي، والتجويف الحقي"
+      },
+      {
+        url: "images/pelvis_age_female_rule.jpg",
+        name: "Pelvis Epiphyses & Female 1-2 Year Lead",
+        caption: "قاعدة الحوض لتقدير السن: الإناث يسبقن الذكور بعام إلى عامين في التحام عظام الحوض"
+      },
+      {
+        url: "images/hyoid_fracture_biomechanics.jpg",
+        name: "Hyoid Fracture Biomechanics (Strangulation)",
+        caption: "كسر العظم اللامي في الخنق اليدوي (Manual Strangulation): فحص القرون الكبرى والانفصال العظمي"
+      },
+      {
+        url: "images/teeth_and_hyoid_sternum.jpg",
+        name: "Sternum, Hyoid & Teeth Composite",
+        caption: "أعضاء الطب الشرعي الحاسمة: عظم القص واللامي والأسنان كشهود إثبات في قضايا القتل"
+      }
+    ]
+  },
+  {
+    category: "Odontology, DNA, Ancestry & Stature",
+    items: [
+      {
+        url: "images/bite_mark_forensics.jpg",
+        name: "Bite Mark Analysis & Odontology",
+        caption: "تحليل آثار العضات (Bite Marks) ومطابقة طبعة الأسنان لتحديد هوية الجاني"
+      },
+      {
+        url: "images/fingerprint_patterns_dna.jpg",
+        name: "Fingerprints & DNA Profiles",
+        caption: "البصمات العشرية والـ DNA: الهوية اليقينية التي لا تكذب ولا تتشابه بين شخصين"
+      },
+      {
+        url: "images/cranial_race_identification.jpg",
+        name: "Cranial Race & Ancestry Morphology",
+        caption: "تحديد السلالة والعرق من عظام الجمجمة: فتحة الأنف، الحجاج، وشكل الفك السفلي"
+      },
+      {
+        url: "images/osteometric_board_stature.jpg",
+        name: "Osteometric Board & Pearson's Stature",
+        caption: "لوح قياس العظام (Osteometric Board) لتطبيق معادلات بيرسون: طول الفخذ × 4 = طول الإنسان"
+      }
+    ]
+  }
+];
+
+function openGalleryModal(slideIdx) {
+  const modal = document.getElementById('modal-gallery');
+  const container = document.getElementById('gallery-container');
+  if (!modal || !container) return;
+
+  container.innerHTML = '';
+
+  FORENSIC_IMAGE_GALLERY.forEach(cat => {
+    const sec = document.createElement('div');
+    sec.className = 'gallery-cat-section';
+    sec.innerHTML = `<div class="gallery-cat-title">${cat.category}</div>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'gallery-grid';
+
+    cat.items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'gallery-card';
+      const resolved = getResolvedImageData(item.url);
+      card.innerHTML = `
+        <img src="${resolved}" alt="${escHtml(item.name)}" class="gallery-thumb" loading="lazy" />
+        <div class="gallery-info">
+          <div class="gallery-name">${escHtml(item.name)}</div>
+          <div class="gallery-cap-preview" title="${escHtml(item.caption)}">${escHtml(item.caption)}</div>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        addGalleryImageToSlide(state.epIdx, slideIdx, item.url, item.caption);
+        modal.classList.add('hidden');
+      });
+      grid.appendChild(card);
+    });
+
+    sec.appendChild(grid);
+    container.appendChild(sec);
+  });
+
+  modal.classList.remove('hidden');
+}
+
+function addGalleryImageToSlide(epIdx, slideIdx, imgUrl, caption) {
+  const slides = getEpSlides(epIdx);
+  if (!slides[slideIdx]) return;
+  if (!slides[slideIdx].images) slides[slideIdx].images = [];
+  
+  const imgIdx = slides[slideIdx].images.length;
+  slides[slideIdx].images.push({ url: imgUrl, caption: caption });
+  saveEpSlides(epIdx, slides);
+  
+  saveSlideImageCaption(epIdx, slideIdx, imgIdx, caption);
+  
+  renderSlide();
+  showToast('✓ Attached diagram & caption to slide!');
+}
+
 function buildImageZone(slideIdx) {
   const epIdx = state.epIdx;
   const slides = getEpSlides(epIdx);
@@ -2168,13 +2423,20 @@ function buildImageZone(slideIdx) {
       const empty = document.createElement('div');
       empty.className = 'image-zone-empty';
       empty.innerHTML = `
-        <span>📷 Add Media (Image, GIF, Video)</span>
-        <label>➕ Upload<input type="file" accept="image/*,video/mp4,video/webm" multiple style="display:none" /></label>
+        <span style="font-weight:600;color:var(--text2);">📷 Slide Diagrams & Illustrations</span>
+        <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;justify-content:center;">
+          <button class="tool-btn btn-open-gallery" style="background:#0284C7;color:#fff;font-size:0.75rem;padding:5px 12px;border-radius:6px;font-weight:700;">🖼 Built-in Gallery (23 Images)</button>
+          <label class="tool-btn" style="cursor:pointer;font-size:0.75rem;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);">➕ Upload Local File<input type="file" accept="image/*,video/mp4,video/webm" multiple style="display:none" /></label>
+        </div>
       `;
+      empty.querySelector('.btn-open-gallery').addEventListener('click', (e) => {
+        e.preventDefault();
+        openGalleryModal(slideIdx);
+      });
       empty.querySelector('input[type=file]').addEventListener('change', (e) => handleImgUpload(e, slideIdx, () => renderSlide()));
       zone.appendChild(empty);
     } else {
-      // Top bar with Layout options and Add More
+      // Top bar with Layout options and Gallery
       const topBar = document.createElement('div');
       topBar.className = 'img-layout-bar';
       topBar.style.display = 'flex';
@@ -2204,12 +2466,29 @@ function buildImageZone(slideIdx) {
       });
       topBar.appendChild(posWrap);
 
+      const actionWrap = document.createElement('div');
+      actionWrap.style.display = 'flex';
+      actionWrap.style.gap = '6px';
+      actionWrap.style.alignItems = 'center';
+
+      const galleryBtn = document.createElement('button');
+      galleryBtn.className = 'tool-btn';
+      galleryBtn.style.cssText = 'background:#0284C7;color:#fff;font-size:0.72rem;padding:4px 10px;border-radius:6px;font-weight:700;';
+      galleryBtn.textContent = '🖼 Gallery';
+      galleryBtn.title = 'Choose from 23 forensic medical images';
+      galleryBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openGalleryModal(slideIdx);
+      });
+      actionWrap.appendChild(galleryBtn);
+
       const addLabel = document.createElement('div');
       addLabel.className = 'img-add-btn-bar';
-      addLabel.innerHTML = `<label>➕ Add More<input type="file" accept="image/*,video/mp4,video/webm" multiple style="display:none" /></label>`;
+      addLabel.innerHTML = `<label style="cursor:pointer;font-size:0.72rem;padding:4px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);">➕ Upload<input type="file" accept="image/*,video/mp4,video/webm" multiple style="display:none" /></label>`;
       addLabel.querySelector('input[type=file]').addEventListener('change', (e) => handleImgUpload(e, slideIdx, () => renderSlide()));
-      topBar.appendChild(addLabel);
+      actionWrap.appendChild(addLabel);
 
+      topBar.appendChild(actionWrap);
       zone.appendChild(topBar);
 
       // Grid of images / videos / gifs
@@ -2234,7 +2513,7 @@ function buildImageZone(slideIdx) {
           mediaEl.className = 'slide-media-item';
         } else {
           mediaEl = document.createElement('img');
-          mediaEl.src = src;
+          mediaEl.src = getResolvedImageData(src);
           mediaEl.alt = cap || `Media ${imgIdx+1}`;
           mediaEl.className = 'slide-media-item';
         }
@@ -2845,312 +3124,479 @@ function exportEpisodeHTML() {
    EXPORT — POWERPOINT (.PPTX)
    Pixel-Perfect Layouts, Scaled Fonts, No Overflow
    ════════════════════════════════════ */
+/* ════════════════════════════════════
+   CLEAN SLIDE SHEET RENDERER
+   Dedicated for High-Resolution PDF & Print (100% Page Fill, Zero Blank Notes)
+   ════════════════════════════════════ */
+function buildCleanSlideSheet(slide, idx, totalSlides, epIdx) {
+  const sheet = document.createElement('div');
+  sheet.className = 'clean-slide-sheet';
+  sheet.style.cssText = 'width:1120px;height:792px;max-height:792px;box-sizing:border-box;background:#FFFFFF;padding:34px 44px;display:flex;flex-direction:column;justify-content:flex-start;page-break-after:always;page-break-inside:avoid;overflow:hidden;position:relative;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1E293B;';
+
+  const ep = window.SLIDES_DATA[epIdx] || { title: '' };
+
+  // Header
+  const hdr = document.createElement('div');
+  hdr.className = 'clean-slide-header';
+  hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;';
+  hdr.innerHTML = `
+    <div style="font-size:11px;font-weight:700;color:#0284C7;letter-spacing:0.5px;text-transform:uppercase;">
+      MedDuo Forensics · Episode ${epIdx + 1}
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="${badgeStyle(slide.type)};padding:3px 10px;border-radius:20px;font-size:0.7rem;font-weight:700;text-transform:uppercase;">${slide.type.toUpperCase()}</span>
+      <span style="font-size:0.75rem;color:#94A3B8;font-weight:600;">#${idx + 1}</span>
+    </div>
+  `;
+  sheet.appendChild(hdr);
+
+  // Title
+  const titleEl = document.createElement('div');
+  titleEl.style.cssText = 'font-family:Poppins,sans-serif;font-size:22px;font-weight:700;color:#0F172A;margin:6px 0 10px 0;line-height:1.25;';
+  titleEl.textContent = slide.title;
+  sheet.appendChild(titleEl);
+
+  // Divider
+  const divEl = document.createElement('div');
+  divEl.style.cssText = 'height:1.5px;background:#E2E8F0;width:100%;margin-bottom:18px;';
+  sheet.appendChild(divEl);
+
+  // Body container
+  const body = document.createElement('div');
+  body.style.cssText = 'display:flex;gap:28px;flex:1;min-height:0;overflow:hidden;align-items:flex-start;';
+
+  // Get Images
+  const imgs = getSlideImages(epIdx, idx);
+  const hasImgs = imgs && imgs.length > 0;
+
+  // Content Column
+  const contentCol = document.createElement('div');
+  contentCol.style.cssText = 'flex:1;min-width:0;overflow:hidden;';
+
+  const content = slide.content || {};
+
+  if (slide.type === 'title') {
+    contentCol.innerHTML = `
+      <div style="text-align:${hasImgs ? 'left' : 'center'};padding:${hasImgs ? '20px 0' : '50px 0'};">
+        <h1 style="font-family:Poppins,sans-serif;font-size:2rem;color:#0284C7;margin-bottom:12px;">${escHtml(slide.title)}</h1>
+        ${(content.bullets || []).map(b => `<p style="font-size:1.1rem;color:#475569;margin:8px 0;line-height:1.5;">${escHtml(b)}</p>`).join('')}
+      </div>
+    `;
+  } else if (content.question) {
+    contentCol.innerHTML = `
+      <div style="background:#FEF3C7;border:1.5px solid #F59E0B;border-radius:10px;padding:16px 20px;margin-bottom:14px;">
+        <div style="font-size:11px;font-weight:700;color:#B45309;text-transform:uppercase;margin-bottom:4px;">Question</div>
+        <div style="font-size:14px;color:#92400E;font-weight:600;line-height:1.5;">${escHtml(content.question)}</div>
+      </div>
+      <div style="background:#DCFCE7;border:1.5px solid #10B981;border-radius:10px;padding:16px 20px;">
+        <div style="font-size:11px;font-weight:700;color:#15803D;text-transform:uppercase;margin-bottom:4px;">Answer & Analysis</div>
+        <div style="font-size:13.5px;color:#166534;line-height:1.5;">${escHtml(content.answer)}</div>
+      </div>
+    `;
+  } else if (content.calc) {
+    contentCol.innerHTML = `
+      <pre style="background:#0F172A;color:#38BDF8;font-family:Consolas,monospace;font-size:12px;padding:18px;border-radius:10px;line-height:1.6;white-space:pre-wrap;margin:0;">${escHtml(content.calc.join('\n'))}</pre>
+    `;
+  } else if (content.rows) {
+    const isCompact = content.rows.length > 5;
+    let tableHTML = `
+      <table style="width:100%;border-collapse:collapse;font-size:${isCompact ? '11px' : '12px'};border:1px solid #CBD5E1;border-radius:8px;overflow:hidden;margin-bottom:12px;">
+        <thead>
+          <tr style="background:#0284C7;color:#FFFFFF;">
+            ${content.headers.map(h => `<th style="padding:${isCompact ? '6px 10px' : '8px 12px'};text-align:left;font-weight:600;">${escHtml(h)}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${content.rows.map((r, ri) => `
+            <tr style="background:${ri % 2 === 0 ? '#F8FAFC' : '#FFFFFF'};border-top:1px solid #E2E8F0;">
+              ${r.map(c => `<td style="padding:${isCompact ? '5px 10px' : '7px 12px'};color:#1E293B;line-height:1.4;">${escHtml(c)}</td>`).join('')}
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+    if (content.extra_bullets && content.extra_bullets.length) {
+      tableHTML += `
+        <div style="margin-top:8px;">
+          ${content.extra_bullets.map(b => `<div style="font-size:11.5px;color:#334155;margin:4px 0;line-height:1.4;">• ${escHtml(b.replace(/^[\s•\-\*]+/, ''))}</div>`).join('')}
+        </div>
+      `;
+    }
+    contentCol.innerHTML = tableHTML;
+  } else if (content.bullets && content.bullets.length) {
+    const count = content.bullets.length;
+    let bSize = count > 8 ? '11.5px' : (count > 5 ? '12.5px' : '13.5px');
+    let bMargin = count > 8 ? '6px' : '10px';
+    let bulletsHTML = '<div style="display:flex;flex-direction:column;gap:' + bMargin + ';">';
+    content.bullets.forEach(b => {
+      const isSub = b.startsWith('  ') || b.startsWith('	') || b.match(/^\s+•/);
+      const cleanB = b.replace(/^[\s•\-\*]+/, '').trim();
+      bulletsHTML += `
+        <div style="display:flex;gap:10px;align-items:flex-start;padding-left:${isSub ? '24px' : '0'};font-size:${isSub ? '11px' : bSize};line-height:1.5;color:${isSub ? '#475569' : '#1E293B'};">
+          <span style="color:#0284C7;font-weight:bold;line-height:1;">${isSub ? '○' : '●'}</span>
+          <span style="flex:1;">${escHtml(cleanB)}</span>
+        </div>
+      `;
+    });
+    bulletsHTML += '</div>';
+    contentCol.innerHTML = bulletsHTML;
+  }
+
+  body.appendChild(contentCol);
+
+  // Media Column (Right) if images exist
+  if (hasImgs) {
+    const mediaCol = document.createElement('div');
+    mediaCol.style.cssText = 'width:440px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;';
+
+    const firstImg = imgs[0];
+    const rawUrl = typeof firstImg === 'string' ? firstImg : (firstImg.url || '');
+    const cap = typeof firstImg === 'object' && firstImg.caption ? firstImg.caption : '';
+    const resolvedUrl = getResolvedImageData(rawUrl);
+
+    const imgEl = document.createElement('img');
+    imgEl.src = resolvedUrl;
+    imgEl.alt = cap || 'Forensic diagram';
+    imgEl.style.cssText = 'max-width:440px;max-height:430px;width:auto;height:auto;object-fit:contain;border-radius:8px;border:1px solid #CBD5E1;box-shadow:0 4px 12px rgba(0,0,0,0.06);display:block;';
+    mediaCol.appendChild(imgEl);
+
+    if (cap) {
+      const capEl = document.createElement('div');
+      capEl.style.cssText = 'margin-top:10px;font-size:11.5px;color:#475569;font-style:italic;text-align:center;line-height:1.45;max-width:440px;word-break:break-word;';
+      capEl.textContent = cap;
+      mediaCol.appendChild(capEl);
+    }
+
+    body.appendChild(mediaCol);
+  }
+
+  sheet.appendChild(body);
+
+  // Presenter Notes strictly if non-empty
+  if (slide.notes && slide.notes.trim().length > 0) {
+    const noteEl = document.createElement('div');
+    noteEl.style.cssText = 'margin-top:12px;padding:8px 12px;background:#F8FAFC;border-left:3px solid #0284C7;border-radius:4px;font-size:11px;color:#475569;line-height:1.4;';
+    noteEl.innerHTML = `📝 <strong>Presenter Note:</strong> ${escHtml(slide.notes.trim())}`;
+    sheet.appendChild(noteEl);
+  }
+
+  // Footer
+  const footer = document.createElement('div');
+  footer.style.cssText = 'margin-top:auto;padding-top:10px;border-top:1px solid #E2E8F0;display:flex;align-items:center;justify-content:space-between;';
+  footer.innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;">
+      <img src="${getResolvedImageData('Logo.jpg')}" alt="MedDuo" style="height:20px;object-fit:contain;" />
+      <span style="font-size:11px;color:#64748B;font-weight:600;">MedDuo — The Bone Code</span>
+    </div>
+    <span style="font-size:11px;color:#94A3B8;font-weight:500;">Slide ${idx + 1} of ${totalSlides}</span>
+  `;
+  sheet.appendChild(footer);
+
+  return sheet;
+}
+
+
+/* ════════════════════════════════════
+   EXPORT — POWERPOINT (.PPTX)
+   Genuine 16:9 Canvas, Scaled Text, Embedded Base64 Images & Notes Pane
+   ════════════════════════════════════ */
 function exportEpisodePPT() {
   const ep = window.SLIDES_DATA[state.epIdx];
   const slides = getEpSlides(state.epIdx);
 
-  if (typeof PptxGenJS !== 'undefined') {
-    showToast('⏳ Generating genuine PowerPoint (.pptx)...');
-    try {
-      const pptx = new PptxGenJS();
-      pptx.layout = 'LAYOUT_16x9'; // 13.33 x 7.5 inches
-      pptx.author = 'MedDuo';
-      pptx.company = 'MedDuo Forensic Medicine';
-      pptx.title = `Episode ${state.epIdx+1}: ${ep.title}`;
+  if (typeof PptxGenJS === 'undefined') {
+    alert('PowerPoint generator library is not loaded. Please check your internet connection.');
+    return;
+  }
 
-      slides.forEach((slide, i) => {
-        const s = pptx.addSlide();
+  showToast('⏳ Generating genuine PowerPoint (.pptx) with diagrams...');
+  try {
+    const pptx = new PptxGenJS();
+    pptx.layout = 'LAYOUT_16x9'; // 13.33 x 7.5 inches
+    pptx.author = 'MedDuo';
+    pptx.company = 'MedDuo Forensic Medicine';
+    pptx.title = `Episode ${state.epIdx + 1}: ${ep.title}`;
 
-        // 1. Brand Chip & Title Banner
-        s.addText(`MedDuo · The Bone Code · Episode ${state.epIdx+1}`, {
-          x: 0.8, y: 0.35, w: 10.0, h: 0.28,
-          fontSize: 10, bold: true, color: '0284C7', fontFace: 'Calibri'
-        });
+    slides.forEach((slide, i) => {
+      const s = pptx.addSlide();
 
-        s.addText(slide.title, {
-          x: 0.8, y: 0.65, w: 11.7, h: 0.65,
-          fontSize: 20, bold: true, color: '0F172A', fontFace: 'Calibri'
-        });
+      // Brand Chip & Title Banner
+      s.addText(`MedDuo · The Bone Code · Episode ${state.epIdx + 1}`, {
+        x: 0.8, y: 0.35, w: 10.0, h: 0.28,
+        fontSize: 10, bold: true, color: '0284C7', fontFace: 'Calibri'
+      });
 
-        // Thin separator line
-        s.addShape(pptx.shapes.LINE, {
-          x: 0.8, y: 1.35, w: 11.7, h: 0,
-          line: { color: 'E2E8F0', width: 1 }
-        });
+      s.addText(slide.title, {
+        x: 0.8, y: 0.65, w: 11.7, h: 0.65,
+        fontSize: 20, bold: true, color: '0F172A', fontFace: 'Calibri'
+      });
 
-        // Determine if slide has images to allocate layout
-        const hasImages = slide.images && slide.images.length > 0;
-        const totalW = hasImages ? 7.2 : 11.7;
-        const contentStartY = 1.55;
+      // Thin separator line
+      s.addShape(pptx.shapes.LINE, {
+        x: 0.8, y: 1.35, w: 11.7, h: 0,
+        line: { color: 'E2E8F0', width: 1 }
+      });
 
-        // Render Image on the right if available
-        const slideImgs = getSlideImages(state.epIdx, idx);
-        const hasSlideImgs = slideImgs && slideImgs.length > 0;
-        if (hasSlideImgs) {
-          const firstImg = slideImgs[0];
-          const imgUrl = (typeof firstImg === 'string') ? firstImg : (firstImg.url || '');
-          const imgCap = (typeof firstImg === 'object' && firstImg.caption) ? firstImg.caption : '';
+      // Images and Layout
+      const slideImgs = getSlideImages(state.epIdx, i);
+      const hasSlideImgs = slideImgs && slideImgs.length > 0;
+      const totalW = hasSlideImgs ? 7.0 : 11.7;
+      const contentStartY = 1.55;
 
-          try {
-            const imgOpts = {
-              x: 8.2, y: 1.55, w: 4.3, h: imgCap ? 4.2 : 4.8,
-              sizing: { type: 'contain', w: 4.3, h: imgCap ? 4.2 : 4.8 }
-            };
-            if (imgUrl.startsWith('data:')) {
-              imgOpts.data = imgUrl;
-            } else {
-              imgOpts.path = imgUrl;
-            }
-            s.addImage(imgOpts);
+      if (hasSlideImgs) {
+        const firstImg = slideImgs[0];
+        const rawUrl = (typeof firstImg === 'string') ? firstImg : (firstImg.url || '');
+        const imgCap = (typeof firstImg === 'object' && firstImg.caption) ? firstImg.caption : '';
+        const base64Data = getResolvedImageData(rawUrl);
 
-            if (imgCap) {
-              s.addText(imgCap, {
-                x: 8.2, y: 5.85, w: 4.3, h: 0.9,
-                fontSize: 9.5, italic: true, color: '64748B', align: 'center', fontFace: 'Calibri'
-              });
-            }
-          } catch(imgErr) {
-            console.warn('Could not add image to PPTX', imgErr);
-          }
-        }
-
-        const content = slide.content || {};
-
-        // Title slide
-        if (slide.type === 'title') {
-          s.addText(slide.title, {
-            x: 1.0, y: 2.2, w: 11.3, h: 1.4,
-            fontSize: 28, bold: true, color: '0284C7', align: 'center', fontFace: 'Calibri'
-          });
-          if (content.bullets && content.bullets.length) {
-            s.addText(content.bullets.join('\n'), {
-              x: 1.0, y: 3.8, w: 11.3, h: 1.6,
-              fontSize: 15, color: '475569', align: 'center', fontFace: 'Calibri',
-              lineSpacing: 22
-            });
-          }
-        }
-        // Table slide
-        else if (content.rows) {
-          const colCount = content.headers.length;
-          let colWidths = [];
-          if (colCount === 2) {
-            colWidths = [totalW * 0.35, totalW * 0.65];
-          } else if (colCount === 3) {
-            colWidths = [totalW * 0.22, totalW * 0.35, totalW * 0.43];
+        try {
+          const imgH = imgCap ? 4.1 : 4.8;
+          const imgOpts = {
+            x: 8.0, y: 1.55, w: 4.5, h: imgH,
+            sizing: { type: 'contain', w: 4.5, h: imgH }
+          };
+          if (base64Data.startsWith('data:')) {
+            imgOpts.data = base64Data;
           } else {
-            colWidths = content.headers.map(() => totalW / colCount);
+            imgOpts.path = rawUrl;
           }
+          s.addImage(imgOpts);
 
-          const isCompact = content.rows.length > 5;
-          const tableFontSize = isCompact ? 9.5 : 11;
-          const cellPadding = isCompact ? [2, 4, 2, 4] : [4, 6, 4, 6];
-
-          const tableData = [
-            content.headers.map(h => ({
-              text: h,
-              options: { bold: true, fill: '0284C7', color: 'FFFFFF', fontFace: 'Calibri', margin: cellPadding }
-            })),
-            ...content.rows.map((r, ri) => r.map(c => ({
-              text: c,
-              options: { fill: ri % 2 === 0 ? 'F8FAFC' : 'FFFFFF', color: '1E293B', fontFace: 'Calibri', margin: cellPadding }
-            })))
-          ];
-
-          s.addTable(tableData, {
-            x: 0.8, y: contentStartY, w: totalW, colW: colWidths,
-            fontSize: tableFontSize, border: { pt: 0.5, color: 'CBD5E1' }
-          });
-
-          // Extra bullets below table if present
-          if (content.extra_bullets && content.extra_bullets.length) {
-            const approxTableH = (content.rows.length + 1) * (isCompact ? 0.32 : 0.42);
-            const extraY = Math.min(5.6, contentStartY + approxTableH + 0.15);
-            const extraH = Math.max(0.8, 6.8 - extraY);
-
-            const extraItems = content.extra_bullets.map((b, bi) => ({
-              text: b.replace(/^[\s•\-\*]+/, '').trim(),
-              options: {
-                bullet: true,
-                breakLine: bi < content.extra_bullets.length - 1,
-                fontSize: 10.5,
-                color: '334155',
-                fontFace: 'Calibri'
-              }
-            }));
-
-            s.addText(extraItems, {
-              x: 0.8, y: extraY, w: totalW, h: extraH,
-              valign: 'top', fontFace: 'Calibri'
+          if (imgCap) {
+            s.addText(imgCap, {
+              x: 7.9, y: 5.85, w: 4.7, h: 1.1,
+              fontSize: 9.5, italic: true, color: '475569', align: 'center', fontFace: 'Calibri',
+              valign: 'top', wrap: true
             });
           }
+        } catch(imgErr) {
+          console.warn('Could not add image to PPTX slide', i, imgErr);
         }
-        // Quiz / Question slide
-        else if (content.question) {
-          const qH = Math.min(2.0, Math.max(1.1, (content.question.length / 50) * 0.35));
-          s.addText(`QUESTION:\n${content.question}`, {
-            x: 0.8, y: contentStartY, w: totalW, h: qH,
-            fontSize: 13.5, bold: true, color: '92400E', fill: 'FEF3C7',
-            margin: 10, fontFace: 'Calibri', valign: 'top'
-          });
+      }
 
-          const aY = contentStartY + qH + 0.25;
-          const aH = Math.min(3.2, Math.max(1.2, 6.8 - aY));
-          s.addText(`ANSWER:\n${content.answer}`, {
-            x: 0.8, y: aY, w: totalW, h: aH,
-            fontSize: 13, color: '166534', fill: 'DCFCE7',
-            margin: 10, fontFace: 'Calibri', valign: 'top'
-          });
-        }
-        // Calculation slide
-        else if (content.calc) {
-          const calcLines = content.calc.length;
-          const calcFontSize = calcLines > 8 ? 10.5 : 12;
-          s.addText(content.calc.join('\n'), {
-            x: 0.8, y: contentStartY, w: totalW, h: Math.min(5.1, calcLines * 0.32 + 0.5),
-            fontSize: calcFontSize, fontFace: 'Courier New', color: '38BDF8', fill: '0F172A',
-            margin: 10, valign: 'top'
+      const content = slide.content || {};
+
+      // Render Title Slide
+      if (slide.type === 'title') {
+        s.addText(slide.title, {
+          x: 0.8, y: 2.2, w: totalW, h: 1.4,
+          fontSize: 28, bold: true, color: '0284C7', align: hasSlideImgs ? 'left' : 'center', fontFace: 'Calibri'
+        });
+        if (content.bullets && content.bullets.length) {
+          s.addText(content.bullets.join('\n'), {
+            x: 0.8, y: 3.8, w: totalW, h: 1.8,
+            fontSize: 15, color: '475569', align: hasSlideImgs ? 'left' : 'center', fontFace: 'Calibri',
+            lineSpacing: 22
           });
         }
-        // Bullet points slide
-        else if (content.bullets && content.bullets.length) {
-          const count = content.bullets.length;
-          let fSize = 13.5;
-          let lSpace = 20;
-          if (count >= 10) { fSize = 10.5; lSpace = 15; }
-          else if (count >= 7) { fSize = 12; lSpace = 18; }
+      }
+      // Render Table Slide
+      else if (content.rows) {
+        const colCount = content.headers.length;
+        let colWidths = [];
+        if (colCount === 2) {
+          colWidths = [totalW * 0.35, totalW * 0.65];
+        } else if (colCount === 3) {
+          colWidths = [totalW * 0.22, totalW * 0.38, totalW * 0.40];
+        } else {
+          colWidths = content.headers.map(() => totalW / colCount);
+        }
 
-          const textItems = content.bullets.map((b, bi) => {
-            const isSub = b.startsWith('  ') || b.startsWith('\t') || b.match(/^\s+•/);
-            return {
-              text: b.replace(/^[\s•\-\*]+/, '').trim(),
-              options: {
-                bullet: true,
-                breakLine: bi < content.bullets.length - 1,
-                indentLevel: isSub ? 1 : 0,
-                fontSize: isSub ? fSize - 1 : fSize,
-                color: isSub ? '475569' : '1E293B',
-                fontFace: 'Calibri',
-                lineSpacing: lSpace
-              }
-            };
-          });
+        const isCompact = content.rows.length > 5;
+        const tableFontSize = isCompact ? 9.5 : 11;
+        const cellPadding = isCompact ? [2, 4, 2, 4] : [4, 6, 4, 6];
 
-          s.addText(textItems, {
-            x: 0.8, y: contentStartY, w: totalW, h: 5.2,
+        const tableData = [
+          content.headers.map(h => ({
+            text: h,
+            options: { bold: true, fill: '0284C7', color: 'FFFFFF', fontFace: 'Calibri', margin: cellPadding }
+          })),
+          ...content.rows.map((r, ri) => r.map(c => ({
+            text: c,
+            options: { fill: ri % 2 === 0 ? 'F8FAFC' : 'FFFFFF', color: '1E293B', fontFace: 'Calibri', margin: cellPadding }
+          })))
+        ];
+
+        s.addTable(tableData, {
+          x: 0.8, y: contentStartY, w: totalW, colW: colWidths,
+          fontSize: tableFontSize, border: { pt: 0.5, color: 'CBD5E1' }
+        });
+
+        if (content.extra_bullets && content.extra_bullets.length) {
+          const approxTableH = (content.rows.length + 1) * (isCompact ? 0.32 : 0.42);
+          const extraY = Math.min(5.6, contentStartY + approxTableH + 0.15);
+          const extraH = Math.max(0.8, 6.8 - extraY);
+
+          const extraItems = content.extra_bullets.map((b, bi) => ({
+            text: b.replace(/^[\s•\-\*]+/, '').trim(),
+            options: {
+              bullet: true,
+              breakLine: bi < content.extra_bullets.length - 1,
+              fontSize: 10,
+              color: '334155',
+              fontFace: 'Calibri'
+            }
+          }));
+
+          s.addText(extraItems, {
+            x: 0.8, y: extraY, w: totalW, h: extraH,
             valign: 'top', fontFace: 'Calibri'
           });
         }
-
-        // Add Notes to PowerPoint Presenter Notes Pane (Clean & Official!)
-        if (slide.notes && slide.notes.trim()) {
-          s.addNotes(slide.notes.trim());
-        }
-      });
-
-      pptx.writeFile({ fileName: `medduo-ep${state.epIdx+1}-presentation.pptx` })
-        .then(() => showToast('✓ Genuine PowerPoint (.pptx) downloaded!'))
-        .catch(err => {
-          console.error(err);
-          alert('Error generating PPTX: ' + err.message);
+      }
+      // Render Quiz Slide
+      else if (content.question) {
+        const qH = Math.min(1.8, Math.max(1.1, (content.question.length / 50) * 0.35));
+        s.addText(`QUESTION:\n${content.question}`, {
+          x: 0.8, y: contentStartY, w: totalW, h: qH,
+          fontSize: 13, bold: true, color: '92400E', fill: 'FEF3C7',
+          margin: 10, fontFace: 'Calibri', valign: 'top', wrap: true
         });
-      return;
-    } catch(err) {
-      console.warn('PptxGenJS error, using HTML export fallback', err);
-    }
-  }
 
-  exportEpisodeHTML();
+        const aY = contentStartY + qH + 0.25;
+        const aH = Math.min(3.2, Math.max(1.2, 6.8 - aY));
+        s.addText(`ANSWER:\n${content.answer}`, {
+          x: 0.8, y: aY, w: totalW, h: aH,
+          fontSize: 12.5, color: '166534', fill: 'DCFCE7',
+          margin: 10, fontFace: 'Calibri', valign: 'top', wrap: true
+        });
+      }
+      // Render Calc Slide
+      else if (content.calc) {
+        const calcLines = content.calc.length;
+        const calcFontSize = calcLines > 8 ? 10 : 11.5;
+        s.addText(content.calc.join('\n'), {
+          x: 0.8, y: contentStartY, w: totalW, h: Math.min(5.1, calcLines * 0.35 + 0.5),
+          fontSize: calcFontSize, fontFace: 'Courier New', color: '38BDF8', fill: '0F172A',
+          margin: 10, valign: 'top', wrap: true
+        });
+      }
+      // Render Bullets Slide
+      else if (content.bullets && content.bullets.length) {
+        const count = content.bullets.length;
+        let fSize = 13;
+        let lSpace = 20;
+        if (count >= 10) { fSize = 10; lSpace = 15; }
+        else if (count >= 7) { fSize = 11.5; lSpace = 18; }
+        else if (count >= 5) { fSize = 12.5; lSpace = 20; }
+
+        const textItems = content.bullets.map((b, bi) => {
+          const isSub = b.startsWith('  ') || b.startsWith('	') || b.match(/^\s+•/);
+          return {
+            text: b.replace(/^[\s•\-\*]+/, '').trim(),
+            options: {
+              bullet: true,
+              breakLine: bi < content.bullets.length - 1,
+              indentLevel: isSub ? 1 : 0,
+              fontSize: isSub ? fSize - 1 : fSize,
+              color: isSub ? '475569' : '1E293B',
+              fontFace: 'Calibri',
+              lineSpacing: lSpace
+            }
+          };
+        });
+
+        s.addText(textItems, {
+          x: 0.8, y: contentStartY, w: totalW, h: 5.2,
+          valign: 'top', fontFace: 'Calibri'
+        });
+      }
+
+      // Add Notes strictly to Presenter Notes pane if not empty
+      if (slide.notes && slide.notes.trim()) {
+        s.addNotes(slide.notes.trim());
+      }
+    });
+
+    pptx.writeFile({ fileName: `medduo-ep${state.epIdx + 1}-presentation.pptx` })
+      .then(() => showToast('✓ Genuine PowerPoint (.pptx) downloaded!'))
+      .catch(err => {
+        console.error(err);
+        alert('Error generating PPTX: ' + err.message);
+      });
+  } catch(err) {
+    console.error('PptxGenJS error', err);
+    alert('Failed to generate PowerPoint: ' + err.message);
+  }
 }
 
 
 /* ════════════════════════════════════
    DOWNLOAD PDF (ONE-CLICK AUTOMATIC)
-   Full-Bleed A4 Landscape, 100% Page Fill, Zero Empty Notes
+   Full-Bleed A4 Landscape, 100% Page Fill, Zero Blank Notes, All Images Rendered
    ════════════════════════════════════ */
-function downloadEpisodePDF() {
+async function downloadEpisodePDF() {
   const ep = window.SLIDES_DATA[state.epIdx];
   const slides = getEpSlides(state.epIdx);
 
-  if (typeof html2pdf !== 'undefined') {
-    showToast('⏳ Generating presentation PDF...');
+  const jsPDFConstructor = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+  if (!jsPDFConstructor || typeof html2canvas === 'undefined') {
+    printEpisode();
+    return;
+  }
 
-    // 1120px width x 792px height = Exact A4 Landscape aspect ratio (1.414)
-    const tempContainer = document.createElement('div');
-    tempContainer.style.background = '#0F172A';
-    tempContainer.style.padding = '0';
-    tempContainer.style.margin = '0';
-    tempContainer.style.fontFamily = 'Inter, Arial, sans-serif';
-    tempContainer.style.width = '1120px';
+  showToast('⏳ Generating presentation PDF with diagrams...');
 
-    slides.forEach((slide, idx) => {
-      // Each slide is an exact full-bleed presentation sheet
-      const pageSheet = document.createElement('div');
-      pageSheet.className = 'pdf-slide-sheet';
-      pageSheet.style.width = '1120px';
-      pageSheet.style.height = '792px';
-      pageSheet.style.maxHeight = '792px';
-      pageSheet.style.boxSizing = 'border-box';
-      pageSheet.style.background = '#FFFFFF';
-      pageSheet.style.padding = '36px 44px';
-      pageSheet.style.margin = '0';
-      pageSheet.style.display = 'flex';
-      pageSheet.style.flexDirection = 'column';
-      pageSheet.style.justifyContent = 'flex-start';
-      pageSheet.style.pageBreakAfter = 'always';
-      pageSheet.style.pageBreakInside = 'avoid';
-      pageSheet.style.overflow = 'hidden';
-      pageSheet.style.position = 'relative';
+  // Off-screen / in-flow container
+  const tempContainer = document.createElement('div');
+  tempContainer.id = 'medduo-pdf-temp-container';
+  tempContainer.style.cssText = 'position:fixed;top:0;left:0;width:1120px;height:792px;background:#FFFFFF;z-index:999999;overflow:hidden;pointer-events:none;opacity:0.99;box-shadow:0 10px 40px rgba(0,0,0,0.3);';
 
-      // Build slide visual card
-      const card = buildSlideCard(slide, idx, slides);
+  const progressBanner = document.createElement('div');
+  progressBanner.style.cssText = 'position:absolute;top:12px;right:24px;background:#0284C7;color:#fff;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.25);';
+  progressBanner.textContent = 'Rendering PDF slides...';
+  tempContainer.appendChild(progressBanner);
 
-      // Permanently remove all editing controls and empty notes areas
-      card.querySelectorAll('.slide-header-right, .slide-notes-area, .slide-img-del, .img-add-btn-bar, .image-zone-empty, .img-layout-bar').forEach(el => el.remove());
+  document.body.appendChild(tempContainer);
 
-      // If user actually wrote custom notes, append a sleek footnote
-      if (slide.notes && slide.notes.trim()) {
-        const noteDiv = document.createElement('div');
-        noteDiv.style.marginTop = 'auto';
-        noteDiv.style.paddingTop = '8px';
-        noteDiv.style.borderTop = '1px dashed #CBD5E1';
-        noteDiv.style.fontSize = '11px';
-        noteDiv.style.color = '#64748B';
-        noteDiv.innerHTML = `📝 <strong>Presenter Note:</strong> ${escHtml(slide.notes.trim())}`;
-        card.appendChild(noteDiv);
-      }
-
-      pageSheet.appendChild(card);
-      tempContainer.appendChild(pageSheet);
+  try {
+    const pdf = new jsPDFConstructor({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: 'a4'
     });
 
-    document.body.appendChild(tempContainer);
+    for (let idx = 0; idx < slides.length; idx++) {
+      progressBanner.textContent = `Rendering slide ${idx + 1} of ${slides.length}...`;
+      showToast(`⏳ Rendering slide ${idx + 1} of ${slides.length}...`);
 
-    const opt = {
-      margin: 0,
-      filename: `medduo-ep${state.epIdx+1}-presentation.pdf`,
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
+      const sheet = buildCleanSlideSheet(slides[idx], idx, slides.length, state.epIdx);
+      sheet.style.width = '1120px';
+      sheet.style.height = '792px';
+
+      // Remove any previously rendered slide
+      tempContainer.querySelectorAll('.clean-slide-sheet').forEach(el => el.remove());
+      tempContainer.appendChild(sheet);
+
+      // Await images inside sheet to decode
+      const imgs = Array.from(sheet.querySelectorAll('img'));
+      await Promise.all(imgs.map(img => img.complete ? Promise.resolve() : img.decode().catch(() => {})));
+
+      await new Promise(r => setTimeout(r, 60));
+
+      const canvas = await html2canvas(sheet, {
         scale: 2,
         useCORS: true,
         letterRendering: true,
         width: 1120,
-        windowWidth: 1120
-      },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
+        height: 792,
+        scrollX: 0,
+        scrollY: 0,
+        logging: false
+      });
 
-    html2pdf().set(opt).from(tempContainer).save().then(() => {
-      tempContainer.remove();
-      showToast('✓ Presentation PDF downloaded successfully!');
-    }).catch(err => {
-      tempContainer.remove();
-      console.error(err);
-      printEpisode();
-    });
-  } else {
+      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      if (idx > 0) pdf.addPage([297, 210], 'landscape');
+      pdf.addImage(imgData, 'JPEG', 0, 0, 297, 210, undefined, 'FAST');
+    }
+
+    pdf.save(`medduo-ep${state.epIdx + 1}-presentation.pdf`);
+    showToast('✓ Presentation PDF downloaded successfully!');
+  } catch(err) {
+    console.error('PDF generation error:', err);
     printEpisode();
+  } finally {
+    tempContainer.remove();
   }
 }
 
@@ -3159,6 +3605,7 @@ function downloadEpisodePDF() {
    PRINT / PDF (ALL SLIDES)
    ════════════════════════════════════ */
 function printEpisode() {
+  const ep = window.SLIDES_DATA[state.epIdx];
   const slides = getEpSlides(state.epIdx);
   const existing = document.getElementById('medduo-print-area');
   if (existing) existing.remove();
@@ -3167,25 +3614,9 @@ function printEpisode() {
   printArea.id = 'medduo-print-area';
 
   slides.forEach((slide, idx) => {
-    const card = document.createElement('div');
-    card.className = 'slide-card print-slide-card';
-    card.appendChild(buildSlideCard(slide, idx, slides));
-    
-    // Remove edit controls and empty notes
-    card.querySelectorAll('.slide-header-right, .slide-notes-area, .slide-img-del, .img-add-btn-bar, .image-zone-empty, .img-layout-bar').forEach(el => el.remove());
-
-    if (slide.notes && slide.notes.trim()) {
-      const noteDiv = document.createElement('div');
-      noteDiv.style.marginTop = 'auto';
-      noteDiv.style.paddingTop = '8px';
-      noteDiv.style.borderTop = '1px dashed #CBD5E1';
-      noteDiv.style.fontSize = '11px';
-      noteDiv.style.color = '#64748B';
-      noteDiv.innerHTML = `📝 <strong>Presenter Note:</strong> ${escHtml(slide.notes.trim())}`;
-      card.appendChild(noteDiv);
-    }
-
-    printArea.appendChild(card);
+    const sheet = buildCleanSlideSheet(slide, idx, slides.length, state.epIdx);
+    sheet.classList.add('print-slide-sheet');
+    printArea.appendChild(sheet);
   });
 
   document.body.appendChild(printArea);
@@ -3442,18 +3873,35 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('💾 Changes saved to localStorage!');
   });
   document.getElementById('btn-present').addEventListener('click', enterPresentation);
-  document.getElementById('btn-export-html').addEventListener('click', exportEpisodeHTML);
+  const btnExpHtml = document.getElementById('btn-export-html');
+  if (btnExpHtml) btnExpHtml.addEventListener('click', exportEpisodeHTML);
   document.getElementById('btn-export-ppt').addEventListener('click', exportEpisodePPT);
   document.getElementById('btn-download-pdf').addEventListener('click', downloadEpisodePDF);
   document.getElementById('btn-print').addEventListener('click', printEpisode);
   document.getElementById('btn-reset-ep').addEventListener('click', () => {
-    if (!confirm('Reset all edits for this episode? This cannot be undone.')) return;
+    if (!confirm(`Reset Episode ${state.epIdx + 1} to the latest official version with all diagrams and mnemonics? This will replace your local edits.`)) return;
     localStorage.removeItem(`medduo_slides_edits_${state.epIdx}`);
+    for (let i = 0; i < 25; i++) {
+      for (let j = 0; j < 10; j++) {
+        localStorage.removeItem(`medduo_img_${state.epIdx}_${i}_${j}`);
+        localStorage.removeItem(`medduo_cap_${state.epIdx}_${i}_${j}`);
+      }
+    }
     state.slideIdx = 0;
     renderEpisodeToolbar();
     renderSlide();
-    showToast('Episode reset to original.');
+    showToast(`✓ Episode ${state.epIdx + 1} reset to latest official version!`);
   });
+
+  // Gallery Modal Close Listeners
+  const modalGal = document.getElementById('modal-gallery');
+  const closeGal = document.getElementById('modal-gallery-close');
+  if (closeGal && modalGal) {
+    closeGal.addEventListener('click', () => modalGal.classList.add('hidden'));
+    modalGal.addEventListener('click', (e) => {
+      if (e.target === modalGal) modalGal.classList.add('hidden');
+    });
+  }
 
   // Nav
   document.getElementById('btn-prev').addEventListener('click', () => navigate(-1));
