@@ -115,6 +115,49 @@ table { border-collapse: collapse; width: 100%; }
 .hero-title span { color: var(--cyan); }
 .hero-sub { font-size: 1rem; color: var(--text2); margin-top: 8px; }
 
+/* ── University Track Switcher ── */
+.track-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 22px auto 32px;
+  max-width: 520px;
+  background: var(--bg2);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.track-tab {
+  flex: 1;
+  padding: 11px 20px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text2);
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.22s ease-in-out;
+}
+.track-tab .track-icon { font-size: 1.25rem; }
+.track-tab:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+.track-tab.active {
+  background: var(--bg);
+  color: var(--cyan);
+  box-shadow: 0 4px 14px rgba(77, 217, 232, 0.18);
+  border: 1px solid var(--cyan);
+}
+
 /* ── Episodes Grid ── */
 .episodes-grid {
   max-width: 1200px;
