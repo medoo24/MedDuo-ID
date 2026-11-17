@@ -1818,7 +1818,7 @@ const state = {
   filter: 'all',
   autoScrollPlaying: false,
   autoScrollTimer: null,
-  scrollSpeeds: { slow: 20, medium: 50, fast: 100 },
+  scrollSpeeds: { slow: 26, medium: 52, fast: 98 },
   modalMode: null,
   targetItemIndex: null,
   targetInsertIndex: null,
@@ -2982,36 +2982,85 @@ $filterBtns.forEach(btn => {
   });
 });
 
-// ─── AUTO-SCROLL ──────────────────────────────────────────────
-let lastScrollY = 0;
+// ─── AUTO-SCROLL (Silky Smooth 60fps Teleprompter) ────────────
+let autoScrollRafId = null;
+let lastScrollTimestamp = 0;
+let accumulatedScrollFraction = 0;
+
+function autoScrollStep(timestamp) {
+  if (!state.autoScrollPlaying) return;
+
+  if (!lastScrollTimestamp) {
+    lastScrollTimestamp = timestamp;
+  }
+
+  // Delta time in seconds, capped to avoid huge jumps on tab resume
+  const dt = Math.min((timestamp - lastScrollTimestamp) / 1000, 0.08);
+  lastScrollTimestamp = timestamp;
+
+  const speedKey = ($scrollSpeed && $scrollSpeed.value) ? $scrollSpeed.value : 'medium';
+  const pixelsPerSecond = state.scrollSpeeds[speedKey] || 52;
+
+  accumulatedScrollFraction += pixelsPerSecond * dt;
+
+  if (accumulatedScrollFraction >= 1) {
+    const pixelsToMove = Math.floor(accumulatedScrollFraction);
+    accumulatedScrollFraction -= pixelsToMove;
+
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+
+    // Stop gracefully at bottom of page
+    if (window.scrollY >= maxScroll - 4) {
+      stopAutoScroll();
+      return;
+    }
+
+    // Scroll by precise pixel amount
+    window.scrollBy(0, pixelsToMove);
+  }
+
+  autoScrollRafId = requestAnimationFrame(autoScrollStep);
+}
 
 function startAutoScroll() {
-  const speedKey = $scrollSpeed.value;
-  const px = state.scrollSpeeds[speedKey];
+  if (state.autoScrollPlaying) return;
   state.autoScrollPlaying = true;
+  document.documentElement.classList.add('autoscrolling');
   $btnScroll.textContent = '⏸';
   $btnScroll.classList.add('playing');
-  lastScrollY = window.scrollY;
+  $btnScroll.title = 'إيقاف مؤقت للتمرير التلقائي';
 
-  state.autoScrollTimer = setInterval(() => {
-    window.scrollBy({ top: px, behavior: 'instant' });
-    const diff = Math.abs(window.scrollY - lastScrollY - px);
-    if (diff > 60) {
-      stopAutoScroll();
-    }
-    lastScrollY = window.scrollY;
-    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 10) {
-      stopAutoScroll();
-    }
-  }, 200);
+  lastScrollTimestamp = 0;
+  accumulatedScrollFraction = 0;
+  autoScrollRafId = requestAnimationFrame(autoScrollStep);
 }
 
 function stopAutoScroll() {
   state.autoScrollPlaying = false;
-  clearInterval(state.autoScrollTimer);
+  document.documentElement.classList.remove('autoscrolling');
+  if (autoScrollRafId) {
+    cancelAnimationFrame(autoScrollRafId);
+    autoScrollRafId = null;
+  }
+  lastScrollTimestamp = 0;
+  accumulatedScrollFraction = 0;
   $btnScroll.textContent = '▶';
   $btnScroll.classList.remove('playing');
+  $btnScroll.title = 'تشغيل التمرير التلقائي السلس';
 }
+
+// Gracefully pause if user scrolls manually with wheel or touch
+window.addEventListener('wheel', () => {
+  if (state.autoScrollPlaying) {
+    stopAutoScroll();
+  }
+}, { passive: true });
+
+window.addEventListener('touchstart', () => {
+  if (state.autoScrollPlaying) {
+    stopAutoScroll();
+  }
+}, { passive: true });
 
 // ─── COPY TEXT ───────────────────────────────────────────────
 function copyCurrentEpisodeText() {
