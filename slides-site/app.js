@@ -46,7 +46,7 @@ function escHtml(str) {
 window.AIN_SHAMS_SLIDES_DATA = [
   {
     "title": "The Skull & Living ID: Personal ID, Fontanels, Sutures & Mandible",
-    "description": "Ain Shams forensic foundation: 6-step ID protocol, 8 civil & 2 criminal living cases, 13-5-4 infant skull, fontanels finger metric, cranial suture timeline, the Negroid metopic trap, and mandible metamorphosis.",
+    "description": "Ain Shams forensic foundation: 6-step ID hierarchy pipeline, 8 civil & 2 criminal living cases, 13-5-4 infant skull, fontanels finger metric, cranial suture timeline, the Negroid metopic trap, and mandible metamorphosis.",
     "slides": [
       {
         "type": "title",
@@ -55,23 +55,62 @@ window.AIN_SHAMS_SLIDES_DATA = [
           "bullets": [
             "Faculty of Medicine, Ain Shams University · Forensic Medicine Department",
             "Chapter 3: Identification & DNA Typing (Pages 37–40, 42)",
-            "Core Foundations: Living ID Scenarios, 6-Step Protocol, Fontanelles, Sutures & Mandible",
+            "Visual Learning Edition: Pipeline Flowcharts, Comparison Cards & Exam Traps",
             "Presented by MedDuo Forensic Team"
           ]
         },
         "images": [],
-        "notes": "أهلاً بكم في العرض التقديمي الأكاديمي الشامل لشبتر الاستعراف والجمجمة طبقاً لكتاب طب عين شمس."
+        "notes": "أهلاً بكم في العرض التقديمي المرئي المتقدم لشبتر الاستعراف والجمجمة طبقاً لكتاب طب عين شمس."
       },
       {
-        "type": "concept",
+        "type": "case",
         "title": "Medico-Legal Scenarios: 4 Cardinal Identification Challenges",
         "content": {
-          "bullets": [
-            "1. Unidentified Living Coma Patient: Elderly ICU admission without civil documents requiring legal identity verification",
-            "2. Disputed Heirship / Unregistered Person: Claim of parenthood requiring biological and somatic verification",
-            "3. Disputed Minor Age in Criminal Offenses: Accused claiming juvenile status (<15y) to evade adult criminal liability",
-            "4. Decomposed / Skeletonized Remains: Excavated infant skull and mandible requiring age, viability, and race determination",
-            "Clinical Mandate: Forensic identification establishes absolute civil status, inheritance rights, and criminal responsibility"
+          "cards": [
+            {
+              "badge": "CIVIL CASE 1",
+              "theme": "cyan",
+              "icon": "🏥",
+              "title": "Unidentified ICU Coma Patient",
+              "items": [
+                "Elderly patient admitted in profound coma to emergency ICU",
+                "Lacks identity documents, fingerprint records, or conscious recall",
+                "Mandate: Legal identification to notify next-of-kin & protect assets"
+              ]
+            },
+            {
+              "badge": "CIVIL CASE 2",
+              "theme": "amber",
+              "icon": "📜",
+              "title": "Disputed Heirship & Unregistered Person",
+              "items": [
+                "Claimant asserts biological son status of deceased wealthy person",
+                "Unregistered birth (ساقط قيد); lacks official birth certificate",
+                "Mandate: Biological and somatic verification for inheritance rights"
+              ]
+            },
+            {
+              "badge": "CRIMINAL CASE",
+              "theme": "rose",
+              "icon": "⚖️",
+              "title": "Juvenile Age Dispute in Felonies",
+              "items": [
+                "Fugitive suspect arrested at airport with forged documents",
+                "Claims age <15y to evade adult life sentence and capital penalty",
+                "Mandate: Radiographic bone age assessment for criminal court"
+              ]
+            },
+            {
+              "badge": "SKELETAL CASE",
+              "theme": "emerald",
+              "icon": "⚰️",
+              "title": "Excavated Infant Cranial Remains",
+              "items": [
+                "Construction excavation unearths infant skull and mandible",
+                "Mandate: Viable full-term vs pre-term infant status & time of death",
+                "Determination of cranial growth indices and anatomical age"
+              ]
+            }
           ]
         },
         "images": [
@@ -86,15 +125,43 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "Personal Identification: Definition & The 6-Step Standard Hierarchy",
         "content": {
-          "bullets": [
-            "Definition: Recognition of an individual living or dead based on distinctive biological and physical characteristics",
-            "Standard 6-Step Medico-Legal Hierarchy (Sequential Elimination):",
-            "   • 1. Race: Caucasoid, Negroid, Mongoloid (Skull shape & Cephalic Index)",
-            "   • 2. Sex: Pelvis (most accurate), Skull, Long bones, and DNA (Amelogenin locus)",
-            "   • 3. Age: Deciduous & permanent teeth, ossification centers, epiphyseal union, and sutures",
-            "   • 4. Stature: Long bone osteometry via Trotter & Gleser regression formulae",
-            "   • 5. General Features: Complexion, facial contour, hair, eyes, and dental alignment",
-            "   • 6. Peculiar Marks: Fingerprints, scars, tattoos, moles, and congenital deformities"
+          "flowchart": [
+            {
+              "step": "STEP 1",
+              "icon": "🌍",
+              "title": "1. Race",
+              "desc": "Caucasoid, Negroid, Mongoloid (Cranial vault & Cephalic Index)"
+            },
+            {
+              "step": "STEP 2",
+              "icon": "⚧",
+              "title": "2. Sex",
+              "desc": "Pelvis (most accurate), Skull, Long bones, Amelogenin DNA"
+            },
+            {
+              "step": "STEP 3",
+              "icon": "⏳",
+              "title": "3. Age",
+              "desc": "Teeth eruption, Ossification centers, Epiphyseal union, Sutures"
+            },
+            {
+              "step": "STEP 4",
+              "icon": "📏",
+              "title": "4. Stature",
+              "desc": "Long bone osteometry via Trotter & Gleser regression formulae"
+            },
+            {
+              "step": "STEP 5",
+              "icon": "👤",
+              "title": "5. General Features",
+              "desc": "Complexion, facial contour, hair, eyes, and dental alignment"
+            },
+            {
+              "step": "STEP 6",
+              "icon": "🧬",
+              "title": "6. Peculiar Marks",
+              "desc": "Fingerprints, surgical scars, tattoos, and congenital moles"
+            }
           ]
         },
         "images": [
@@ -109,19 +176,33 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "Identification of the Living: 8 Civil & 2 Criminal Medico-Legal Scenarios",
         "content": {
-          "bullets": [
-            "A. Civil Identification Situations (8 Situations):",
-            "   • 1. Persons of unknown identity found unconscious, comatose, or insane",
-            "   • 2. Lost children and foundlings (abandoned infants)",
-            "   • 3. Persons suffering from memory loss (amnesia) or fugue states",
-            "   • 4. Missing persons, soldiers in war, and disaster survivors",
-            "   • 5. Disputed parentage, inheritance claims, and paternity suits",
-            "   • 6. Pretended death to claim life insurance or evade legal obligations",
-            "   • 7. Impersonation of another person to claim property, titles, or wealth",
-            "   • 8. Issuance of official documents (passports, national IDs, driver licenses, pensions)",
-            "B. Criminal Identification Situations (2 Situations):",
-            "   • 1. Criminals and suspects accused of offenses or crimes",
-            "   • 2. Absconding prisoners, escaped convicts, and repeat offenders (recidivists)"
+          "cards": [
+            {
+              "badge": "CIVIL ID (8 SITUATIONS)",
+              "theme": "cyan",
+              "icon": "🏛️",
+              "title": "Civil Law Identification Scenarios",
+              "items": [
+                "1. Unconscious, comatose, or insane persons of unknown identity",
+                "2. Lost children and foundlings (abandoned infants)",
+                "3. Persons suffering from memory loss (amnesia) or fugue states",
+                "4. Missing persons, soldiers in wartime, and disaster survivors",
+                "5. Disputed parentage, inheritance claims, and paternity suits",
+                "6. Pretended death to claim life insurance or evade legal liabilities",
+                "7. Impersonation of another person to claim wealth or property",
+                "8. Official passport, national ID, driver's license, and pension verification"
+              ]
+            },
+            {
+              "badge": "CRIMINAL ID (2 SITUATIONS)",
+              "theme": "rose",
+              "icon": "⚖️",
+              "title": "Criminal Law Identification Scenarios",
+              "items": [
+                "1. Accused suspects and criminals arrested in felonies and misdemeanors",
+                "2. Absconding prisoners, escaped convicts, and repeat recidivists"
+              ]
+            }
           ]
         },
         "images": [
@@ -184,19 +265,34 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "The Infant Skull: Architectural Proportions & Mode of Development",
         "content": {
-          "bullets": [
-            "1. Vault vs Facial Skeleton Proportions:",
-            "   • At Birth: Cranium (vault) to face ratio is 8:1 (reflects rapid intrauterine brain growth)",
-            "   • In Adults: Cranium to face ratio decreases to 2:1 (expansion of masticatory apparatus & air sinuses)",
-            "2. Mode of Skull Bone Development:",
-            "   • Vault of the Skull: Develops purely in membrane (fibrous intramembranous ossification)",
-            "   • Base of the Skull: Develops in cartilage (endochondral ossification)",
-            "3. The 13-5-4 Golden Growth Rule:",
-            "   • Circumference at birth = 13 inches (33 cm)",
-            "   • Increases by 5 inches during 1st year (reaches 18 inches at age 1 year)",
-            "   • Increases by only 4 inches during rest of life (reaches adult average of 22 inches / 56 cm)",
-            "Forensic Value: Differentiates viable full-term newborn from pre-term fetus or infant remains"
-          ]
+          "cards": [
+            {
+              "badge": "VAULT VS FACE",
+              "theme": "cyan",
+              "icon": "📐",
+              "title": "Cranial Proportions & Mode of Growth",
+              "items": [
+                "Cranium to Face Ratio: 8:1 at birth → decreases to 2:1 in adult",
+                "Vault of Skull: Develops purely in membrane (intramembranous ossification)",
+                "Base of Skull: Develops in cartilage (endochondral ossification)"
+              ]
+            },
+            {
+              "badge": "13-5-4 RULE",
+              "theme": "emerald",
+              "icon": "📏",
+              "title": "Golden Growth Circumference Formula",
+              "items": [
+                "13 Inches (33 cm): Normal head circumference at full-term birth",
+                "+5 Inches in 1st Year: Reaches 18 inches (45 cm) at age 1 year",
+                "+4 Inches Rest of Life: Reaches adult average of 22 inches (56 cm)"
+              ]
+            }
+          ],
+          "trap": {
+            "title": "Viability & Infanticide Assessment",
+            "desc": "A skull circumference <13 inches indicates premature non-viable fetus or microcephaly, vital in infanticide investigations."
+          }
         },
         "images": [
           {
@@ -296,9 +392,10 @@ window.AIN_SHAMS_SLIDES_DATA = [
               "All obliterated except temporoparietal suture which remains open till late senility"
             ]
           ],
-          "extra_bullets": [
-            "Closure sequence: Endocranial union precedes ectocranial obliteration by several years."
-          ]
+          "trap": {
+            "title": "The #1 Ain Shams Exam Trap: Negroid Frontal Suture Persistence",
+            "desc": "Frontal (metopic) suture persists in ~10% of Negroid individuals throughout adult life! Never mistake a persistent frontal suture for an infant skull or a linear cranial fracture!"
+          }
         },
         "images": [
           {
@@ -309,49 +406,46 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "دروز الجمجمة: السهمي 30 سنة، الإكليلي 40 سنة، اللامي 50 سنة، وكلها 70 سنة ما عدا الصدغي الجداري. تذكر مصيدة العرق الزنجي في الدرز الجبهي!"
       },
       {
-        "type": "table",
+        "type": "concept",
         "title": "Mandible Metamorphosis: Infant, Adult & Senile Morphological Features",
         "content": {
-          "headers": [
-            "Anatomical Feature",
-            "Infant Mandible",
-            "Adult Mandible",
-            "Elderly / Senile Mandible"
-          ],
-          "rows": [
-            [
-              "Angle of Mandible",
-              "Obtuse: 140° – 150° (ramus oblique)",
-              "Nearly Right angle: 110° – 120° (ramus vertical)",
-              "Obtuse again: 140° (resembles infantile angle)"
-            ],
-            [
-              "Mental Foramen",
-              "Near lower border (below milk tooth sockets)",
-              "Midway between upper and lower borders",
-              "Near upper alveolar border (due to alveolar resorption)"
-            ],
-            [
-              "Symphysis Menti",
-              "Fibrous synchondrosis at birth; fuses at 1–2y",
-              "Completely fused with prominent mental protuberance",
-              "Completely fused; mental process remains prominent"
-            ],
-            [
-              "Alveolar Margin",
-              "Rudimentary with un-erupted tooth buds",
-              "Broad, deep, housing 16 permanent teeth",
-              "Completely resorbed and thinned following tooth loss"
-            ],
-            [
-              "Coronoid & Condyle",
-              "Coronoid process higher than condyle",
-              "Condyloid and coronoid processes balanced",
-              "Condyle bent backwards; coronoid prominent"
-            ]
-          ],
-          "extra_bullets": [
-            "Diagnostic Value: Mandible is the strongest facial bone and provides rapid age triage in charred and fragmented remains."
+          "cards": [
+            {
+              "badge": "INFANT MANDIBLE",
+              "theme": "cyan",
+              "icon": "👶",
+              "title": "Infantile Morphology",
+              "items": [
+                "Angle: Obtuse (140° – 150°); ramus is oblique",
+                "Mental Foramen: Situated low, near lower border",
+                "Symphysis: Fibrous synchondrosis (fuses at 1–2 years)",
+                "Alveolar Margin: Shallow, housing un-erupted tooth buds"
+              ]
+            },
+            {
+              "badge": "ADULT MANDIBLE",
+              "theme": "emerald",
+              "icon": "🧑",
+              "title": "Adult Morphology",
+              "items": [
+                "Angle: Nearly Right angle (110° – 120°); ramus vertical",
+                "Mental Foramen: Midway between upper and lower borders",
+                "Symphysis: Fully fused; mental protuberance prominent",
+                "Alveolar Margin: Deep, housing 16 permanent teeth"
+              ]
+            },
+            {
+              "badge": "SENILE MANDIBLE",
+              "theme": "amber",
+              "icon": "👴",
+              "title": "Elderly / Senile Morphology",
+              "items": [
+                "Angle: Becomes Obtuse again (140°); ramus oblique",
+                "Mental Foramen: High, near upper alveolar border",
+                "Alveolar Resorption: Extensive bone resorption after tooth loss",
+                "Condyle: Bent backwards; chin appears pointed"
+              ]
+            }
           ]
         },
         "images": [
@@ -406,15 +500,50 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "الحلقة الثانية: استعراف العمر عبر الأسنان، مراكز التعظم، التحام المشاشات، وجدول الأهمية الجنائية والمدنية."
       },
       {
-        "type": "concept",
+        "type": "case",
         "title": "Age Estimation Challenges: 4 Classic Forensic Scenarios",
         "content": {
-          "bullets": [
-            "1. Child Labor Offenses: Determining whether a juvenile worker is under 12y (training prohibited) or under 14y/16y/18y",
-            "2. Age of Criminal Discrimination: Assessing whether a child offender is below 7y (absolute non-liability) or 7–15y",
-            "3. Capital Sentence Threshold (Age 18): Verifying biological age of accused in heinous crimes to determine eligibility for death penalty",
-            "4. Identification of Charred Adult Remains: Utilizing clavicular fusion (21-25y) and sternal synostosis (40-60y) to verify identity",
-            "Forensic Principle: Teeth provide superior accuracy from infancy to 12y; epiphyseal union dominates from 14y to 25y"
+          "cards": [
+            {
+              "badge": "FELONY",
+              "theme": "rose",
+              "icon": "⚖️",
+              "title": "Capital Punishment Threshold (Age 18)",
+              "items": [
+                "Heinous homicide suspect claims juvenile age to avoid execution",
+                "Mandate: Full radiological epiphyseal status of wrists, knees, clavicle"
+              ]
+            },
+            {
+              "badge": "LABOR LAW",
+              "theme": "amber",
+              "icon": "🏭",
+              "title": "Child Labor Violations (<12y / <16y)",
+              "items": [
+                "Factory inspection discovers underage workers in hazardous jobs",
+                "Mandate: Dentition eruption & postnatal centers verification"
+              ]
+            },
+            {
+              "badge": "JUVENILE PENAL",
+              "theme": "cyan",
+              "icon": "👦",
+              "title": "Age of Discrimination (Age 7)",
+              "items": [
+                "Child accused of arson; defense asserts age <7y (no liability)",
+                "Mandate: 1st permanent molar & central incisors eruption triage"
+              ]
+            },
+            {
+              "badge": "ARSON REMAINS",
+              "theme": "emerald",
+              "icon": "🔥",
+              "title": "Charred Skeletal Remains",
+              "items": [
+                "Basement fire reveals burnt human skeleton",
+                "Mandate: Sternal end of clavicle (21-25y) and sternum (40-60y) fusion"
+              ]
+            }
           ]
         },
         "images": [
@@ -606,9 +735,10 @@ window.AIN_SHAMS_SLIDES_DATA = [
               "Signals commencement of compulsory primary school age"
             ]
           ],
-          "extra_bullets": [
-            "Exam Trap: Never forget that the Patella appears at age 3 years—frequently tested in oral exams."
-          ]
+          "trap": {
+            "title": "The Patella 3-Year Rule",
+            "desc": "The Patella (Knee Cap) ossification center appears at AGE 3 YEARS! One of the most frequently tested oral questions in Ain Shams forensic medicine."
+          }
         },
         "images": [
           {
@@ -619,61 +749,34 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "مراكز التعظم بعد الولادة: سنة رؤوس، سنتين أطراف سفلية للزند والقصبة، 3 سنين الصابونة (مصيدة!)، 4 سنين رأس الشظية والمدور الكبير، 5 سنين أسفل الشظية، 6 سنين رأس الكعبرة وأسفل الزند."
       },
       {
-        "type": "table",
-        "title": "Epiphyseal Union of Upper Limb: The Elbow Scissors & Landmark Ages",
+        "type": "concept",
+        "title": "Epiphyseal Union I: The Elbow Scissors & Landmark Ages (14y to 17y)",
         "content": {
-          "headers": [
-            "Age",
-            "Epiphyseal Union Landmark",
-            "Joint Involved",
-            "Clinical / Diagnostic Significance"
-          ],
-          "rows": [
-            [
-              "14 Years",
-              "Trochlea unites with Capitulum",
-              "Elbow Joint (Distal Humerus)",
-              "Commencement of elbow scissors fusion"
-            ],
-            [
-              "15 Years",
-              "Conjoined Trochlea-Capitulum fuses with Humerus Shaft",
-              "Elbow Joint",
-              "Marks juvenile detention boundary"
-            ],
-            [
-              "16 Years",
-              "Lateral Epicondyle fuses with humerus; Olecranon fuses with ulna",
-              "Elbow Joint",
-              "Excludes child labor in hazardous occupations"
-            ],
-            [
-              "17 Years",
-              "Medial Epicondyle fuses with humerus; Head of radius fuses",
-              "Elbow Joint",
-              "Elbow joint is completely closed! ('Elbow scissors: 14 to 17y')"
-            ],
-            [
-              "18 – 20 Years",
-              "Metacarpals and Phalanges fuse with shafts",
-              "Hand & Fingers",
-              "Key corroboration for 18-year legal adult threshold"
-            ],
-            [
-              "20 – 21 Years",
-              "Lower end of radius & lower end of ulna fuse with shafts",
-              "Wrist Joint",
-              "Wrist completely closed; adult skeletal status achieved"
-            ],
-            [
-              "20 – 21 Years",
-              "Head of humerus fuses with shaft; Coracoid (15-17y), Acromion (18-20y)",
-              "Shoulder Joint",
-              "Upper limb elongation completely ceases"
-            ]
-          ],
-          "extra_bullets": [
-            "Mnemonic: 'Elbow Scissors' runs sequentially from 14 to 17 years (14y Trochlea-Capitulum → 15y Shaft → 16y Lat Epicondyle → 17y Med Epicondyle)."
+          "flowchart": [
+            {
+              "step": "14 YEARS",
+              "icon": "✂️",
+              "title": "Trochlea + Capitulum",
+              "desc": "Trochlea and capitulum centers fuse together into a single conjoined mass"
+            },
+            {
+              "step": "15 YEARS",
+              "icon": "🦴",
+              "title": "Fusion with Shaft",
+              "desc": "Conjoined trochlea-capitulum fuses completely with the humerus shaft"
+            },
+            {
+              "step": "16 YEARS",
+              "icon": "⚖️",
+              "title": "Lateral Epicondyle & Olecranon",
+              "desc": "Lateral epicondyle fuses with humerus; olecranon fuses with ulna shaft"
+            },
+            {
+              "step": "17 YEARS",
+              "icon": "🔒",
+              "title": "Medial Epicondyle & Radius Head",
+              "desc": "Medial epicondyle fuses; elbow joint is completely closed and consolidated!"
+            }
           ]
         },
         "images": [
@@ -748,18 +851,31 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "Biological Principles in Age Estimation: The Female Lead Rule",
         "content": {
-          "bullets": [
-            "1. The Female Lead Rule (قاعدة تقدم الإناث):",
-            "   • Epiphyses appear and unite 1 to 2 years EARLIER in females than in males (driven by earlier estrogen surge)",
-            "   • Example 1: Sternal end of clavicle fuses at 21–23y in females vs 23–25y in males",
-            "   • Example 2: Knee epiphyses fuse at 18–19y in females vs 20–21y in males",
-            "   • Criminal Implication: A 16-year-old female may present with epiphyseal status equivalent to an 18-year-old male!",
-            "2. The Law of Ossification Emergence vs Union:",
-            "   • The epiphysis that appears FIRST in life unites LAST (e.g. head of humerus appears at 1y, unites at 20-21y)",
-            "   • Exception: Lower end of fibula appears late (5y) but unites early (18y)",
-            "3. Extrinsic Modifiers of Bone Age:",
-            "   • Malnutrition, rickets, and severe chronic infections delay epiphyseal union by 1 to 3 years",
-            "   • Hyperthyroidism and precocious puberty accelerate epiphyseal closure"
+          "cards": [
+            {
+              "badge": "FEMALE LEAD RULE",
+              "theme": "rose",
+              "icon": "👩",
+              "title": "Advancement by 1 to 2 Years",
+              "items": [
+                "Epiphyses appear and unite 1 to 2 years EARLIER in females than males",
+                "Driven by earlier prepubertal estrogen surge stimulating epiphyseal fusion",
+                "Example: Knee fuses at 18-19y in females vs 20-21y in males",
+                "Forensic Impact: A 16y female may show epiphyseal union of an 18y male!"
+              ]
+            },
+            {
+              "badge": "OSSIFICATION LAWS",
+              "theme": "cyan",
+              "icon": "📜",
+              "title": "First to Appear, Last to Unite",
+              "items": [
+                "General Law: The epiphysis that appears FIRST in life unites LAST",
+                "Example: Head of humerus appears at 1y, unites at 20-21y",
+                "Exception: Lower end of fibula appears late (5y) but unites early (18y)",
+                "Clavicle Fact: Sternal end is the LAST long bone epiphysis to fuse (21-25y)!"
+              ]
+            }
           ]
         },
         "images": [
@@ -919,15 +1035,50 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "الحلقة الثالثة: البصمات، الحمض النووي الصامت، الخطوات الست للتحليل، وقضايا إثبات النسب والجنايات."
       },
       {
-        "type": "concept",
+        "type": "case",
         "title": "Fingerprints & DNA: 4 Cardinal Diagnostic Dilemmas",
         "content": {
-          "bullets": [
-            "1. Intentional Mutilation of Friction Ridges: Suspect burning fingertips with acid/heat to obliterate fingerprints",
-            "2. The Monozygotic (Identical) Twin Defense: Armed robbery suspect claiming crime scene DNA could belong to his innocent twin",
-            "3. Rootless Biological Traces: A shed hair shaft without follicular root left at crime scene requiring specialized DNA typing",
-            "4. Disputed Paternity with Significant Inheritance: Mother claiming child paternity against denying putative father",
-            "Diagnostic Power: Dactylography distinguishes identical twins; DNA typing provides 1 in 10^15 statistical individuality"
+          "cards": [
+            {
+              "badge": "MUTILATION",
+              "theme": "rose",
+              "icon": "🔥",
+              "title": "Intentional Chemical Mutilation",
+              "items": [
+                "Criminal burns fingertips with acid to obliterate friction ridges",
+                "Question: Can papillary ridges regenerate, or does a scar form?"
+              ]
+            },
+            {
+              "badge": "TWINS DEFENSE",
+              "theme": "amber",
+              "icon": "👥",
+              "title": "Monozygotic (Identical) Twins Dilemma",
+              "items": [
+                "Armed robber caught; defense claims 100% DNA match to twin brother",
+                "Question: Can forensic science distinguish monozygotic twins?"
+              ]
+            },
+            {
+              "badge": "TRACE EVIDENCE",
+              "theme": "cyan",
+              "icon": "🔬",
+              "title": "Rootless Hair Shaft Forensic Trace",
+              "items": [
+                "Shed hair shaft left at scene lacks follicular bulb (no nuclear DNA)",
+                "Question: Which specialized DNA system enables identification?"
+              ]
+            },
+            {
+              "badge": "CIVIL INHERITANCE",
+              "theme": "emerald",
+              "icon": "📜",
+              "title": "Disputed Paternity & Multi-Million Estate",
+              "items": [
+                "Putative father denies paternity of child claiming massive inheritance",
+                "Question: What is the genetic rule for exclusion vs inclusion?"
+              ]
+            }
           ]
         },
         "images": [
@@ -942,20 +1093,31 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "Dactylography: Galton's Principles of Friction Ridge Biology",
         "content": {
-          "bullets": [
-            "1. Definition: The study of epidermal papillary friction ridges on the palmar surface of hands and plantar surface of feet",
-            "2. Galton's Cardinal Principles of Dactylography:",
-            "   • Absolute Individuality: Probability of two identical prints is 1 in 64 billion (exceeds global human population)",
-            "   • Permanent Immutability: Formed in the 4th month of intrauterine life and remain unchanged until post-mortem decomposition",
-            "   • Monozygotic Distinction: Even identical twins (with identical DNA) possess distinct, unique fingerprint patterns!",
-            "3. Anatomical Architecture (The Dual Shield):",
-            "   • Epidermal Layer: Superficial ridges replicated faithfully by underlying dermal papillae",
-            "   • Papillary Dermis: Generative basement matrix; contains tactile receptors and sweat gland ducts",
-            "4. Ridge Pattern Classification (Galton / Henry System):",
-            "   • Loops: ~65% of all patterns (Ulnar and Radial loops)",
-            "   • Whorls: ~30% of patterns (Circular or spiral ridges with two deltas)",
-            "   • Arches: ~5% of patterns (Plain and Tented arches; no delta)",
-            "   • Composites: Rare complex combinations (Central pocket, lateral pocket, accidental)"
+          "cards": [
+            {
+              "badge": "GALTON PRINCIPLES",
+              "theme": "cyan",
+              "icon": "👆",
+              "title": "Uniqueness & Permanent Immutability",
+              "items": [
+                "Individuality: Probability of two identical prints is 1 in 64 Billion!",
+                "Permanence: Formed in 4th month I.U. and remain unchanged till decomposition",
+                "Monozygotic Distinction: Even identical twins have DISTINCT fingerprints!",
+                "Substrate: Friction ridges on palmar and plantar epidermal surfaces"
+              ]
+            },
+            {
+              "badge": "PATTERNS CLASSIFICATION",
+              "theme": "emerald",
+              "icon": "🔍",
+              "title": "The 4 Standard Ridge Patterns",
+              "items": [
+                "Loops (~65%): Most common; single delta (Ulnar and Radial loops)",
+                "Whorls (~30%): Circular/spiral ridges; two deltas present",
+                "Arches (~5%): Ridges enter one side and exit other; NO delta",
+                "Composites: Rare combinations (central pocket, accidental)"
+              ]
+            }
           ]
         },
         "images": [
@@ -967,50 +1129,39 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "مبادئ جالتون: الانفرادية المطلقة (1 في 64 مليار)، الثبات الدائم من الشهر الرابع جنينياً، واختلاف بصمات التوأم المتطابق."
       },
       {
-        "type": "table",
-        "title": "Fingerprint Alterations: Trauma, Chemical Burns & Pathological Conditions",
+        "type": "concept",
+        "title": "Fingerprint Alterations: Epidermis vs Dermis & Scars",
         "content": {
-          "headers": [
-            "Condition / Injury",
-            "Depth of Tissue Involvement",
-            "Effect on Friction Ridges",
-            "Forensic / Medico-Legal Outcome"
+          "cards": [
+            {
+              "badge": "EPIDERMAL DAMAGE",
+              "theme": "emerald",
+              "icon": "🩹",
+              "title": "Superficial Injury / Scalds",
+              "items": [
+                "Tissue Level: Confined to Epidermis (stratum corneum/spinosum)",
+                "Outcome: Ridges regenerate COMPLETELY without distortion",
+                "Timeline: Full restoration within 2 to 4 weeks",
+                "Result: Original fingerprint pattern returns 100% intact!"
+              ]
+            },
+            {
+              "badge": "DERMAL DAMAGE",
+              "theme": "rose",
+              "icon": "⚠️",
+              "title": "Deep Incisions / Acid Burns",
+              "items": [
+                "Tissue Level: Extends into Papillary Dermis (>1-2 mm)",
+                "Outcome: Destroys generative dermal papillae; heals by scar (cicatrix)",
+                "Forensic Result: Permanent scar creates an ADDITIONAL unique mark!",
+                "Conclusion: Deep mutilation strengthens court identification!"
+              ]
+            }
           ],
-          "rows": [
-            [
-              "Superficial Abrasion / Scald",
-              "Epidermis only (Stratum corneum)",
-              "Ridges regenerate completely without distortion within weeks",
-              "Original fingerprint pattern is 100% restored"
-            ],
-            [
-              "Deep Incision / Acid Burn",
-              "Extends into Papillary Dermis (>1-2 mm)",
-              "Destroys dermal papillae; heals by fibrous cicatrix (scar)",
-              "Permanent scar creates an ADDITIONAL unique identifying mark!"
-            ],
-            [
-              "Surgical Skin Grafting",
-              "Full-thickness excision and graft",
-              "Replaced by smooth non-ridge skin",
-              "Readily recognized as intentional mutilation; raises criminal suspicion"
-            ],
-            [
-              "Senile Atrophy",
-              "Dermal thinning in elderly",
-              "Ridges become faint, shallow, and difficult to record",
-              "Requires special oblique lighting or chemical enhancement"
-            ],
-            [
-              "Pathological Skin Diseases",
-              "Scleroderma, Leprosy, Chronic Eczema",
-              "Causes permanent atrophy, ulceration, or loss of ridge detail",
-              "Documented as pathological dermatological condition"
-            ]
-          ],
-          "extra_bullets": [
-            "Forensic Rule: You cannot erase a fingerprint—superficial damage regrows, and deep damage creates an incriminating permanent scar!"
-          ]
+          "trap": {
+            "title": "The Impossibility of Erasing Fingerprints",
+            "desc": "You cannot erase a fingerprint: superficial damage regrows untouched, while deep damage creates an incriminating permanent scar that makes identification even easier!"
+          }
         },
         "images": [
           {
@@ -1024,17 +1175,30 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "DNA Biology: The 90% Non-Coding Genome & Forensic Polymorphism",
         "content": {
-          "bullets": [
-            "1. Nuclear DNA Architecture:",
-            "   • Double helix composed of 3.2 billion base pairs packaged into 23 pairs of chromosomes (46 total)",
-            "   • Identical in every nucleated cell of a single human individual (blood, semen, saliva, skin, bone, tooth pulp)",
-            "2. The 90% Non-Coding (Silent) Genome Paradox:",
-            "   • Only ~1% to 2% of human DNA codes for functional proteins (Exons)",
-            "   • Over 90% consists of non-coding, silent intronic sequences ('Junk DNA')",
-            "   • Why Forensics Uses Non-Coding Regions:",
-            "     - Immune from natural selection pressure, accumulating vast hypervariable mutations across generations",
-            "     - Contains polymorphic Short Tandem Repeats (STRs: 2 to 6 base pair repeats)",
-            "     - Highly individualistic: Length polymorphisms generate unique individual profiles without revealing medical disease traits"
+          "cards": [
+            {
+              "badge": "GENOME STRUCTURE",
+              "theme": "cyan",
+              "icon": "🧬",
+              "title": "Nuclear DNA & Double Helix",
+              "items": [
+                "3.2 Billion base pairs packaged into 23 pairs of chromosomes",
+                "Identical in all nucleated cells (blood, semen, saliva, bone, hair root)",
+                "Only ~1-2% codes for functional proteins (Exons / Coding Genes)"
+              ]
+            },
+            {
+              "badge": "FORENSIC GOLDMINE",
+              "theme": "amber",
+              "icon": "💎",
+              "title": "The >90% Non-Coding Silent Genome",
+              "items": [
+                ">90% consists of non-coding intronic sequences ('Silent DNA')",
+                "Free from evolutionary selection pressure → high hypervariable mutations",
+                "Harbors Short Tandem Repeats (STRs: 2-6 bp polymorphic repeats)",
+                "Individual length variation without revealing private disease traits"
+              ]
+            }
           ]
         },
         "images": [
@@ -1103,17 +1267,30 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "The Standard 16 Forensic Loci & The Amelogenin Sex Marker",
         "content": {
-          "bullets": [
-            "1. Standard Forensic Multiplex (The 16-Loci System):",
-            "   • 15 Autosomal STR Loci: Spread across different non-homologous chromosomes (e.g. D8S1179, D21S11, D18S51, vWA, FGA, TH01)",
-            "   • Under Hardy-Weinberg equilibrium, multiplying allele frequencies yields match probability < 1 in 10^15",
-            "2. The 16th Locus: Amelogenin (Sex Determination Gene):",
-            "   • Gene codes for tooth enamel protein; located on both X and Y chromosomes",
-            "   • Structural Difference: X-chromosome amelogenin has a 6-base-pair deletion compared to Y-chromosome amelogenin",
-            "   • Electropherogram Peak Interpretation:",
-            "     - Female (XX): Single peak at 106 bp (homozygous for X)",
-            "     - Male (XY): Two distinct peaks at 106 bp and 112 bp (heterozygous for X and Y)",
-            "Forensic Utility: Instantly identifies sex from minute blood drops, bone dust, or sexual assault swabs"
+          "cards": [
+            {
+              "badge": "15 AUTOSOMAL LOCI",
+              "theme": "cyan",
+              "icon": "🔬",
+              "title": "Core STR Multiplex System",
+              "items": [
+                "15 STR loci spread across non-homologous autosomes (D8S1179, vWA, FGA...)",
+                "Hardy-Weinberg allele multiplication yields random match < 1 in 10^15",
+                "Accepted by international databases (CODIS, Interpol, Egyptian Forensics)"
+              ]
+            },
+            {
+              "badge": "16TH LOCUS: AMELOGENIN",
+              "theme": "emerald",
+              "icon": "⚧",
+              "title": "Genetic Sex-Typing Marker",
+              "items": [
+                "Amelogenin gene located on both X and Y chromosomes (tooth enamel)",
+                "X-chromosome has a 6-base-pair deletion compared to Y-chromosome",
+                "Female (XX): Single peak at 106 bp (homozygous)",
+                "Male (XY): Two peaks at 106 bp and 112 bp (heterozygous)"
+              ]
+            }
           ]
         },
         "images": [
@@ -1173,55 +1350,46 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "notes": "الـ Y-STR للذكور وقضايا الاغتصاب المتعدد، والـ mtDNA للأنساب من جهة الأم وخصلات الشعر بدون جذر."
       },
       {
-        "type": "table",
+        "type": "concept",
         "title": "The 6 Standard Steps of DNA Typing: From Crime Scene to Profile",
         "content": {
-          "headers": [
-            "Step Number",
-            "Laboratory Procedure",
-            "Technical Method / Equipment",
-            "Key Precautions / Objectives"
-          ],
-          "rows": [
-            [
-              "Step 1: Collection",
-              "Gathering biological evidence at scene",
-              "Sterile swabs, forceps, paper envelopes",
-              "Strict chain of custody; avoid plastic bags (mold growth)"
-            ],
-            [
-              "Step 2: Preservation",
-              "Transport and biological storage",
-              "Dry preservation; freezing at -20°C to -80°C",
-              "Prevents enzymatic nuclease degradation & bacterial decay"
-            ],
-            [
-              "Step 3: Extraction",
-              "Isolating pure DNA from cellular matrix",
-              "Organic (Phenol-Chloroform) or Chelex / Silica columns",
-              "Lyses cell membranes, removes proteins and PCR inhibitors"
-            ],
-            [
-              "Step 4: PCR Amplification",
-              "Enzymatic exponential replication",
-              "Thermal cycler (Taq polymerase, primers, dNTPs)",
-              "Amplifies target 16 STR loci millions of times from picograms"
-            ],
-            [
-              "Step 5: Electrophoresis",
-              "Separation of STR fragments by size",
-              "Capillary electrophoresis with polymer matrix",
-              "Sizing fragments down to single base-pair resolution"
-            ],
-            [
-              "Step 6: Detection",
-              "Laser excitation & profile generation",
-              "Fluorescent CCD camera & GeneMapper software",
-              "Generates electropherogram peaks showing STR alleles"
-            ]
-          ],
-          "extra_bullets": [
-            "Official Textbook Step Sequence: Collection → Preservation → Extraction → Amplification → Separation → Detection."
+          "flowchart": [
+            {
+              "step": "STEP 1",
+              "icon": "🧪",
+              "title": "1. Collection",
+              "desc": "Sterile swabbing, packaging in paper envelopes; strict chain of custody"
+            },
+            {
+              "step": "STEP 2",
+              "icon": "❄️",
+              "title": "2. Preservation",
+              "desc": "Freezing at -20°C to -80°C to prevent nuclease enzymatic decay"
+            },
+            {
+              "step": "STEP 3",
+              "icon": "🧬",
+              "title": "3. Extraction",
+              "desc": "Organic Phenol-Chloroform or Chelex/Silica to isolate pure DNA"
+            },
+            {
+              "step": "STEP 4",
+              "icon": "⚡",
+              "title": "4. PCR Amplification",
+              "desc": "Thermal cycler exponentially copies 16 STR loci from picograms"
+            },
+            {
+              "step": "STEP 5",
+              "icon": "🔬",
+              "title": "5. Electrophoresis",
+              "desc": "Capillary electrophoresis separates STR fragments by base-pair size"
+            },
+            {
+              "step": "STEP 6",
+              "icon": "📸",
+              "title": "6. Laser Detection",
+              "desc": "Fluorescent CCD camera generates electropherogram allele profile"
+            }
           ]
         },
         "images": [
@@ -1236,16 +1404,29 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "type": "concept",
         "title": "Medico-Legal Applications of DNA Profiling in Civil & Criminal Law",
         "content": {
-          "bullets": [
-            "1. Criminal Investigation & Forensic Casework:",
-            "   • Linking suspect biological traces (blood, semen, saliva, skin cells) to crime scenes",
-            "   • Exonerating falsely accused innocent suspects (cold case reviews & innocence projects)",
-            "2. Mass Disasters & Skeletonized Remains Identification:",
-            "   • Identifying victims of airplane crashes, fires, wars, and tsunamis by matching against family reference profiles",
-            "3. Disputed Parentage (Paternity & Maternity Testing):",
-            "   • Genetic Principle: A child inherits exactly 50% of autosomal alleles from mother and 50% from biological father",
-            "   • Rule of Exclusion: If a child possesses an obligate paternal allele absent in the alleged father across 2 or more loci, paternity is EXCLUDED 100%!",
-            "   • Rule of Inclusion: If the alleged father possesses all obligate paternal alleles across all 15 STR loci, paternity is PROVEN with statistical probability > 99.999%"
+          "cards": [
+            {
+              "badge": "CRIMINAL & DISASTER",
+              "theme": "rose",
+              "icon": "⚖️",
+              "title": "Forensic Casework & Disaster ID",
+              "items": [
+                "Suspect Identification: Matching biological crime scene stains to suspects",
+                "Innocence Exoneration: Exonerating falsely accused innocent individuals",
+                "Mass Disasters: Identifying victims of crashes, explosions, and tsunamis"
+              ]
+            },
+            {
+              "badge": "PATERNITY TESTING",
+              "theme": "emerald",
+              "icon": "👶",
+              "title": "Disputed Parentage Genetic Rules",
+              "items": [
+                "Rule of Inheritance: Child inherits exactly 50% alleles from biological father",
+                "Rule of Exclusion (100%): Paternal allele absent in alleged father excludes him 100%!",
+                "Rule of Inclusion (>99.999%): Sharing all obligate alleles proves paternity >99.999%"
+              ]
+            }
           ]
         },
         "images": [
@@ -3013,7 +3194,7 @@ const defaultTrack = (initialUrlTrack === 'must' || (!initialUrlTrack && initial
 
 
 // ── BUILD VERSION CACHE BUSTER ──
-const SLIDES_BUILD_VERSION = '2026-11-17-v3-academic';
+const SLIDES_BUILD_VERSION = '2026-11-17-v4-visual-pro';
 if (localStorage.getItem('medduo_slides_version') !== SLIDES_BUILD_VERSION) {
   for (let ep = 0; ep < 10; ep++) {
     localStorage.removeItem(`medduo_slides_edits_ain_shams_${ep}`);
@@ -3366,14 +3547,14 @@ function buildCardsGrid(cardsData) {
     const card = document.createElement('div');
     const theme = c.theme || 'cyan';
     card.className = `visual-card theme-${theme}`;
-    const itemsHTML = (c.items || []).map(it => `<li>${escHtml(it)}</li>`).join('');
-    const highlightHTML = c.highlight ? `<div class="card-highlight">${escHtml(c.highlight)}</div>` : '';
+    const itemsHTML = (c.items || []).map(it => `<li contenteditable="true" title="Click to edit item">${escHtml(it)}</li>`).join('');
+    const highlightHTML = c.highlight ? `<div class="card-highlight" contenteditable="true">${escHtml(c.highlight)}</div>` : '';
     card.innerHTML = `
       <div class="card-top">
         <span class="card-badge">${escHtml(c.badge || '')}</span>
         <span class="card-icon">${escHtml(c.icon || '📌')}</span>
       </div>
-      <div class="card-title">${escHtml(c.title || '')}</div>
+      <div class="card-title" contenteditable="true" title="Click to edit title">${escHtml(c.title || '')}</div>
       <ul class="card-items">${itemsHTML}</ul>
       ${highlightHTML}
     `;
@@ -3633,6 +3814,32 @@ function buildSlideCard(slide, idx, slides) {
     if (!btn) return;
     const action = btn.dataset.action;
     if (action === 'save') {
+      // Sync any direct contenteditable changes back into slide data
+      const currentSlide = slides[state.slideIdx];
+      const cardEl = document.getElementById('slide-card');
+      if (currentSlide && cardEl) {
+        if (currentSlide.content && currentSlide.content.cards) {
+          const vCards = cardEl.querySelectorAll('.visual-card');
+          vCards.forEach((vc, ci) => {
+            if (currentSlide.content.cards[ci]) {
+              const tEl = vc.querySelector('.card-title');
+              if (tEl) currentSlide.content.cards[ci].title = tEl.textContent.trim();
+              const items = Array.from(vc.querySelectorAll('.card-items li')).map(li => li.textContent.trim()).filter(Boolean);
+              if (items.length) currentSlide.content.cards[ci].items = items;
+            }
+          });
+        } else if (currentSlide.content && currentSlide.content.flowchart) {
+          const fNodes = cardEl.querySelectorAll('.flow-node');
+          fNodes.forEach((fn, ni) => {
+            if (currentSlide.content.flowchart[ni]) {
+              const tEl = fn.querySelector('.flow-node-title');
+              if (tEl) currentSlide.content.flowchart[ni].title = tEl.textContent.trim();
+              const dEl = fn.querySelector('.flow-node-desc');
+              if (dEl) currentSlide.content.flowchart[ni].desc = dEl.textContent.trim();
+            }
+          });
+        }
+      }
       saveEpSlides(state.epIdx, slides);
       showToast('✓ All changes saved to localStorage!');
     }
@@ -4153,7 +4360,6 @@ function startEdit(idx) {
   body.appendChild(titleInput);
 
   if (slide.type === 'quiz') {
-    // Question
     const qLabel = document.createElement('label');
     qLabel.className = 'edit-label';
     qLabel.textContent = 'Question';
@@ -4162,7 +4368,7 @@ function startEdit(idx) {
     qTA.value = content.question || '';
     body.appendChild(qLabel);
     body.appendChild(qTA);
-    // Answer
+
     const aLabel = document.createElement('label');
     aLabel.className = 'edit-label';
     aLabel.textContent = 'Answer';
@@ -4199,13 +4405,11 @@ function startEdit(idx) {
     });
 
   } else if (content.rows) {
-    // Table: make cells contenteditable
     const tLabel = document.createElement('label');
     tLabel.className = 'edit-label';
-    tLabel.textContent = 'Table (cells are editable)';
+    tLabel.textContent = 'Table (cells are editable in-place)';
     body.appendChild(tLabel);
     const tbl = buildTable(content);
-    // Make all cells editable
     tbl.querySelectorAll('td').forEach(td => {
       td.setAttribute('contenteditable', 'true');
       td.style.minWidth = '60px';
@@ -4216,42 +4420,16 @@ function startEdit(idx) {
     });
     body.appendChild(tbl);
 
-    if (content.bullets) {
-      const bLabel = document.createElement('label');
-      bLabel.className = 'edit-label';
-      bLabel.textContent = 'Additional bullets (one per line)';
-      const bTA = document.createElement('textarea');
-      bTA.className = 'edit-textarea';
-      bTA.value = (content.bullets || []).join('\n');
-      body.appendChild(bLabel);
-      body.appendChild(bTA);
-    }
+    let ebTA = null;
     if (content.extra_bullets) {
       const ebLabel = document.createElement('label');
       ebLabel.className = 'edit-label';
       ebLabel.textContent = 'Extra bullets (one per line)';
-      const ebTA = document.createElement('textarea');
+      ebTA = document.createElement('textarea');
       ebTA.className = 'edit-textarea';
       ebTA.value = (content.extra_bullets || []).join('\n');
       body.appendChild(ebLabel);
       body.appendChild(ebTA);
-
-      addEditActions(body, () => {
-        slide.title = titleInput.value;
-        // Collect table headers/rows from DOM
-        const headers = Array.from(tbl.querySelectorAll('th')).map(th => th.textContent.trim());
-        const rows = Array.from(tbl.querySelectorAll('tbody tr')).map(tr =>
-          Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim())
-        );
-        const newContent = { headers, rows, extra_bullets: ebTA.value.split('\n') };
-        if (content.bullets) newContent.bullets = body.querySelector('.edit-textarea[data-role=bullets]') ?
-          body.querySelector('.edit-textarea[data-role=bullets]').value.split('\n') : content.bullets;
-        slide.content = newContent;
-        slides[idx] = slide;
-        saveEpSlides(state.epIdx, slides);
-        renderSlide();
-      });
-      return;
     }
 
     addEditActions(body, () => {
@@ -4261,14 +4439,124 @@ function startEdit(idx) {
         Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim())
       );
       const newContent = { headers, rows };
-      if (content.bullets) newContent.bullets = content.bullets;
+      if (ebTA) newContent.extra_bullets = ebTA.value.split('\n').map(s => s.trim()).filter(Boolean);
+      if (content.trap) newContent.trap = content.trap;
       slide.content = newContent;
       slides[idx] = slide;
       saveEpSlides(state.epIdx, slides);
       renderSlide();
     });
 
-  } else if (content.bullets) {
+  } else if (content.cards && content.cards.length) {
+    // ── CARDS VISUAL EDITOR ──
+    const cardsLabel = document.createElement('label');
+    cardsLabel.className = 'edit-label';
+    cardsLabel.textContent = 'Visual Cards Editor (Title, Badge & Items):';
+    body.appendChild(cardsLabel);
+
+    const cardsContainer = document.createElement('div');
+    cardsContainer.style.cssText = 'display:flex;flex-direction:column;gap:12px;margin:10px 0;';
+
+    content.cards.forEach((c, ci) => {
+      const cBox = document.createElement('div');
+      cBox.style.cssText = 'background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:8px;padding:12px;';
+      cBox.innerHTML = `
+        <div style="font-weight:700;color:#0284C7;margin-bottom:6px;">Card ${ci + 1}: ${escHtml(c.title || '')}</div>
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+          <input class="edit-input card-title-in" value="${escHtml(c.title || '')}" placeholder="Card Title" style="flex:2;" />
+          <input class="edit-input card-badge-in" value="${escHtml(c.badge || '')}" placeholder="Badge" style="flex:1;" />
+          <input class="edit-input card-icon-in" value="${escHtml(c.icon || '📌')}" placeholder="Icon" style="width:50px;text-align:center;" />
+        </div>
+        <label class="edit-label">Card Items (one per line):</label>
+        <textarea class="edit-textarea card-items-ta" style="min-height:70px;">${(c.items || []).join('\n')}</textarea>
+      `;
+      cardsContainer.appendChild(cBox);
+    });
+    body.appendChild(cardsContainer);
+
+    let trapTA = null;
+    if (content.trap) {
+      const trLabel = document.createElement('label');
+      trLabel.className = 'edit-label';
+      trLabel.textContent = '⚠️ Exam Trap Description:';
+      trapTA = document.createElement('textarea');
+      trapTA.className = 'edit-textarea';
+      trapTA.value = content.trap.desc || '';
+      body.appendChild(trLabel);
+      body.appendChild(trapTA);
+    }
+
+    addEditActions(body, () => {
+      slide.title = titleInput.value;
+      const cBoxes = cardsContainer.querySelectorAll('div[style*="padding:12px"]');
+      const updatedCards = [];
+      cBoxes.forEach((box, ci) => {
+        const titleVal = box.querySelector('.card-title-in').value.trim();
+        const badgeVal = box.querySelector('.card-badge-in').value.trim();
+        const iconVal = box.querySelector('.card-icon-in').value.trim();
+        const itemsVal = box.querySelector('.card-items-ta').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const origTheme = content.cards[ci] ? content.cards[ci].theme : 'cyan';
+        updatedCards.push({
+          badge: badgeVal,
+          theme: origTheme,
+          icon: iconVal,
+          title: titleVal,
+          items: itemsVal
+        });
+      });
+      const newContent = Object.assign({}, slide.content, { cards: updatedCards });
+      if (trapTA) newContent.trap = Object.assign({}, content.trap, { desc: trapTA.value.trim() });
+      slide.content = newContent;
+      slides[idx] = slide;
+      saveEpSlides(state.epIdx, slides);
+      renderSlide();
+    });
+
+  } else if (content.flowchart && content.flowchart.length) {
+    // ── FLOWCHART VISUAL EDITOR ──
+    const flowLabel = document.createElement('label');
+    flowLabel.className = 'edit-label';
+    flowLabel.textContent = 'Pipeline Flowchart Editor:';
+    body.appendChild(flowLabel);
+
+    const flowContainer = document.createElement('div');
+    flowContainer.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin:10px 0;';
+
+    content.flowchart.forEach((node, ni) => {
+      const fBox = document.createElement('div');
+      fBox.style.cssText = 'background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:8px;padding:10px;';
+      fBox.innerHTML = `
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input class="edit-input flow-step-in" value="${escHtml(node.step || '')}" placeholder="Step (e.g. STEP 1)" style="width:100px;" />
+          <input class="edit-input flow-icon-in" value="${escHtml(node.icon || '📌')}" placeholder="Icon" style="width:50px;text-align:center;" />
+          <input class="edit-input flow-title-in" value="${escHtml(node.title || '')}" placeholder="Node Title" style="flex:1;" />
+        </div>
+        <input class="edit-input flow-desc-in" value="${escHtml(node.desc || '')}" placeholder="Description" />
+      `;
+      flowContainer.appendChild(fBox);
+    });
+    body.appendChild(flowContainer);
+
+    addEditActions(body, () => {
+      slide.title = titleInput.value;
+      const fBoxes = flowContainer.querySelectorAll('div[style*="padding:10px"]');
+      const updatedFlow = [];
+      fBoxes.forEach(box => {
+        updatedFlow.push({
+          step: box.querySelector('.flow-step-in').value.trim(),
+          icon: box.querySelector('.flow-icon-in').value.trim(),
+          title: box.querySelector('.flow-title-in').value.trim(),
+          desc: box.querySelector('.flow-desc-in').value.trim()
+        });
+      });
+      slide.content = Object.assign({}, slide.content, { flowchart: updatedFlow });
+      slides[idx] = slide;
+      saveEpSlides(state.epIdx, slides);
+      renderSlide();
+    });
+
+  } else {
+    // Bullets or general slide
     const bLabel = document.createElement('label');
     bLabel.className = 'edit-label';
     bLabel.textContent = 'Bullets (one per line, leading spaces = sub-bullet)';
@@ -4280,32 +4568,14 @@ function startEdit(idx) {
 
     addEditActions(body, () => {
       slide.title = titleInput.value;
-      slide.content = { bullets: bTA.value.split('\n') };
-      slides[idx] = slide;
-      saveEpSlides(state.epIdx, slides);
-      renderSlide();
-    });
-
-  } else {
-    // title type, bullets or general slide
-    const bLabel = document.createElement('label');
-    bLabel.className = 'edit-label';
-    bLabel.textContent = 'Slide Points / Bullets (one per line, leading spaces = sub-bullet)';
-    const bTA = document.createElement('textarea');
-    bTA.className = 'edit-textarea';
-    bTA.value = (content.bullets || []).join('\n');
-    body.appendChild(bLabel);
-    body.appendChild(bTA);
-
-    addEditActions(body, () => {
-      slide.title = titleInput.value;
-      slide.content = Object.assign({}, slide.content, { bullets: bTA.value.split('\n') });
+      slide.content = Object.assign({}, slide.content, { bullets: bTA.value.split('\n').map(s => s.trim()).filter(Boolean) });
       slides[idx] = slide;
       saveEpSlides(state.epIdx, slides);
       renderSlide();
     });
   }
 }
+
 
 function addEditActions(container, onSave) {
   const actDiv = document.createElement('div');
@@ -4806,6 +5076,24 @@ function buildCleanSlideSheet(slide, idx, totalSlides, epIdx) {
     });
     bulletsHTML += '</div>';
     contentCol.innerHTML = bulletsHTML;
+  } else {
+    // VISUAL RICH COMPONENTS FOR PDF / PRINT
+    let visualHTML = '';
+    if (content.flowchart && content.flowchart.length) {
+      visualHTML += buildFlowchartHTML(content.flowchart);
+    }
+    if (content.cards && content.cards.length) {
+      visualHTML += buildCardsGridHTML(content.cards);
+    }
+    if (content.timeline && content.timeline.length) {
+      visualHTML += buildTimelineHTML(content.timeline);
+    }
+    if (content.trap) {
+      visualHTML += buildTrapBoxHTML(content.trap);
+    }
+    if (visualHTML) {
+      contentCol.innerHTML = visualHTML;
+    }
   }
 
   body.appendChild(contentCol);
@@ -5036,6 +5324,181 @@ function exportEpisodePPT() {
           fontSize: calcFontSize, fontFace: 'Courier New', color: '38BDF8', fill: '0F172A',
           margin: 10, valign: 'top', wrap: true
         });
+      }
+      // Render Cards Slide
+      else if (content.cards && content.cards.length) {
+        const count = content.cards.length;
+        if (count === 2) {
+          const cardW = (totalW - 0.4) / 2;
+          const cardH = content.trap ? 3.6 : 5.0;
+          content.cards.forEach((card, ci) => {
+            const cardX = 0.8 + ci * (cardW + 0.4);
+            const theme = card.theme || 'cyan';
+            let borderColor = '0284C7';
+            if (theme === 'amber') borderColor = 'F59E0B';
+            else if (theme === 'emerald') borderColor = '10B981';
+            else if (theme === 'rose') borderColor = 'F43F5E';
+
+            s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+              x: cardX, y: contentStartY, w: cardW, h: cardH,
+              fill: { color: 'F8FAFC' }, line: { color: borderColor, width: 2 }
+            });
+            s.addText(`${card.badge ? '[' + card.badge + '] ' : ''}${card.title}`, {
+              x: cardX + 0.15, y: contentStartY + 0.15, w: cardW - 0.3, h: 0.55,
+              fontSize: 12, bold: true, color: borderColor, fontFace: 'Calibri'
+            });
+            const items = (card.items || []).map((it, ii) => ({
+              text: it,
+              options: {
+                bullet: true,
+                breakLine: ii < card.items.length - 1,
+                fontSize: 10,
+                color: '1E293B',
+                fontFace: 'Calibri',
+                lineSpacing: 16
+              }
+            }));
+            s.addText(items, {
+              x: cardX + 0.15, y: contentStartY + 0.75, w: cardW - 0.3, h: cardH - 0.9,
+              valign: 'top', fontFace: 'Calibri'
+            });
+          });
+        } else if (count === 3) {
+          const cardW = (totalW - 0.5) / 3;
+          const cardH = content.trap ? 3.6 : 5.0;
+          content.cards.forEach((card, ci) => {
+            const cardX = 0.8 + ci * (cardW + 0.25);
+            const theme = card.theme || 'cyan';
+            let borderColor = '0284C7';
+            if (theme === 'amber') borderColor = 'F59E0B';
+            else if (theme === 'emerald') borderColor = '10B981';
+            else if (theme === 'rose') borderColor = 'F43F5E';
+
+            s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+              x: cardX, y: contentStartY, w: cardW, h: cardH,
+              fill: { color: 'F8FAFC' }, line: { color: borderColor, width: 2 }
+            });
+            s.addText(`${card.badge ? '[' + card.badge + '] ' : ''}${card.title}`, {
+              x: cardX + 0.12, y: contentStartY + 0.15, w: cardW - 0.24, h: 0.55,
+              fontSize: 11, bold: true, color: borderColor, fontFace: 'Calibri'
+            });
+            const items = (card.items || []).map((it, ii) => ({
+              text: it,
+              options: {
+                bullet: true,
+                breakLine: ii < card.items.length - 1,
+                fontSize: 9.5,
+                color: '1E293B',
+                fontFace: 'Calibri',
+                lineSpacing: 14
+              }
+            }));
+            s.addText(items, {
+              x: cardX + 0.12, y: contentStartY + 0.75, w: cardW - 0.24, h: cardH - 0.9,
+              valign: 'top', fontFace: 'Calibri'
+            });
+          });
+        } else if (count >= 4) {
+          const cardW = (totalW - 0.3) / 2;
+          const cardH = 2.35;
+          content.cards.slice(0, 4).forEach((card, ci) => {
+            const col = ci % 2;
+            const row = Math.floor(ci / 2);
+            const cardX = 0.8 + col * (cardW + 0.3);
+            const cardY = contentStartY + row * (cardH + 0.2);
+            const theme = card.theme || 'cyan';
+            let borderColor = '0284C7';
+            if (theme === 'amber') borderColor = 'F59E0B';
+            else if (theme === 'emerald') borderColor = '10B981';
+            else if (theme === 'rose') borderColor = 'F43F5E';
+
+            s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+              x: cardX, y: cardY, w: cardW, h: cardH,
+              fill: { color: 'F8FAFC' }, line: { color: borderColor, width: 1.5 }
+            });
+            s.addText(`${card.badge ? '[' + card.badge + '] ' : ''}${card.title}`, {
+              x: cardX + 0.12, y: cardY + 0.1, w: cardW - 0.24, h: 0.45,
+              fontSize: 10.5, bold: true, color: borderColor, fontFace: 'Calibri'
+            });
+            const items = (card.items || []).map((it, ii) => ({
+              text: it,
+              options: {
+                bullet: true,
+                breakLine: ii < card.items.length - 1,
+                fontSize: 9,
+                color: '334155',
+                fontFace: 'Calibri',
+                lineSpacing: 13
+              }
+            }));
+            s.addText(items, {
+              x: cardX + 0.12, y: cardY + 0.55, w: cardW - 0.24, h: cardH - 0.65,
+              valign: 'top', fontFace: 'Calibri'
+            });
+          });
+        }
+
+        if (content.trap) {
+          const trapY = contentStartY + (count >= 4 ? 4.9 : 3.8);
+          s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: 0.8, y: trapY, w: totalW, h: 1.15,
+            fill: { color: 'FFFBEB' }, line: { color: 'F59E0B', width: 2 }
+          });
+          s.addText(`⚠️ AIN SHAMS EXAM TRAP: ${content.trap.title}\n${content.trap.desc}`, {
+            x: 0.95, y: trapY + 0.1, w: totalW - 0.3, h: 0.95,
+            fontSize: 10, bold: true, color: '92400E', fontFace: 'Calibri'
+          });
+        }
+      }
+      // Render Flowchart Slide
+      else if (content.flowchart && content.flowchart.length) {
+        const count = content.flowchart.length;
+        if (count <= 4) {
+          const nodeW = (totalW - (count - 1) * 0.35) / count;
+          const nodeH = 4.8;
+          content.flowchart.forEach((node, ni) => {
+            const nodeX = 0.8 + ni * (nodeW + 0.35);
+            s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+              x: nodeX, y: contentStartY, w: nodeW, h: nodeH,
+              fill: { color: 'F0F9FF' }, line: { color: '0284C7', width: 1.5 }
+            });
+            s.addText(`${node.step}\n\n${node.title}\n\n${node.desc}`, {
+              x: nodeX + 0.1, y: contentStartY + 0.15, w: nodeW - 0.2, h: nodeH - 0.3,
+              fontSize: 10.5, color: '0F172A', fontFace: 'Calibri', align: 'center', valign: 'top'
+            });
+            if (ni < count - 1) {
+              s.addShape(pptx.shapes.RIGHT_ARROW, {
+                x: nodeX + nodeW + 0.05, y: contentStartY + 2.2, w: 0.25, h: 0.2,
+                fill: { color: '94A3B8' }, line: { color: '94A3B8' }
+              });
+            }
+          });
+        } else {
+          const cols = Math.ceil(count / 2);
+          const nodeW = (totalW - (cols - 1) * 0.3) / cols;
+          const nodeH = 2.3;
+          content.flowchart.forEach((node, ni) => {
+            const col = ni % cols;
+            const row = Math.floor(ni / cols);
+            const nodeX = 0.8 + col * (nodeW + 0.3);
+            const nodeY = contentStartY + row * (nodeH + 0.35);
+
+            s.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+              x: nodeX, y: nodeY, w: nodeW, h: nodeH,
+              fill: { color: 'F0F9FF' }, line: { color: '0284C7', width: 1.5 }
+            });
+            s.addText(`${node.step}: ${node.title}\n${node.desc}`, {
+              x: nodeX + 0.1, y: nodeY + 0.1, w: nodeW - 0.2, h: nodeH - 0.2,
+              fontSize: 9.5, color: '0F172A', fontFace: 'Calibri', valign: 'top'
+            });
+            if (col < cols - 1 && ni < count - 1) {
+              s.addShape(pptx.shapes.RIGHT_ARROW, {
+                x: nodeX + nodeW + 0.05, y: nodeY + 1.0, w: 0.2, h: 0.16,
+                fill: { color: '94A3B8' }, line: { color: '94A3B8' }
+              });
+            }
+          });
+        }
       }
       // Render Bullets Slide
       else if (content.bullets && content.bullets.length) {
