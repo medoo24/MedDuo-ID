@@ -41,6 +41,15 @@
 
       <!-- Controls (right in RTL = end) -->
       <div class="header-controls">
+        <a href="../slides-site/" id="btn-goto-slides" class="ctrl-btn portal-link" title="انتقل إلى منصة السلايدات والشرائح">
+          <span class="icon">📊</span>
+          <span class="label">السلايدات</span>
+        </a>
+        <a href="../index.html" class="ctrl-btn portal-link" title="العودة للبوابة الرئيسية">
+          <span class="icon">🏠</span>
+          <span class="label">الرئيسية</span>
+        </a>
+
         <button id="btn-reading-mode" class="ctrl-btn" title="وضع القراءة">
           <span class="icon">📖</span>
           <span class="label">قراءة</span>
@@ -60,6 +69,18 @@
       <div class="grid-header">
         <h2 class="grid-title">الحلقات</h2>
         <p class="grid-subtitle">بودكاست الطب الشرعي بلا عُقَد – اضغط على أي حلقة للاستماع والقراءة والتعديل</p>
+
+                <!-- University Track Switcher -->
+        <div class="track-switcher" id="track-switcher">
+          <button class="track-tab active" id="tab-ain-shams" data-track="ain_shams" title="منهج طب عين شمس — 3 حلقات">
+            <span class="track-icon">🏛️</span>
+            <span class="track-name">Ain_shams-ID&DNA</span>
+          </button>
+          <button class="track-tab" id="tab-must" data-track="must" title="سلسلة كود العظام — جامعة مصر — 8 حلقات">
+            <span class="track-icon">🦴</span>
+            <span class="track-name">MUST-ID</span>
+          </button>
+        </div>
 
         <!-- Global Collaborative Tools Bar -->
         <div class="grid-tools-bar">

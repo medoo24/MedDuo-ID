@@ -1183,3 +1183,21 @@ table { border-collapse: collapse; width: 100%; }
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.podcast-nav-link {
+  text-decoration: none;
+  color: var(--cyan) !important;
+  border-color: var(--cyan) !important;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+}
+.podcast-nav-link:hover {
+  background: var(--cyan) !important;
+  color: #fff !important;
+}
+.portal-home-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}

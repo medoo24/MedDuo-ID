@@ -2716,6 +2716,11 @@ function updateActiveTrack(newTrack, skipHistory = false) {
   localStorage.setItem('medduo_selected_track', state.track);
   window.SLIDES_DATA = (state.track === 'must') ? window.MUST_SLIDES_DATA : window.AIN_SHAMS_SLIDES_DATA;
 
+  const btnGotoPodcast = document.getElementById('btn-goto-podcast');
+  if (btnGotoPodcast) {
+    btnGotoPodcast.href = `../podcast-site/?track=${state.track}`;
+  }
+
   // Update tabs UI
   const tabAin = document.getElementById('tab-ain-shams');
   const tabMust = document.getElementById('tab-must');
