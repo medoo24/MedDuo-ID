@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MedDuo — كود العظام | The Bone Code Portal</title>
+  <title>MedDuo — البوابة الطبية الشرعية | Forensic Medicine Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -11,6 +11,8 @@
     :root {
       --cyan: #4DD9E8;
       --pink: #F28CB1;
+      --gold: #F59E0B;
+      --emerald: #10B981;
       --bg: #0F172A;
       --card-bg: #1E293B;
       --card-border: #334155;
@@ -40,21 +42,21 @@
     /* Ambient Glow */
     .glow-cyan {
       position: fixed;
-      width: 450px;
-      height: 450px;
+      width: 500px;
+      height: 500px;
       background: radial-gradient(circle, rgba(77, 217, 232, 0.12) 0%, transparent 70%);
-      top: -100px;
-      right: -100px;
+      top: -120px;
+      right: -120px;
       pointer-events: none;
       z-index: 0;
     }
     .glow-pink {
       position: fixed;
-      width: 450px;
-      height: 450px;
+      width: 500px;
+      height: 500px;
       background: radial-gradient(circle, rgba(242, 140, 177, 0.12) 0%, transparent 70%);
-      bottom: -100px;
-      left: -100px;
+      bottom: -120px;
+      left: -120px;
       pointer-events: none;
       z-index: 0;
     }
@@ -62,7 +64,7 @@
     .container {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 960px;
       width: 100%;
       text-align: center;
       margin: auto 0;
@@ -70,7 +72,7 @@
 
     /* Header */
     .logo-wrap {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .logo-img {
       width: 105px;
@@ -84,36 +86,171 @@
       transform: scale(1.05);
     }
 
+    .badge-wrap {
+      margin-bottom: 12px;
+    }
     .badge {
       display: inline-block;
-      padding: 5px 16px;
+      padding: 5px 18px;
       border-radius: 50px;
       background: rgba(77, 217, 232, 0.1);
       color: var(--cyan);
       border: 1px solid rgba(77, 217, 232, 0.3);
       font-size: 0.85rem;
       font-weight: 700;
-      margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
 
     h1 {
       font-size: 2.5rem;
       font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #FFFFFF 30%, var(--cyan) 80%, var(--pink) 100%);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #FFFFFF 25%, var(--cyan) 75%, var(--pink) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
-      margin-bottom: 36px;
-      max-width: 600px;
+      margin-bottom: 28px;
+      max-width: 650px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Track Selector */
+    .track-selector-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .track-selector {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .track-tab-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 14px 26px;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      min-width: 250px;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .track-tab-btn:hover {
+      border-color: rgba(77, 217, 232, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .track-tab-btn.active {
+      border-color: var(--cyan);
+      background: linear-gradient(180deg, rgba(77, 217, 232, 0.12) 0%, rgba(30, 41, 59, 0.95) 100%);
+      box-shadow: 0 0 25px rgba(77, 217, 232, 0.25), 0 10px 30px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .track-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      right: 15%;
+      height: 3px;
+      background: var(--cyan);
+      border-radius: 3px 3px 0 0;
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    .track-tab-code {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .track-tab-btn.active .track-tab-code {
+      color: var(--cyan);
+    }
+
+    .track-tab-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Track Detail Container */
+    .track-detail-box {
+      background: rgba(30, 41, 59, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 28px;
+      transition: all 0.3s ease;
+      text-align: right;
+    }
+
+    .track-detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .track-badge-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #FBBF24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .track-source-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      direction: ltr;
+    }
+
+    .track-curriculum-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .track-curriculum-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
@@ -121,14 +258,17 @@
     .portal-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 22px;
       margin-bottom: 30px;
     }
 
     @media (max-width: 768px) {
       .portal-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
+      }
+      .track-tab-btn {
+        min-width: 100%;
       }
       h1 { font-size: 2rem; }
     }
@@ -137,7 +277,7 @@
       background: var(--card-bg);
       border: 1.5px solid var(--card-border);
       border-radius: 20px;
-      padding: 32px 24px;
+      padding: 30px 24px;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -148,6 +288,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
 
     .portal-card::before {
@@ -170,32 +311,32 @@
     .card-slides:hover { border-color: var(--pink); }
 
     .card-icon {
-      font-size: 3rem;
-      margin-bottom: 16px;
+      font-size: 2.8rem;
+      margin-bottom: 14px;
       filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
     }
 
     .card-title {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .card-podcast .card-title { color: #E0F2FE; }
     .card-slides .card-title { color: #FCE7F3; }
 
     .card-en-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
 
     .card-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       flex-grow: 1;
     }
 
@@ -260,21 +401,52 @@
       <img src="Logo.jpg" alt="MedDuo Logo" class="logo-img" />
     </div>
 
-    <div class="badge">Forensic Medicine · كلية الطب</div>
-    <h1>كود العظام — MedDuo</h1>
+    <div class="badge-wrap">
+      <span class="badge">Forensic Medicine & Toxicology · البوابة الطبية الشرعية</span>
+    </div>
+    <h1>MedDuo — Forensic Hub</h1>
     <p class="subtitle">
-      سلسلة الاستعراف الطبي الشرعي (Identification) · اختر وجهتك للدخول إما للبودكاست الحواري المصري أو عارض السلايدات الأكاديمي
+      منصة الطب الشرعي والاستعراف التفاعلية لكليات الطب المصرية · اختر المسار الدراسي المطلوب لعرض البودكاست والسلايدات الخاصة به
     </p>
 
+    <!-- TRACK SELECTOR BUTTONS -->
+    <div class="track-selector-title">اختر مسار الكلية / المنهج:</div>
+    <div class="track-selector" role="tablist">
+      <!-- 1. Ain Shams Track -->
+      <button class="track-tab-btn active" id="tab-ainshams" role="tab" aria-selected="true" data-track="ain_shams">
+        <span class="track-tab-code">🏛️ Ain_shams-ID&DNA</span>
+        <span class="track-tab-sub">طب عين شمس · الاستعراف والبصمة الوراثية</span>
+      </button>
+
+      <!-- 2. MUST Track -->
+      <button class="track-tab-btn" id="tab-must" role="tab" aria-selected="false" data-track="must">
+        <span class="track-tab-code">🦴 MUST-ID</span>
+        <span class="track-tab-sub">جامعة مصر MUST · كود العظام (8 حلقات)</span>
+      </button>
+    </div>
+
+    <!-- DYNAMIC TRACK DETAIL BOX -->
+    <div class="track-detail-box" id="track-detail-box">
+      <div class="track-detail-header">
+        <span class="track-badge-pill" id="track-badge">🏛️ المنهج المعتمد — طب عين شمس</span>
+        <span class="track-source-tag" id="track-source">Source: 3_ID&DNA.pdf</span>
+      </div>
+      <div class="track-curriculum-title" id="track-title">Identification & DNA Typing — Ain Shams University</div>
+      <p class="track-curriculum-desc" id="track-desc">
+        منهج الاستعراف الطبي الشرعي والبصمة الوراثية المعتمد لطب عين شمس · الاستعراف المدني والجنائي (ساقط القيد، شبيه صدام)، أبعاد ودرزات الجمجمة (13-5-4 ومصيدة الزنوج)، الأسنان اللبنية والدائمة، والـ DNA وتطبيقاته.
+      </p>
+    </div>
+
+    <!-- ACTION CARDS (PODCAST & SLIDES) -->
     <div class="portal-grid">
       <!-- PODCAST CARD -->
-      <a href="podcast-site/" class="portal-card card-podcast">
+      <a href="podcast-site/?track=ain_shams" id="btn-portal-podcast" class="portal-card card-podcast">
         <div>
           <div class="card-icon">🎙️</div>
-          <div class="card-title">بودكاست كود العظام</div>
-          <div class="card-en-title">The Bone Code Podcast</div>
-          <p class="card-desc">
-            حوار مصري خفيف الدم بين د. طارق وعاطف · قضايا وألغاز جنائية حقيقية وتثبيت لأرقام الامتحان · قابل للتعديل والتحكم الكامل ووضع القراءة والتمرير الهادئ.
+          <div class="card-title" id="podcast-title">بودكاست الاستعراف والـ DNA</div>
+          <div class="card-en-title" id="podcast-subtitle">Ain Shams Forensic Podcast</div>
+          <p class="card-desc" id="podcast-desc">
+            حوار مصري خفيف ودسم بين د. طارق وعاطف · قضايا المستشفى، ساقط القيد، شبيه صدام، تفكيك أبعاد الجمجمة ومصائد امتحانات عين شمس بدقة أكاديمية بالغة.
           </p>
         </div>
         <div class="card-btn">
@@ -284,13 +456,13 @@
       </a>
 
       <!-- SLIDES CARD -->
-      <a href="slides-site/" class="portal-card card-slides">
+      <a href="slides-site/?track=ain_shams" id="btn-portal-slides" class="portal-card card-slides">
         <div>
           <div class="card-icon">📊</div>
-          <div class="card-title">سلايدات العرض الأكاديمي</div>
-          <div class="card-en-title">Academic Slides Deck</div>
-          <p class="card-desc">
-            عرض تقديمي أكاديمي إنجليزي لـ 8 حلقات · وضع Present بملء الشاشة مع زر (F) · تحميل فوري كـ PowerPoint (.pptx) و PDF · إضافة وتنسيق الصور ومقاطع الفيديو وأرشيف السلايدات.
+          <div class="card-title" id="slides-title">سلايدات العرض الأكاديمي</div>
+          <div class="card-en-title" id="slides-subtitle">Academic Slides & Diagrams</div>
+          <p class="card-desc" id="slides-desc">
+            سلايدات أكاديمية إنجليزية بالصور والرسومات وتصدير كامل كـ PowerPoint (.pptx) و PDF بصفحة كاملة بدون أخطاء وملاحظات المحاضر الرسمية.
           </p>
         </div>
         <div class="card-btn">
@@ -301,11 +473,100 @@
     </div>
 
     <footer>
-      <p>MedDuo Forensic Medicine Series · Made for Medical Students</p>
+      <p>MedDuo Forensic Medicine Series · Made for Medical Students across Egyptian Universities</p>
       <p style="margin-top: 6px;">
         <a href="https://github.com/medoo24/MedDuo-ID" target="_blank" rel="noopener">GitHub: medoo24/MedDuo-ID</a>
       </p>
     </footer>
   </div>
+
+  <script>
+    const TRACK_CONFIGS = {
+      ain_shams: {
+        badge: '🏛️ المنهج المعتمد — طب عين شمس',
+        source: 'Source: 3_ID&DNA.pdf',
+        title: 'Identification & DNA Typing — Ain Shams University',
+        desc: 'منهج الاستعراف الطبي الشرعي والبصمة الوراثية المعتمد لطب عين شمس · الاستعراف المدني والجنائي (ساقط القيد، فاقد الذاكرة، شبيه صدام)، أبعاد ودرزات الجمجمة (قاعدة 13-5-4 ومصيدة الزنوج 30 سنة)، ومراحل التسنين، وتحليل الـ DNA والبصمات.',
+        podcastLink: 'podcast-site/?track=ain_shams',
+        podcastTitle: 'بودكاست الاستعراف والـ DNA (عين شمس)',
+        podcastSubtitle: 'Ain Shams Forensic Podcast · 3_ID&DNA',
+        podcastDesc: 'حوار طبي شرعي مصري عالي المستوى بين د. طارق وعاطف · قضايا إثبات النسب، ساقط القيد، شبيه صدام، حساب أبعاد الرضيع ويافوخ الأصابع ومصائد امتحانات عين شمس.',
+        slidesLink: 'slides-site/?track=ain_shams',
+        slidesTitle: 'سلايدات الاستعراف والـ DNA (عين شمس)',
+        slidesSubtitle: 'Academic Slides Deck · 3_ID&DNA',
+        slidesDesc: 'عرض تقديمي أكاديمي شامل لمنهج عين شمس · أبعاد ودرزات الجمجمة، محطات العمر الجنائية، والـ DNA وتصدير فوري كـ PowerPoint و PDF بنقاء كامل.'
+      },
+      must: {
+        badge: '🦴 كود العظام — جامعة مصر MUST (8 حلقات)',
+        source: 'Source: MUST Forensic Modules (Ep 1-8)',
+        title: 'The Bone Code — MUST Forensic Medicine Series',
+        desc: 'سلسلة كود العظام الكاملة في 8 حلقات تفاعلية · طريقة د. شيرين للأشكال الهندسية، مراكز التعظم وقضية البرنس، عظام الحوض والخنق اللامي، وبصمات اليد والأسنان ومعادلات بيرسون.',
+        podcastLink: 'podcast-site/?track=must',
+        podcastTitle: 'بودكاست كود العظام (8 حلقات)',
+        podcastSubtitle: 'The Bone Code Podcast (MUST Track)',
+        podcastDesc: 'حوار مصري خفيف الدم وشديد الدقة بين د. طارق وعاطف · رحلة الـ 8 حلقات كاملة مع قضية البرنس وفحص الجثة المتفحمة وقضية المشنوق وتثبيت أرقام الامتحان.',
+        slidesLink: 'slides-site/?track=must',
+        slidesTitle: 'سلايدات كود العظام (8 حلقات)',
+        slidesSubtitle: 'Academic Slides Deck (MUST Track)',
+        slidesDesc: 'عرض تقديمي متكامل لـ 8 حلقات يضم 23 رسماً تشريحياً وجنائياً عالي الدقة · وضع العرض المسرحي (F) وتصدير رسمي كـ PowerPoint (.pptx) و PDF بجودة Retina.'
+      }
+    };
+
+    function applyTrack(trackKey) {
+      const cfg = TRACK_CONFIGS[trackKey] || TRACK_CONFIGS.ain_shams;
+      
+      // Update Tab buttons
+      document.querySelectorAll('.track-tab-btn').forEach(btn => {
+        const isTarget = btn.dataset.track === trackKey;
+        btn.classList.toggle('active', isTarget);
+        btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+      });
+
+      // Update Track Info Box
+      document.getElementById('track-badge').textContent = cfg.badge;
+      document.getElementById('track-source').textContent = cfg.source;
+      document.getElementById('track-title').textContent = cfg.title;
+      document.getElementById('track-desc').textContent = cfg.desc;
+
+      // Update Cards Links & Content
+      const pLink = document.getElementById('btn-portal-podcast');
+      pLink.href = cfg.podcastLink;
+      document.getElementById('podcast-title').textContent = cfg.podcastTitle;
+      document.getElementById('podcast-subtitle').textContent = cfg.podcastSubtitle;
+      document.getElementById('podcast-desc').textContent = cfg.podcastDesc;
+
+      const sLink = document.getElementById('btn-portal-slides');
+      sLink.href = cfg.slidesLink;
+      document.getElementById('slides-title').textContent = cfg.slidesTitle;
+      document.getElementById('slides-subtitle').textContent = cfg.slidesSubtitle;
+      document.getElementById('slides-desc').textContent = cfg.slidesDesc;
+
+      // Persist choice & URL hash
+      localStorage.setItem('medduo_selected_track', trackKey);
+      if (history.replaceState) {
+        history.replaceState(null, null, '#' + trackKey);
+      }
+    }
+
+    // Attach click handlers
+    document.querySelectorAll('.track-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyTrack(btn.dataset.track);
+      });
+    });
+
+    // Init from URL hash or localStorage or default to ain_shams
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      const saved = localStorage.getItem('medduo_selected_track');
+      if (hash && TRACK_CONFIGS[hash]) {
+        applyTrack(hash);
+      } else if (saved && TRACK_CONFIGS[saved]) {
+        applyTrack(saved);
+      } else {
+        applyTrack('ain_shams');
+      }
+    });
+  </script>
 </body>
 </html>
