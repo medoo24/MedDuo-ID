@@ -1,3 +1,6 @@
 Unlimited Memory/
 .git/
 *.tmp
+
+__pycache__/
+*.pyc
