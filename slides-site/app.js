@@ -53,1472 +53,1262 @@ window.AIN_SHAMS_SLIDES_DATA = [
         "title": "Personal Identification & The Skull — Living ID, Fontanels & Sutures",
         "content": {
           "bullets": [
-            "Faculty of Medicine, Ain Shams University · Chapter 3 (Pages 37–40, 42)",
-            "Episode 1 · Ain Shams Forensic Trilogy",
-            "Presented by Dr. Tarek (Forensic Consultant) & Dr. Atef (Resident)",
-            "Visual Learning Edition: Mindmaps, Flowcharts, Diagnostic Trees & Oral Exam Traps"
+            "Faculty of Medicine, Ain Shams University · Forensic Medicine Department",
+            "Chapter 3: Identification & DNA Typing (Pages 37–40, 42)",
+            "Core Foundations: Living ID Scenarios, 6-Step Protocol, Fontanelles, Sutures & Mandible",
+            "Presented by MedDuo Forensic Team"
           ]
         },
         "images": [],
-        "notes": "أهلاً بكم في النسخة المرئية المتقدمة لشبتر الاستعراف بطب عين شمس. تم تصميم الشرائح بخرائط ذهنية وتدفقات انسيابية لتسهيل الحفظ المتقن للامتحانات."
+        "notes": "أهلاً بكم في العرض التقديمي الأكاديمي الشامل لشبتر الاستعراف والجمجمة طبقاً لكتاب طب عين شمس."
       },
       {
-        "type": "case",
-        "title": "Case Investigation: The ICU Coma, Missing Heir & The Heliopolis Remains",
+        "type": "concept",
+        "title": "Medico-Legal Scenarios: 4 Cardinal Identification Challenges",
         "content": {
-          "cards": [
-            {
-              "badge": "CIVIL CASE 1",
-              "theme": "cyan",
-              "icon": "🏥",
-              "title": "مريض غيبوبة الدمرداش (ICU Coma)",
-              "items": [
-                "مسن في أواخر الستينيات استقبلته طوارئ الدمرداش في غيبوبة كاملة",
-                "مجهول الهوية وبدون أي أوراق ثبوتية (Unconscious patient)",
-                "الهدف: إثبات الهوية المدنية وإخطار ذويه والتحفظ على أملاكه"
-              ]
-            },
-            {
-              "badge": "CIVIL CASE 2",
-              "theme": "amber",
-              "icon": "📜",
-              "title": "نزاع ميراث ساقط قيد (Unregistered Heir)",
-              "items": [
-                "شاب يدعي أنه الابن المخطوف منذ 24 عاماً للرجل الثري",
-                "ساقط قيد رسمياً بدون شهادة ميلاد أو بطاقة رقم قومي",
-                "الهدف: إثبات البنوة والنسب الشرعي لاستحقاق التركة"
-              ]
-            },
-            {
-              "badge": "CRIMINAL CASE",
-              "theme": "rose",
-              "icon": "✈️",
-              "title": "قاصر المطار المزيف (Airport Impostor)",
-              "items": [
-                "متهم هارب ضبط بمطار القاهرة بجواز سفر وشهادة ميلاد مزورة",
-                "يدعي أنه حدث تحت 15 سنة للإفلات من عقوبة الإعدام والمؤبد",
-                "الهدف: تحديد العمر العظمي البيولوجي الحقيقي لمحاكمته"
-              ]
-            },
-            {
-              "badge": "SKELETAL CASE",
-              "theme": "emerald",
-              "icon": "⚰️",
-              "title": "رفات فيلا مصر الجديدة (Infant Remains)",
-              "items": [
-                "صندوق خشبي عثر عليه عمال الحفر يضم جمجمة رضيع وفك سفلي",
-                "المطلوب: هل ولد حياً أم سقط جنيناً؟ كم كان عمره عند الوفاة؟"
-              ]
-            }
+          "bullets": [
+            "1. Unidentified Living Coma Patient: Elderly ICU admission without civil documents requiring legal identity verification",
+            "2. Disputed Heirship / Unregistered Person: Claim of parenthood requiring biological and somatic verification",
+            "3. Disputed Minor Age in Criminal Offenses: Accused claiming juvenile status (<15y) to evade adult criminal liability",
+            "4. Decomposed / Skeletonized Remains: Excavated infant skull and mandible requiring age, viability, and race determination",
+            "Clinical Mandate: Forensic identification establishes absolute civil status, inheritance rights, and criminal responsibility"
           ]
         },
         "images": [
           {
             "url": "images/charred_skull_forensics.jpg",
-            "caption": "فحص رفات الجمجمة والفك في مشرحة الدمرداش لتحديد الهوية والسن والعرق في قضايا الجنايات والميراث"
+            "caption": "Forensic evaluation of cranial remains and mandible in medico-legal investigations to establish age, sex, and identity"
           }
         ],
-        "notes": "القضية تجمع بين استعراف الأحياء والجمجمة، وهي المدخل الواقعي لكل جدول وقانون في هذا الفصل."
+        "notes": "السيناريوهات الأربعة الأساسية في الطب الشرعي: مريض الغيبوبة، نزاع الميراث، ادعاء صغر السن، وفحص الرفات العظمية."
       },
       {
         "type": "concept",
         "title": "Personal Identification: Definition & The 6-Step Standard Hierarchy",
         "content": {
-          "flowchart": [
-            {
-              "step": "STEP 1",
-              "icon": "🌍",
-              "title": "Race (العرق)",
-              "desc": "Caucasoid, Negroid, Mongoloid · Cranial vault & Cephalic index"
-            },
-            {
-              "step": "STEP 2",
-              "icon": "⚧",
-              "title": "Sex (الجنس)",
-              "desc": "Pelvis, Skull, Long bones, Amelogenin DNA locus"
-            },
-            {
-              "step": "STEP 3",
-              "icon": "⏳",
-              "title": "Age (العمر)",
-              "desc": "Teeth eruption, Ossific centers, Epiphyseal union, Sutures"
-            },
-            {
-              "step": "STEP 4",
-              "icon": "📏",
-              "title": "Stature (القامة)",
-              "desc": "Long bone osteometry via Trotter & Gleser regression math"
-            },
-            {
-              "step": "STEP 5",
-              "icon": "👤",
-              "title": "General Features",
-              "desc": "Complexion, Hair, Eyes, Facial contours, Dental alignment"
-            },
-            {
-              "step": "STEP 6",
-              "icon": "🧬",
-              "title": "Peculiar Marks",
-              "desc": "Scars, Tattoos, Deformities, Fingerprints, DNA Profile"
-            }
-          ],
           "bullets": [
-            "📌 Definition: Determination of individuality of a person, living or dead, complete or in parts (Ain Shams Curriculum, Page 37).",
-            "⚖️ Strict Sequential Rule: Broad population filters (Race/Sex/Age) precede individual pinpointing (Prints/DNA)."
+            "Definition: Recognition of an individual living or dead based on distinctive biological and physical characteristics",
+            "Standard 6-Step Medico-Legal Hierarchy (Sequential Elimination):",
+            "   • 1. Race: Caucasoid, Negroid, Mongoloid (Skull shape & Cephalic Index)",
+            "   • 2. Sex: Pelvis (most accurate), Skull, Long bones, and DNA (Amelogenin locus)",
+            "   • 3. Age: Deciduous & permanent teeth, ossification centers, epiphyseal union, and sutures",
+            "   • 4. Stature: Long bone osteometry via Trotter & Gleser regression formulae",
+            "   • 5. General Features: Complexion, facial contour, hair, eyes, and dental alignment",
+            "   • 6. Peculiar Marks: Fingerprints, scars, tattoos, moles, and congenital deformities"
           ]
         },
         "images": [
           {
-            "url": "images/cranial_race_identification.jpg",
-            "caption": "البروتوكول السداسي للاستعراف: من تحديد العرق والجنس والسن حتى الملامح والعلامات الفردية والبصمة"
+            "url": "images/identification_hierarchy.jpg",
+            "caption": "The 6-step standard hierarchy of forensic identification from broad racial triage to individualizing peculiar marks"
           }
         ],
-        "notes": "احفظ الترتيب السداسي بالترتيب: العرق، الجنس، السن، الطول، الملامح العامة، ثم العلامات الفردية التخصصية."
+        "notes": "التسلسل القياسي للاستعراف: العرق، ثم الجنس، ثم السن، ثم القامة، ثم الملامح العامة، وأخيراً العلامات المميزة."
       },
       {
-        "type": "anatomy",
+        "type": "concept",
         "title": "Identification of the Living: 8 Civil & 2 Criminal Medico-Legal Scenarios",
         "content": {
-          "cards": [
-            {
-              "badge": "8 CIVIL CASES",
-              "theme": "cyan",
-              "icon": "🏛️",
-              "title": "استعراف الأحياء المدني (Civil Identification)",
-              "items": [
-                "1. Coma & amnesia patients in emergency care",
-                "2. Missing persons reunited after long absence",
-                "3. Newborn babies inadvertently switched in nurseries",
-                "4. Impostors claiming inheritance/lineage ('ساقط قيد')",
-                "5. Disputed identity in marriage contracts/nullity",
-                "6. Military conscription fitness and age compliance",
-                "7. Employment, pension verification (Age 60), insurance",
-                "8. Passports, border security, and naturalization"
-              ],
-              "highlight": "سؤال شفوي متكرر: اذكر 5 حالات مدنية للاستعراف على الأحياء!"
-            },
-            {
-              "badge": "2 CRIMINAL CASES",
-              "theme": "rose",
-              "icon": "🚔",
-              "title": "استعراف الأحياء الجنائي (Criminal Identification)",
-              "items": [
-                "1. Fugitive criminals & recidivists (أرباب السوابق)",
-                "2. Suspects confronted with eyewitnesses in line-ups (طابور العرض)",
-                "👂 Forensic History: Saddam Hussein body double controversy resolved via ear auricle cartilage biometrics!"
-              ],
-              "highlight": "طابور العرض وبصمات السوابق هما ركيزة الاستعراف الجنائي للأحياء."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/el_prince_illustration.jpg",
-            "caption": "استعراف الأحياء الجنائي: المتهمون وأرباب السوابق في طوابير العرض وتطابق البصمات والقياسات الحيوية"
-          }
-        ],
-        "notes": "في الامتحان الشفوي يطلب منك سرد 5 حالات مدنية وحالتين جنائيتين؛ تذكر دائماً أطفال الحضانة وغيبوبة الطوارئ وطابور العرض."
-      },
-      {
-        "type": "concept",
-        "title": "Biometrics Architecture: Physical vs Behavioral Modalities",
-        "content": {
-          "cards": [
-            {
-              "badge": "PHYSICAL BIOMETRICS",
-              "theme": "cyan",
-              "icon": "🖐️",
-              "title": "القياسات الفيزيائية (ثبات تشريحي مدى الحياة)",
-              "items": [
-                "Dactylography (Fingerprints): 1 in 64 billion chance; unalterable",
-                "Iris Recognition: Intricate trabecular meshwork; unique in twins",
-                "Facial Geometry: Nodal points (interpupillary, nasal, chin)",
-                "Ear Auricle: Concha, helix, and antihelix contours",
-                "Palmar & Plantar Prints: Epidermal friction ridges",
-                "Vein Pattern Scanning: Subcutaneous infrared vascular maps"
-              ],
-              "highlight": "ثابتة بنيوياً ولا تتغير طوال حياة الإنسان."
-            },
-            {
-              "badge": "BEHAVIORAL BIOMETRICS",
-              "theme": "amber",
-              "icon": "✍️",
-              "title": "القياسات السلوكية (قابلة للتأثر بالصحة والإجهاد)",
-              "items": [
-                "Voiceprint: Acoustic frequency spectrum & formant resonance",
-                "Dynamic Signature: Pen acceleration, stroke vectoring, pressure",
-                "Gait Analysis: Spatiotemporal step cadence, velocity, angles"
-              ],
-              "highlight": "تتأثر بالحالة النفسية، التقدم في العمر، والأمراض العصبية."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "القياسات الحيوية (Biometrics): البصمات وشبكية العين وهندسة الوجه مقابل البصمة الصوتية والتوقيع الحركي"
-          }
-        ],
-        "notes": "الفرق الجوهري: الفيزيائية ثابتة تشريحياً، بينما السلوكية تتأثر بالحالة النفسية والمرضية والإجهاد."
-      },
-      {
-        "type": "anatomy",
-        "title": "The Infant Skull: The 13-5-4 Golden Architectural Formula",
-        "content": {
-          "cards": [
-            {
-              "badge": "RATIO 8:1",
-              "theme": "rose",
-              "icon": "👶",
-              "title": "Proportion & Mode of Growth",
-              "items": [
-                "Cranium to Face Ratio: 8 : 1 in newborns vs 2 : 1 in adults",
-                "Membranous Vault: Allows molding during vaginal birth",
-                "Cartilaginous Base: Solid protection for brainstem & vital centers"
-              ]
-            },
-            {
-              "badge": "THE 13-5-4 RULE",
-              "theme": "emerald",
-              "icon": "📐",
-              "title": "قاعدة الـ 13-5-4 المعمارية",
-              "items": [
-                "13 Bones Vault: 2 Frontal + 2 Parietal + 1 Occipital + 8 Temporal parts (4 each)",
-                "5 Fontanelles: 2 Median (Anterior & Posterior) + 3 Lateral pairs",
-                "4 Sutures: Frontal (metopic), Sagittal, Coronal, Lambdoid"
-              ]
-            }
-          ],
           "bullets": [
-            "🩺 Clinical Significance: Permits elastic head compressibility during labor and accommodates rapid brain tripling in infancy."
+            "A. Civil Identification Situations (8 Situations):",
+            "   • 1. Persons of unknown identity found unconscious, comatose, or insane",
+            "   • 2. Lost children and foundlings (abandoned infants)",
+            "   • 3. Persons suffering from memory loss (amnesia) or fugue states",
+            "   • 4. Missing persons, soldiers in war, and disaster survivors",
+            "   • 5. Disputed parentage, inheritance claims, and paternity suits",
+            "   • 6. Pretended death to claim life insurance or evade legal obligations",
+            "   • 7. Impersonation of another person to claim property, titles, or wealth",
+            "   • 8. Issuance of official documents (passports, national IDs, driver licenses, pensions)",
+            "B. Criminal Identification Situations (2 Situations):",
+            "   • 1. Criminals and suspects accused of offenses or crimes",
+            "   • 2. Absconding prisoners, escaped convicts, and repeat offenders (recidivists)"
           ]
         },
         "images": [
           {
-            "url": "images/skull_sutures_diagram.jpg",
-            "caption": "تشريح جمجمة الرضيع: نسبة الجمجمة للوجه 8:1، وقاعدة الـ 13 عظمة، 5 يافيخ، و4 خطوط درزية"
+            "url": "images/living_id_situations.jpg",
+            "caption": "Medico-legal classification of living identification: 8 civil situations and 2 criminal situations"
           }
         ],
-        "notes": "نسبة الجمجمة للوجه 8:1 عند الولادة وتصبح 2:1 في البالغين؛ سؤال كلاسيكي في كل امتحانات الشفوي."
+        "notes": "استعراف الأحياء: 8 مواقف مدنية وموقفان جنائيان من صميم كتاب عين شمس ص 37-38."
+      },
+      {
+        "type": "table",
+        "title": "Biometric Identification: Physical vs Behavioral Modalities",
+        "content": {
+          "headers": [
+            "Modality Category",
+            "Biometric Features",
+            "Forensic Stability & Accuracy"
+          ],
+          "rows": [
+            [
+              "Physical Biometrics",
+              "Fingerprints (Dactylography), Palm prints, Footprints",
+              "Permanent, unalterable from 4th month I.U. till death"
+            ],
+            [
+              "Ocular Biometrics",
+              "Retinal blood vessel patterns & Iris scanning",
+              "Extremely unique (1 in 10^78), unaffected by contact lenses"
+            ],
+            [
+              "Facial & Dental",
+              "Facial recognition geometry, Forensic odontogram",
+              "Distinctive anatomical landmarks, useful in mass disasters"
+            ],
+            [
+              "Genetic Biometrics",
+              "DNA profiling (STR multiplexing & Amelogenin)",
+              "Definitive biological proof; identical only in monozygotic twins"
+            ],
+            [
+              "Behavioral Biometrics",
+              "Handwriting/Signature, Voice print, Keystroke dynamics",
+              "Modifiable by neurological disease, aging, drugs, or stress"
+            ]
+          ],
+          "extra_bullets": [
+            "Physical biometrics provide unalterable structural proof, whereas behavioral modalities require corroborative validation."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/biometrics_comparison.jpg",
+            "caption": "Biometric modalities comparison: anatomical stability of physical markers vs dynamic variability of behavioral traits"
+          }
+        ],
+        "notes": "القياسات الحيوية: الفيزيائية ثابتة مدى الحياة ولا تتغير، بينما السلوكية تتأثر بالإجهاد والمرض."
       },
       {
         "type": "concept",
-        "title": "Fontanels: The Shrinking Finger Metric (Bregma vs Lambda)",
+        "title": "The Infant Skull: Architectural Proportions & Mode of Development",
         "content": {
-          "timeline": [
-            {
-              "age": "At Birth",
-              "icon": "💎",
-              "title": "Bregma = 3 Fingers Breadth (اتساع 3 أصابع)",
-              "desc": "Diamond-shaped anterior fontanel at junction of frontal & sagittal sutures"
-            },
-            {
-              "age": "6 Months",
-              "icon": "👇",
-              "title": "Bregma = 2 Fingers Breadth (اتساع إصبعين)",
-              "desc": "Progressive ossification along margins"
-            },
-            {
-              "age": "12 Months (1y)",
-              "icon": "👇",
-              "title": "Bregma = 1 Finger Breadth (اتساع إصبع واحد)",
-              "desc": "Reduced to fingertip dimension"
-            },
-            {
-              "age": "18 Months (1.5y)",
-              "icon": "🔒",
-              "title": "Bregma = FULLY CLOSED (الانغلاق التام)",
-              "desc": "Complete bony obliteration in normal infants"
-            },
-            {
-              "age": "2–3 Months",
-              "icon": "🔺",
-              "title": "Lambda (Posterior Fontanel) Closes",
-              "desc": "Triangular fontanel at sagittal & lambdoid junction closes early"
-            }
-          ],
-          "trap": {
-            "title": "Red Flags: Bulging vs Depressed Fontanelle (طوارئ الأطفال والطب الشرعي)",
-            "desc": "Bulging fontanelle indicates raised intracranial pressure, meningitis, or shaken baby subdural hematoma. Depressed fontanelle indicates severe infantile dehydration, malnutrition, or neglect!"
-          }
-        },
-        "images": [
-          {
-            "url": "images/skull_sutures_diagram.jpg",
-            "caption": "اليافوخ الأمامي (معين الشكل): يقبل 3 أصابع عند الولادة وينغلق بمعدل إصبع كل 6 شهور حتى تمام الغلق عند 18 شهراً"
-          }
-        ],
-        "notes": "قاعدة الأصابع المتناقصة بمعدل إصبع كل 6 شهور تجعل تقدير عمر الرضيع دقيقاً للغاية في الفحص الإكلينيكي والجنائي."
-      },
-      {
-        "type": "anatomy",
-        "title": "Cranial Sutures: Chronology & The Negroid Metopic Exam Trap",
-        "content": {
-          "timeline": [
-            {
-              "age": "3 Years",
-              "icon": "🧩",
-              "title": "Frontal (Metopic) Suture Closes Normally",
-              "desc": "Obliterates between the two frontal bones"
-            },
-            {
-              "age": "30 Years",
-              "icon": "📏",
-              "title": "Sagittal Suture Closes",
-              "desc": "Commences from endocranial (inner) aspect outward"
-            },
-            {
-              "age": "40 Years",
-              "icon": "👑",
-              "title": "Coronal Suture Closes",
-              "desc": "Crown suture between frontal and parietals"
-            },
-            {
-              "age": "50 Years",
-              "icon": "📐",
-              "title": "Lambdoid Suture Closes",
-              "desc": "Posterior suture between parietals and occipital"
-            },
-            {
-              "age": "70 Years",
-              "icon": "🔒",
-              "title": "All Cranial Sutures Obliterated",
-              "desc": "Except temporoparietal suture which may persist"
-            }
-          ],
-          "trap": {
-            "title": "THE #1 AIN SHAMS EXAM TRAP: The Negroid Frontal Suture Persistence",
-            "desc": "The frontal suture closes at 3 years normally, but PERSISTS UP TO 30 YEARS in Negroid skulls! Finding an open frontal suture does NOT prove infant age under 3 years if Negroid facial/cranial characteristics are present!"
-          }
-        },
-        "images": [
-          {
-            "url": "images/cranial_race_identification.jpg",
-            "caption": "درزات الجمجمة: الدرز السهمي (30 سنة)، الإكليلي (40)، واللامي (50)، ومصيدة الدرز الجبهي حتى 30 سنة في الزنوج"
-          }
-        ],
-        "notes": "مصيدة امتحانات عين شمس: متى يستمر الدرز الجبهي مفتوحاً حتى سن 30 سنة؟ الإجابة: في الجماجم الزنجية (Negroid skulls)."
-      },
-      {
-        "type": "anatomy",
-        "title": "Mandible Metamorphosis: Infant, Adult & Senile Resorption",
-        "content": {
-          "cards": [
-            {
-              "badge": "INFANT MANDIBLE",
-              "theme": "cyan",
-              "icon": "👶",
-              "title": "فك الرضيع (Infant)",
-              "items": [
-                "Angle: Obtuse (~140°)",
-                "Symphysis: 2 fibrous halves at birth; unites by bone at 1–2 years",
-                "Mental Foramen: Located near lower border (below tooth buds)"
-              ],
-              "highlight": "زاوية منفرجة والفتحة الذقنية قريبة من الحافة السفلية."
-            },
-            {
-              "badge": "ADULT MANDIBLE",
-              "theme": "emerald",
-              "icon": "🧑",
-              "title": "فك البالغ (Adult)",
-              "items": [
-                "Angle: Right angle (~110°–120°) due to vigorous mastication",
-                "Dental Arch: 16 permanent teeth with prominent alveolar ridge",
-                "Mental Foramen: Positioned midway between upper & lower borders"
-              ],
-              "highlight": "الزاوية الوحيدة القائمة؛ والفتحة الذقنية في المنتصف."
-            },
-            {
-              "badge": "SENILE MANDIBLE",
-              "theme": "amber",
-              "icon": "👴",
-              "title": "فك المسن (Elderly)",
-              "items": [
-                "Angle: Reverts to Obtuse (~140°) due to tooth loss & muscle atrophy",
-                "Alveolar Margin: MARKEDLY RESORBED (ضمور الحافة السنخية)",
-                "Mental Foramen: Shifted to lie near the UPPER border!"
-              ],
-              "highlight": "ضمور الحافة السنخية يرفع الفتحة الذقنية للحافة العلوية."
-            }
+          "bullets": [
+            "1. Vault vs Facial Skeleton Proportions:",
+            "   • At Birth: Cranium (vault) to face ratio is 8:1 (reflects rapid intrauterine brain growth)",
+            "   • In Adults: Cranium to face ratio decreases to 2:1 (expansion of masticatory apparatus & air sinuses)",
+            "2. Mode of Skull Bone Development:",
+            "   • Vault of the Skull: Develops purely in membrane (fibrous intramembranous ossification)",
+            "   • Base of the Skull: Develops in cartilage (endochondral ossification)",
+            "3. The 13-5-4 Golden Growth Rule:",
+            "   • Circumference at birth = 13 inches (33 cm)",
+            "   • Increases by 5 inches during 1st year (reaches 18 inches at age 1 year)",
+            "   • Increases by only 4 inches during rest of life (reaches adult average of 22 inches / 56 cm)",
+            "Forensic Value: Differentiates viable full-term newborn from pre-term fetus or infant remains"
           ]
         },
         "images": [
           {
-            "url": "images/mandible_age_diagram.jpg",
-            "caption": "تحولات الفك السفلي: منفرجة (140°) في الرضيع → قائمة (110°) في البالغ → منفرجة مع ضمور الحافة السنخية في المسن"
+            "url": "images/infant_skull_anatomy.jpg",
+            "caption": "Infant skull architecture: 8:1 vault to face ratio, open fontanelles, and the 13-5-4 growth rule"
           }
         ],
-        "notes": "زاوية الفك قائمة فقط في البالغ، ومنفرجة في الرضيع والمسن؛ والفتحة الذقنية تقترب من الحافة العلوية في المسن بسبب ذوبان الحافة السنخية."
+        "notes": "نسبة الجمجمة للوجه عند الولادة 8:1 وفي البالغين 2:1، وقاعدة 13-5-4 للنمو المحيطي."
+      },
+      {
+        "type": "table",
+        "title": "Fontanelles: Chronology, Dimensional Closure & Clinical Red Flags",
+        "content": {
+          "headers": [
+            "Fontanelle",
+            "Shape & Location",
+            "Normal Closure Timeline",
+            "Finger-Breadth Metric / Signs"
+          ],
+          "rows": [
+            [
+              "Anterior (Bregma)",
+              "Diamond-shaped (sagittal, coronal, frontal sutures)",
+              "Closes at 1.5 – 2 years (18–24 months)",
+              "Birth = 3 fingers; 9m = 2 fingers; 1y = 1 finger; 18-24m = fully closed"
+            ],
+            [
+              "Posterior (Lambda)",
+              "Triangular (sagittal & lambdoid sutures)",
+              "Closes at birth or up to 2–3 months",
+              "Normally impalpable or tiny cleft after 2nd-3rd month"
+            ],
+            [
+              "Bulging Fontanelle",
+              "Elevated above cranial plane",
+              "Pathological emergency",
+              "Increased ICP: Meningitis, encephalitis, intracranial hemorrhage, hydrocephalus"
+            ],
+            [
+              "Sunken Fontanelle",
+              "Depressed below cranial plane",
+              "Pathological emergency",
+              "Severe infantile dehydration (gastroenteritis), malnutrition, or shock"
+            ]
+          ],
+          "extra_bullets": [
+            "Medico-Legal Pearls: Essential for post-mortem infant age estimation; clinical access route for sagittal sinus blood sampling."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/fontanelle_finger_rule.jpg",
+            "caption": "Fontanelle closure chronology: the shrinking finger metric from 3 fingers at birth to complete closure at 18-24 months"
+          }
+        ],
+        "notes": "اليافوخ الأمامي يقفل عند سنة ونصف إلى سنتين بمقياس الأصابع، واليافوخ الخلفي يقفل عند الولادة إلى شهرين أو 3 أشهر."
+      },
+      {
+        "type": "table",
+        "title": "Cranial Suture Closure: Normal Chronology vs The Negroid Suture Trap",
+        "content": {
+          "headers": [
+            "Suture Name",
+            "Anatomical Location",
+            "Obliteration Timeline",
+            "Key Medico-Legal Exam Pearl"
+          ],
+          "rows": [
+            [
+              "Frontal (Metopic)",
+              "Between two halves of frontal bone",
+              "2 – 3 years",
+              "Persistent in ~10% of Negroid race (Major Exam Trap: Do not mistake for adult skull!)"
+            ],
+            [
+              "Sagittal Suture",
+              "Midline between parietal bones",
+              "30 years",
+              "Starts endocranially at ~22–25y, completely obliterated ectocranially at 30y"
+            ],
+            [
+              "Coronal Suture",
+              "Between frontal and parietal bones",
+              "40 years",
+              "Begins closure at pterion, completely obliterated at age 40y"
+            ],
+            [
+              "Lambdoid Suture",
+              "Between occipital and parietal bones",
+              "50 years",
+              "Obliterated at age 50y; closure follows 'S-C-L' rule (30 - 40 - 50 years)"
+            ],
+            [
+              "All Cranial Sutures",
+              "Complete synostosis across skull",
+              "70 years",
+              "All obliterated except temporoparietal suture which remains open till late senility"
+            ]
+          ],
+          "extra_bullets": [
+            "Closure sequence: Endocranial union precedes ectocranial obliteration by several years."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/cranial_sutures_clock.jpg",
+            "caption": "Cranial suture closure timeline: Sagittal (30y), Coronal (40y), Lambdoid (50y), and persistent Metopic suture trap"
+          }
+        ],
+        "notes": "دروز الجمجمة: السهمي 30 سنة، الإكليلي 40 سنة، اللامي 50 سنة، وكلها 70 سنة ما عدا الصدغي الجداري. تذكر مصيدة العرق الزنجي في الدرز الجبهي!"
+      },
+      {
+        "type": "table",
+        "title": "Mandible Metamorphosis: Infant, Adult & Senile Morphological Features",
+        "content": {
+          "headers": [
+            "Anatomical Feature",
+            "Infant Mandible",
+            "Adult Mandible",
+            "Elderly / Senile Mandible"
+          ],
+          "rows": [
+            [
+              "Angle of Mandible",
+              "Obtuse: 140° – 150° (ramus oblique)",
+              "Nearly Right angle: 110° – 120° (ramus vertical)",
+              "Obtuse again: 140° (resembles infantile angle)"
+            ],
+            [
+              "Mental Foramen",
+              "Near lower border (below milk tooth sockets)",
+              "Midway between upper and lower borders",
+              "Near upper alveolar border (due to alveolar resorption)"
+            ],
+            [
+              "Symphysis Menti",
+              "Fibrous synchondrosis at birth; fuses at 1–2y",
+              "Completely fused with prominent mental protuberance",
+              "Completely fused; mental process remains prominent"
+            ],
+            [
+              "Alveolar Margin",
+              "Rudimentary with un-erupted tooth buds",
+              "Broad, deep, housing 16 permanent teeth",
+              "Completely resorbed and thinned following tooth loss"
+            ],
+            [
+              "Coronoid & Condyle",
+              "Coronoid process higher than condyle",
+              "Condyloid and coronoid processes balanced",
+              "Condyle bent backwards; coronoid prominent"
+            ]
+          ],
+          "extra_bullets": [
+            "Diagnostic Value: Mandible is the strongest facial bone and provides rapid age triage in charred and fragmented remains."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/mandible_metamorphosis.jpg",
+            "caption": "Mandible morphological metamorphosis: infant (obtuse angle, low foramen), adult (right angle, mid foramen), senile (obtuse, high foramen)"
+          }
+        ],
+        "notes": "الفك السفلي: منفرجة عند الرضيع، قائمة عند البالغ، وتعود منفرجة عند المسن، مع تغير موقع الثقب الذقني."
       },
       {
         "type": "summary",
-        "title": "Episode 1 Summary: Key Rules, Numbers & Oral Exam Pearls",
+        "title": "Episode 1 High-Yield Summary: The Skull & Living Identification",
         "content": {
-          "cards": [
-            {
-              "badge": "THE 7 SACRED NUMBERS",
-              "theme": "purple",
-              "icon": "🔢",
-              "title": "الأرقام الذهبية لامتحانات عين شمس",
-              "items": [
-                "8:1 → Cranium to face ratio in infants (2:1 in adults)",
-                "3 Fingers → Bregma at birth (shrinks 1 finger / 6m to close at 18m)",
-                "2–3 Months → Posterior triangular fontanel closure",
-                "3y vs 30y → Metopic suture (Normal 3y vs Negroid skulls up to 30y)",
-                "140° vs 110° vs 140° → Mandible angle evolution",
-                "8 + 2 → Living ID scenarios (8 Civil + 2 Criminal)",
-                "6 Steps → Hierarchy: Race → Sex → Age → Stature → General → Peculiar"
-              ]
-            }
+          "bullets": [
+            "1. Hierarchy of Identification: Race → Sex → Age → Stature → General Features → Peculiar Marks",
+            "2. Living Identification: 8 Civil scenarios (coma, lost child, amnesia, etc.) + 2 Criminal scenarios (suspects & recidivists)",
+            "3. Cranium to Face Proportions: 8:1 at birth → 2:1 in adult (cranial vault in membrane, base in cartilage)",
+            "4. Golden Growth Rule (13-5-4): Circumference 13\" at birth + 5\" in 1st year (18\") + 4\" rest of life (22\")",
+            "5. Fontanelles: Bregma closes at 1.5–2y (3→2→1 finger rule); Lambda closes at birth to 2–3 months",
+            "6. Suture Clocks (S-C-L): Sagittal 30y → Coronal 40y → Lambdoid 50y → All 70y (Metopic closes at 2–3y, persists in 10% Negroid)",
+            "7. Mandible Metamorphosis: Angle is obtuse in infants (140°), right in adults (110°-120°), obtuse in elderly (140°)",
+            "8. Mental Foramen Position: Low in infant → Midway in adult → High (upper border) in senile resorption"
           ]
         },
         "images": [
           {
-            "url": "images/dr_shereen_framework.jpg",
-            "caption": "خلاصة الحلقة الأولى: القواعد الرقمية والمصائد الشفوية في استعراف الأحياء والجمجمة الآدمية"
+            "url": "images/charred_skull_forensics.jpg",
+            "caption": "High-yield summary matrix for skull and personal identification in Ain Shams forensic examinations"
           }
         ],
-        "notes": "هذه الأرقام السبعة هي جوهر أسئلة لجان الشفوي والـ MCQ لطب عين شمس في درس الجمجمة واستعراف الأحياء."
+        "notes": "ملخص الأرقام الذهبية للامتحان الشفوي والتحريري لطب عين شمس - الباب الثالث."
       }
     ]
   },
   {
     "title": "Bone Age & Dentition: Eruption, Centers & Legal Ages (MLI)",
-    "description": "Milky (20) & permanent (32) dentition, 4 differences, ossific centers (1-6y, patella at 3y), epiphyseal union (6-70y, female lead), and complete Medico-Legal Importance (MLI) table (6 to 60y).",
+    "description": "Ain Shams bone age foundations: deciduous eruption ladder, permanent teeth WBSL differences, postnatal ossific centers (patella trap), elbow scissors (14-17y), female lead rule, and comprehensive Medico-Legal Importance (MLI) table.",
     "slides": [
       {
         "type": "title",
         "title": "The Forensic Age Train — Dentition, Epiphyseal Union & Legal Milestones (MLI)",
         "content": {
           "bullets": [
-            "Faculty of Medicine, Ain Shams University · Chapter 3 (Pages 41, 43–48)",
-            "Episode 2 · Ain Shams Forensic Trilogy",
-            "Presented by Dr. Tarek (Forensic Consultant) & Dr. Atef (Resident)",
-            "Visual Learning Edition: Dental Ladder, Ossification Clock, Elbow Scissors & The MLI Highway"
+            "Faculty of Medicine, Ain Shams University · Forensic Medicine Department",
+            "Chapter 3: Identification & DNA Typing (Pages 40–44)",
+            "Chronological Dentition, Postnatal Ossific Centers, Epiphyseal Union & MLI",
+            "Presented by MedDuo Forensic Team"
           ]
         },
         "images": [],
-        "notes": "مرحباً بكم في الحلقة الثانية من ثلاثية طب عين شمس. نناقش في هذه الحلقة قطار الأعمار الجنائية والمدنية من بزوغ أول سن حتى سن المعاش 60 سنة."
+        "notes": "الحلقة الثانية: استعراف العمر عبر الأسنان، مراكز التعظم، التحام المشاشات، وجدول الأهمية الجنائية والمدنية."
       },
       {
-        "type": "case",
-        "title": "Case: The Battery Factory Arson & The 4 Forensic Suspects",
+        "type": "concept",
+        "title": "Age Estimation Challenges: 4 Classic Forensic Scenarios",
         "content": {
-          "cards": [
-            {
-              "badge": "SUSPECT 1",
-              "theme": "rose",
-              "icon": "⚖️",
-              "title": "المتهم 'عنتر' (القتل وسرقة الخزينة)",
-              "items": [
-                "محاميه يدعي أنه طفل 14 سنة و11 شهراً للإفلات من الإعدام والمؤبد",
-                "المطلوب شرعياً: فحص التحام مشاشات الكوع والكتف والحوض بدقة"
-              ],
-              "highlight": "التحام بكرة ورؤيس العضد يفصل بين سن 14 وسن 15 سنة."
-            },
-            {
-              "badge": "SUSPECT 2",
-              "theme": "amber",
-              "icon": "🧒",
-              "title": "الطفل 'بندق' (نزاع سن التمييز)",
-              "items": [
-                "صاحب المصنع يدعي أن عمره 12 سنة لتحميله مسؤولية السرقة",
-                "أهله يصرخون بأنه تحت 7 سنوات (غير مميز والمسؤولية على الولي)"
-              ],
-              "highlight": "بزوغ القواطع المركزية عند 7 سنين والضرس الثاني عند 12 سنة."
-            },
-            {
-              "badge": "SUSPECT 3",
-              "theme": "cyan",
-              "icon": "🏭",
-              "title": "صاحب المصنع (تشغيل الأطفال)",
-              "items": [
-                "متهم بتشغيل أحداث في مهن خطرة محظورة (صهر الرصاص وأحماض البطاريات)",
-                "القانون يحظر تشغيل من هم دون 16 سنة في مصانع البطاريات"
-              ],
-              "highlight": "سن 16 سنة هو سن بطاقة الرقم القومي وحظر مصانع البطاريات."
-            },
-            {
-              "badge": "SKELETAL REMAINS",
-              "theme": "emerald",
-              "icon": "🦴",
-              "title": "الرفات المتفحمة في البدروم",
-              "items": [
-                "هل الجثة لوالد صاحب المصنع صاحب المعاش (فوق 60 سنة)؟",
-                "أم لشاب في أول العشرينات هارب من التجنيد؟"
-              ],
-              "highlight": "التحام قبضة القص بجسم القص عند 60 سنة يحسم اللغز."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/el_prince_illustration.jpg",
-            "caption": "المتهم 'عنتر' في مواجهة النيابة: يدعي أنه طفل 14 سنة و11 شهراً للإفلات من الإعدام بموجب قانون الطفل"
-          }
-        ],
-        "notes": "القضية تجمع بين قانون الطفل، وقانون العمل وحظر مصانع البطاريات، والمسؤولية الجنائية الكاملة وسن المعاش."
-      },
-      {
-        "type": "anatomy",
-        "title": "Milky Dentition: The 20 Deciduous Teeth & Eruption Ladder",
-        "content": {
-          "timeline": [
-            {
-              "age": "6 Months",
-              "icon": "🦷",
-              "title": "Lower Central Incisors (القواطع المركزية السفلية)",
-              "desc": "First teeth to erupt in human life! (قواطع القرض السفلية)"
-            },
-            {
-              "age": "8 Months",
-              "icon": "🦷",
-              "title": "Upper Central Incisors (القواطع المركزية العلوية)",
-              "desc": "Follows shortly on the maxillary arch"
-            },
-            {
-              "age": "10 Months",
-              "icon": "🦷",
-              "title": "Lateral Incisors (القواطع الجانبية)",
-              "desc": "Upper and lower lateral incisors erupt"
-            },
-            {
-              "age": "12 Months (1y)",
-              "icon": "⭐",
-              "title": "First Milky Molar (الضرس اللبني الأول)",
-              "desc": "HIGH YIELD: Erupts at 1 year, BEFORE canines!"
-            },
-            {
-              "age": "18 Months",
-              "icon": "🦷",
-              "title": "Canines (الأنياب)",
-              "desc": "Erupts between 1st and 2nd milky molars"
-            },
-            {
-              "age": "24 Months (2y)",
-              "icon": "🔒",
-              "title": "Second Milky Molar (الضرس اللبني الثاني)",
-              "desc": "Completes the deciduous dentition (Total = 20 teeth)"
-            }
-          ],
           "bullets": [
-            "📌 Deciduous Dental Formula: 2 Incisors, 1 Canine, 0 Premolars, 2 Molars per quadrant (2:1:0:2 = 20 total)."
+            "1. Child Labor Offenses: Determining whether a juvenile worker is under 12y (training prohibited) or under 14y/16y/18y",
+            "2. Age of Criminal Discrimination: Assessing whether a child offender is below 7y (absolute non-liability) or 7–15y",
+            "3. Capital Sentence Threshold (Age 18): Verifying biological age of accused in heinous crimes to determine eligibility for death penalty",
+            "4. Identification of Charred Adult Remains: Utilizing clavicular fusion (21-25y) and sternal synostosis (40-60y) to verify identity",
+            "Forensic Principle: Teeth provide superior accuracy from infancy to 12y; epiphyseal union dominates from 14y to 25y"
           ]
         },
         "images": [
           {
-            "url": "images/teeth_and_hyoid_sternum.jpg",
-            "caption": "تسلسل بزوغ الأسنان اللبنية الـ 20: من القواطع المركزية السفلية عند 6 شهور حتى الضرس اللبني الثاني عند سنتين"
+            "url": "images/epiphyses_summary_deck.jpg",
+            "caption": "Radiological examination of epiphyses and dental arches in forensic age estimation cases"
           }
         ],
-        "notes": "انتبه لمصيدة الشفوي: الضرس اللبني الأول يسبق الناب؛ الضرس الأول عند سنة والناب عند سنة ونصف."
+        "notes": "السيناريوهات الأربعة الكلاسيكية: عمالة الأطفال، سن التمييز، حاجز الـ 18 سنة لتجنب الإعدام، وتحديد سن الجثث المتفحمة."
+      },
+      {
+        "type": "table",
+        "title": "Deciduous Dentition: Formula, Chronology & Clinical Rules",
+        "content": {
+          "headers": [
+            "Tooth Type",
+            "Dental Formula / Count",
+            "Eruption Age Timeline",
+            "Clinical & Mnemonic Key"
+          ],
+          "rows": [
+            [
+              "Lower Central Incisors",
+              "2 Teeth (Right & Left)",
+              "6 – 8 Months",
+              "First teeth to erupt; lower precedes upper"
+            ],
+            [
+              "Upper Central Incisors",
+              "2 Teeth (Right & Left)",
+              "7 – 9 Months",
+              "Follow lower centrals by ~1 month"
+            ],
+            [
+              "Lateral Incisors (Upper & Lower)",
+              "4 Teeth",
+              "10 – 12 Months",
+              "All 8 incisors present by end of 1st year"
+            ],
+            [
+              "First Milk Molars",
+              "4 Teeth (1 per quadrant)",
+              "12 – 14 Months (~1 Year)",
+              "Erupt before canines ('Molars skip Canines')"
+            ],
+            [
+              "Canines (Eye Teeth)",
+              "4 Teeth",
+              "16 – 20 Months (~1.5 Years)",
+              "Erupt into space between incisors and molars"
+            ],
+            [
+              "Second Milk Molars",
+              "4 Teeth",
+              "20 – 24 Months (~2 Years)",
+              "Completes deciduous dentition (total 20 teeth)"
+            ]
+          ],
+          "extra_bullets": [
+            "Deciduous Formula: 2.1.0.2 / 2.1.0.2 = 10 per jaw (Total = 20 teeth; premolars completely absent in milk dentition)",
+            "General Rule: Lower teeth erupt 1 to 2 months earlier than corresponding upper teeth."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/deciduous_eruption_ladder.jpg",
+            "caption": "Deciduous dentition eruption ladder: lower centrals (6-8m) to second milk molars (20-24m)"
+          }
+        ],
+        "notes": "الأسنان اللبنية: تبدأ عند 6 شهور بالقواطع المركزية السفلية وتنتهي عند سنتين بالضرس اللبني الثاني. تذكر: لا توجد ضواحك في الأسنان اللبنية!"
+      },
+      {
+        "type": "table",
+        "title": "Permanent Dentition: 32 Teeth Eruption Ladder & Key Morphological Differences",
+        "content": {
+          "headers": [
+            "Tooth Type",
+            "Eruption Age",
+            "Morphological Feature",
+            "Deciduous vs Permanent Comparison"
+          ],
+          "rows": [
+            [
+              "1st Permanent Molar",
+              "6 Years ('Six-Year Molar')",
+              "Color",
+              "Deciduous: Chalky / bluish-white · Permanent: Yellower / duller"
+            ],
+            [
+              "Central Incisors",
+              "7 Years",
+              "Size & Shape",
+              "Deciduous: Smaller, bulbous crown · Permanent: Larger, broader"
+            ],
+            [
+              "Lateral Incisors",
+              "8 Years",
+              "Neck Constriction",
+              "Deciduous: Marked cervical constriction · Permanent: Less constricted"
+            ],
+            [
+              "1st Premolar",
+              "9 Years",
+              "Root Anatomy",
+              "Deciduous: Thinner, widely divergent roots · Permanent: Stouter, fused"
+            ],
+            [
+              "2nd Premolar",
+              "10 Years",
+              "Premolar Absence",
+              "Deciduous: No premolars exist · Permanent: 8 premolars replace milk molars"
+            ],
+            [
+              "Canine",
+              "11 Years",
+              "Masticatory Strength",
+              "Deciduous: Weaker enamel layer · Permanent: Thicker, stronger enamel"
+            ],
+            [
+              "2nd Permanent Molar",
+              "12 Years ('12-Year Molar')",
+              "Total Count",
+              "Deciduous: 20 teeth (formula 2.1.0.2) · Permanent: 32 teeth (2.1.2.3)"
+            ],
+            [
+              "3rd Permanent Molar",
+              "18 – 25 Years (Wisdom Tooth)",
+              "Variability",
+              "Highly erratic: may be impacted, congenitally missing, or erupt late"
+            ]
+          ],
+          "extra_bullets": [
+            "Mnemonic: 'Six-Year Molar' erupts behind 2nd deciduous molar before any milk teeth are shed!"
+          ]
+        },
+        "images": [
+          {
+            "url": "images/permanent_teeth_timeline.jpg",
+            "caption": "Permanent teeth eruption timeline: 6-year molar, incisors (7-8y), premolars (9-10y), canine (11y), 2nd molar (12y), wisdom (18-25y)"
+          }
+        ],
+        "notes": "الأسنان الدائمة: الضرس الأول عند 6 سنين، ثم القواطع والضواحك والأنياب، والضرس الثاني عند 12 سنة، وضرس العقل من 18 إلى 25 سنة."
+      },
+      {
+        "type": "table",
+        "title": "Postnatal Ossification Centers: Chronological Emergence (Ages 1 to 6y)",
+        "content": {
+          "headers": [
+            "Age of Emergence",
+            "Ossification Center",
+            "Anatomical Landmark",
+            "Key Medico-Legal Exam Pearl"
+          ],
+          "rows": [
+            [
+              "1st Year",
+              "Heads of 3 major bones",
+              "Head of humerus, head of femur, upper end of tibia",
+              "Crucial for verifying healthy infancy development"
+            ],
+            [
+              "2nd Year",
+              "Lower ends of two leg/forearm bones",
+              "Lower end of radius & lower end of tibia",
+              "Readily visualized on routine wrist and ankle X-rays"
+            ],
+            [
+              "3rd Year",
+              "PATELLA (Knee Cap)",
+              "Sesamoid bone in quadriceps tendon",
+              "THE #1 EXAM TRAP: Patella appears at 3 years!"
+            ],
+            [
+              "4th Year",
+              "Upper fibula & greater trochanter",
+              "Proximal fibular head & proximal femur",
+              "Key marker for preschool age estimation"
+            ],
+            [
+              "5th Year",
+              "Lower end of fibula",
+              "Lateral malleolus of ankle joint",
+              "Exception to epiphyseal rule (appears late, fuses early)"
+            ],
+            [
+              "6th Year",
+              "Head of radius & lower end of ulna",
+              "Proximal radius (elbow) & distal ulna (wrist)",
+              "Signals commencement of compulsory primary school age"
+            ]
+          ],
+          "extra_bullets": [
+            "Exam Trap: Never forget that the Patella appears at age 3 years—frequently tested in oral exams."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/ossification_centers_1to6.jpg",
+            "caption": "Chronological appearance of postnatal ossification centers: 1y (major heads) to 6y (head of radius, lower ulna)"
+          }
+        ],
+        "notes": "مراكز التعظم بعد الولادة: سنة رؤوس، سنتين أطراف سفلية للزند والقصبة، 3 سنين الصابونة (مصيدة!)، 4 سنين رأس الشظية والمدور الكبير، 5 سنين أسفل الشظية، 6 سنين رأس الكعبرة وأسفل الزند."
+      },
+      {
+        "type": "table",
+        "title": "Epiphyseal Union of Upper Limb: The Elbow Scissors & Landmark Ages",
+        "content": {
+          "headers": [
+            "Age",
+            "Epiphyseal Union Landmark",
+            "Joint Involved",
+            "Clinical / Diagnostic Significance"
+          ],
+          "rows": [
+            [
+              "14 Years",
+              "Trochlea unites with Capitulum",
+              "Elbow Joint (Distal Humerus)",
+              "Commencement of elbow scissors fusion"
+            ],
+            [
+              "15 Years",
+              "Conjoined Trochlea-Capitulum fuses with Humerus Shaft",
+              "Elbow Joint",
+              "Marks juvenile detention boundary"
+            ],
+            [
+              "16 Years",
+              "Lateral Epicondyle fuses with humerus; Olecranon fuses with ulna",
+              "Elbow Joint",
+              "Excludes child labor in hazardous occupations"
+            ],
+            [
+              "17 Years",
+              "Medial Epicondyle fuses with humerus; Head of radius fuses",
+              "Elbow Joint",
+              "Elbow joint is completely closed! ('Elbow scissors: 14 to 17y')"
+            ],
+            [
+              "18 – 20 Years",
+              "Metacarpals and Phalanges fuse with shafts",
+              "Hand & Fingers",
+              "Key corroboration for 18-year legal adult threshold"
+            ],
+            [
+              "20 – 21 Years",
+              "Lower end of radius & lower end of ulna fuse with shafts",
+              "Wrist Joint",
+              "Wrist completely closed; adult skeletal status achieved"
+            ],
+            [
+              "20 – 21 Years",
+              "Head of humerus fuses with shaft; Coracoid (15-17y), Acromion (18-20y)",
+              "Shoulder Joint",
+              "Upper limb elongation completely ceases"
+            ]
+          ],
+          "extra_bullets": [
+            "Mnemonic: 'Elbow Scissors' runs sequentially from 14 to 17 years (14y Trochlea-Capitulum → 15y Shaft → 16y Lat Epicondyle → 17y Med Epicondyle)."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/elbow_scissors_diagram.jpg",
+            "caption": "The Elbow Scissors (14 to 17 years): sequential epiphyseal fusion at the elbow joint"
+          }
+        ],
+        "notes": "مقص الكوع من 14 إلى 17 سنة: 14 البكرة مع اللقمة، 15 يلتحمان بالجذع، 16 اللقمة الوحشية والأولكرانون، 17 اللقمة الإنسية ورأس الكعبرة."
+      },
+      {
+        "type": "table",
+        "title": "Epiphyseal Union: Pelvis, Lower Limb & Axial Skeleton",
+        "content": {
+          "headers": [
+            "Age",
+            "Anatomical Landmark / Epiphysis",
+            "Skeletal Region",
+            "Forensic / Medico-Legal Importance"
+          ],
+          "rows": [
+            [
+              "16 Years",
+              "Y-shaped (Triradiate) cartilage of acetabulum fuses",
+              "Pelvic Girdle (Hip Joint)",
+              "Ilium, ischium, and pubis become a single pelvic bone"
+            ],
+            [
+              "18 Years",
+              "Lower end of tibia & lower end of fibula fuse with shafts",
+              "Ankle Joint",
+              "Ankle completely closed; adult threshold established"
+            ],
+            [
+              "18 – 19 Years",
+              "Head of femur & Greater trochanter fuse with shaft",
+              "Hip Joint (Femur)",
+              "Pelvic growth consolidation"
+            ],
+            [
+              "20 – 21 Years",
+              "Lower femur, Upper tibia, Upper fibula (all knee epiphyses)",
+              "Knee Joint",
+              "Knee completely closed; full adult stature achieved"
+            ],
+            [
+              "20 – 21 Years",
+              "Iliac crest & Ischial tuberosity fuse with os coxae",
+              "Pelvic Girdle",
+              "Marks termination of pelvic expansion"
+            ],
+            [
+              "21 – 25 Years",
+              "Sternal end of clavicle fuses with shaft",
+              "Shoulder Girdle (Axial)",
+              "LAST long bone epiphysis in the human body to fuse!"
+            ]
+          ],
+          "extra_bullets": [
+            "Diagnostic Rule: Sternal end of clavicle (21-25y) is the gold standard for verifying age of majority (21y) in forensic radiology."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/epiphyses_summary_deck.jpg",
+            "caption": "Epiphyseal union of pelvis, knee, ankle, and sternal clavicle across juvenile and young adult stages"
+          }
+        ],
+        "notes": "الحوض يكتمل عند 16 سنة (غضروف الحق)، الكاحل عند 18، الركبة عند 20-21، والطرف القصي للترقوة هو آخر مشاشة وتلتحم من 21 إلى 25 سنة."
       },
       {
         "type": "concept",
-        "title": "Permanent Dentition: 32 Teeth & The 4 W-B-S-L Differences",
+        "title": "Biological Principles in Age Estimation: The Female Lead Rule",
         "content": {
-          "cards": [
-            {
-              "badge": "W",
-              "theme": "cyan",
-              "icon": "✨",
-              "title": "Whiter",
-              "items": [
-                "أكثر بياضاً ناصعاً مقارنة باللبني"
-              ]
-            },
-            {
-              "badge": "B",
-              "theme": "emerald",
-              "icon": "📐",
-              "title": "Broader",
-              "items": [
-                "أعرض في التاج وسطح المضغ الأطباقي"
-              ]
-            },
-            {
-              "badge": "S",
-              "theme": "amber",
-              "icon": "💪",
-              "title": "Stronger",
-              "items": [
-                "أقوى في طبقة المينا والبنية العاجية"
-              ]
-            },
-            {
-              "badge": "L",
-              "theme": "rose",
-              "icon": "🐘",
-              "title": "Larger",
-              "items": [
-                "أكبر حجماً وجذوراً وتثبيتاً في الفك"
-              ]
-            }
+          "bullets": [
+            "1. The Female Lead Rule (قاعدة تقدم الإناث):",
+            "   • Epiphyses appear and unite 1 to 2 years EARLIER in females than in males (driven by earlier estrogen surge)",
+            "   • Example 1: Sternal end of clavicle fuses at 21–23y in females vs 23–25y in males",
+            "   • Example 2: Knee epiphyses fuse at 18–19y in females vs 20–21y in males",
+            "   • Criminal Implication: A 16-year-old female may present with epiphyseal status equivalent to an 18-year-old male!",
+            "2. The Law of Ossification Emergence vs Union:",
+            "   • The epiphysis that appears FIRST in life unites LAST (e.g. head of humerus appears at 1y, unites at 20-21y)",
+            "   • Exception: Lower end of fibula appears late (5y) but unites early (18y)",
+            "3. Extrinsic Modifiers of Bone Age:",
+            "   • Malnutrition, rickets, and severe chronic infections delay epiphyseal union by 1 to 3 years",
+            "   • Hyperthyroidism and precocious puberty accelerate epiphyseal closure"
+          ]
+        },
+        "images": [
+          {
+            "url": "images/female_lead_rule.jpg",
+            "caption": "The Female Lead Rule: accelerated ossification and epiphyseal closure in females by 1 to 2 years"
+          }
+        ],
+        "notes": "قاعدة تقدم الإناث بسنة إلى سنتين وأثرها على تقدير السن الجنائي وقانون ظهور والتحام المشاشات."
+      },
+      {
+        "type": "table",
+        "title": "Medico-Legal Importance (MLI) of Ages: Pediatric & Juvenile Milestones",
+        "content": {
+          "headers": [
+            "Age Milestone",
+            "Legal / Civil Designation",
+            "Forensic Significance & Egyptian Law Provisions"
           ],
-          "timeline": [
-            {
-              "age": "6 Years",
-              "icon": "🏫",
-              "title": "1st Permanent Molar",
-              "desc": "School entry milestone ('ضرس سن المدرسة والتعليم')"
-            },
-            {
-              "age": "7 Years",
-              "icon": "⚖️",
-              "title": "Central Incisors",
-              "desc": "Age of discrimination ('سن التمييز الجنائي')"
-            },
-            {
-              "age": "8 Years",
-              "icon": "🦷",
-              "title": "Lateral Incisors",
-              "desc": "Upper and lower lateral replacement"
-            },
-            {
-              "age": "9–10 Years",
-              "icon": "🦷",
-              "title": "Premolars (1st & 2nd)",
-              "desc": "Replace milky molars"
-            },
-            {
-              "age": "11 Years",
-              "icon": "🦷",
-              "title": "Canines",
-              "desc": "Permanent maxillary & mandibular eye teeth"
-            },
-            {
-              "age": "12 Years",
-              "icon": "⚠️",
-              "title": "2nd Permanent Molar",
-              "desc": "Partial criminal responsibility milestone"
-            },
-            {
-              "age": "18–25 Years",
-              "icon": "🧠",
-              "title": "3rd Permanent Molar",
-              "desc": "Wisdom tooth ('ضرس العقل') — Adulthood marker"
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/teeth_and_hyoid_sternum.jpg",
-            "caption": "الأسنان الدائمة الـ 32: الضرس الأول عند سن 6 سنين، والقواطع عند 7 سنين، وضرس العقل من 18 إلى 25 سنة"
-          }
-        ],
-        "notes": "قاعدة WBSL الأربعة للفروق بين اللبني والدائم: Whiter, Broader, Stronger, Larger."
-      },
-      {
-        "type": "anatomy",
-        "title": "Appearance of Postnatal Ossific Centers (Age 1 to 6 Years)",
-        "content": {
-          "timeline": [
-            {
-              "age": "1 Year",
-              "icon": "🦴",
-              "title": "Heads of 3 Major Long Bones",
-              "desc": "Head of humerus, head of femur, and upper end of tibia"
-            },
-            {
-              "age": "2 Years",
-              "icon": "🦴",
-              "title": "Lower Radius & Lower Tibia",
-              "desc": "Secondary triangular center of distal radius"
-            },
-            {
-              "age": "3 Years",
-              "icon": "⭐",
-              "title": "PATELLA (عظمة الرضفة / صابونة الركبة)",
-              "desc": "HIGH-YIELD EXAM TRAP: Patella appears at 3y on X-ray!"
-            },
-            {
-              "age": "4 Years",
-              "icon": "🦴",
-              "title": "Upper Fibula & Greater Trochanter",
-              "desc": "Proximal fibular head and femoral greater trochanter"
-            },
-            {
-              "age": "5 Years",
-              "icon": "🦴",
-              "title": "Lower Fibula",
-              "desc": "Distal lateral malleolus center"
-            },
-            {
-              "age": "6 Years",
-              "icon": "🦴",
-              "title": "Head of Radius & Lower Ulna",
-              "desc": "Proximal radial head and distal ulnar head"
-            }
+          "rows": [
+            [
+              "Age 6 Years",
+              "Compulsory Education",
+              "Mandatory enrollment in primary schools; child welfare regulations apply"
+            ],
+            [
+              "Age 7 Years",
+              "Age of Discrimination (سن التمييز)",
+              "Under 7y: ABSOLUTE lack of criminal responsibility (لا مسؤولية جنائية على الإطلاق)"
+            ],
+            [
+              "Age 12 Years",
+              "Child Labor Training",
+              "Training or employment of children under 12y is strictly prohibited by law"
+            ],
+            [
+              "Age 14 Years",
+              "Presumption Against Rape",
+              "A male child under 14y is legally presumed incapable of committing rape; light regulated work permitted"
+            ],
+            [
+              "Age 15 Years",
+              "Juvenile Custody Threshold",
+              "Cannot be sentenced to adult imprisonment or capital punishment; placed in social welfare institutions; end of mother's custody dispute"
+            ],
+            [
+              "Age 16 Years",
+              "National Identity Card",
+              "Mandatory issuance of National ID card; employment in hazardous work (battery factories, chemicals, mining) prohibited under 18y"
+            ]
           ],
-          "trap": {
-            "title": "THE PATELLA 3-YEAR RULE (مصيدة امتحانات عين شمس)",
-            "desc": "ظهور مركز تعظم الرضفة (Patella) في أشعة الركبة يثبت بشكل قطعي أن عمر الطفل لا يقل عن 3 سنوات كاملة!"
-          }
+          "extra_bullets": [
+            "Egyptian Penal & Child Law (Law 12/1996 amended by Law 126/2008): Defines juvenile protections from 7 to 18 years."
+          ]
         },
         "images": [
           {
-            "url": "images/ossification_centers_diagram.jpg",
-            "caption": "مراكز التعظم بعد الولادة: عظمة الرضفة (Patella) تظهر عند سن 3 سنوات، والرأس الكعبري والزند السفلي عند 6 سنوات"
+            "url": "images/mli_pediatric_table.jpg",
+            "caption": "Medico-Legal Importance (MLI) milestones from age 6 (school) to 16 (National ID and hazardous labor prohibition)"
           }
         ],
-        "notes": "ظهور مركز تعظم الرضفة عند سن 3 سنوات سؤال شفوي شهير جداً في طب عين شمس."
+        "notes": "جدول الأهمية الطبية الشرعية للأعمار الصغيرة: سن 7 لا مسؤولية جنائية، سن 12 حظر تدريب، سن 14 استحالة الاغتصاب، سن 16 بطاقة الرقم القومي وحظر الأعمال الخطرة."
       },
       {
-        "type": "anatomy",
-        "title": "Epiphyseal Union I: The Elbow Scissors & Upper Limb (14y to 21y)",
+        "type": "table",
+        "title": "Medico-Legal Importance (MLI) of Ages: Adult & Civic Milestones",
         "content": {
-          "flowchart": [
-            {
-              "step": "AGE 14y",
-              "icon": "✂️",
-              "title": "Trochlea + Capitulum",
-              "desc": "Unite together (بكرة ورؤيس العضد يندمجان معاً)"
-            },
-            {
-              "step": "AGE 15y",
-              "icon": "⚖️",
-              "title": "Unite with Humerus Shaft",
-              "desc": "Both unite with shaft (حل لغز عنتر وسن 15 سنة)"
-            },
-            {
-              "step": "AGE 16y",
-              "icon": "💪",
-              "title": "Lateral Epicondyle + Ulna",
-              "desc": "Lateral epicondyle & Upper end of ulna (olecranon)"
-            },
-            {
-              "step": "AGE 17y",
-              "icon": "🎯",
-              "title": "Medial Epicondyle + Radius",
-              "desc": "Medial epicondyle & Upper end of radius (head)"
-            }
+          "headers": [
+            "Age Milestone",
+            "Legal / Civil Designation",
+            "Constitutional & Civil Law Provisions"
           ],
-          "cards": [
-            {
-              "badge": "WRIST & HAND (18y–21y)",
-              "theme": "cyan",
-              "icon": "🖐️",
-              "title": "مشاشات اليد والرسغ (Hand & Wrist)",
-              "items": [
-                "Age 18 Years: Distal ends of metacarpals unite with shafts (Male adulthood mark)",
-                "Age 20–21 Years: Lower ends of radius and ulna unite with shafts"
-              ]
-            }
+          "rows": [
+            [
+              "Age 18 Years",
+              "Adult Criminal Responsibility",
+              "Child Law protections expire; capital punishment (execution) & life imprisonment become legally applicable; full driver's license"
+            ],
+            [
+              "Age 21 Years",
+              "Age of Majority (سن الرشد القانوني)",
+              "Full civil capacity; unrestricted management and disposition of property and financial wealth; legal capacity to marry without guardian"
+            ],
+            [
+              "Age 30 Years",
+              "Parliamentary Candidacy",
+              "Minimum legal age for candidacy in the Egyptian Senate (مجلس الشيوخ)"
+            ],
+            [
+              "Age 35 Years",
+              "Judicial High Office",
+              "Minimum age requirement for appointment to the Supreme Constitutional Court and senior judicial bodies"
+            ],
+            [
+              "Age 40 Years",
+              "Presidential Candidacy",
+              "Minimum constitutional age requirement for candidacy for President of the Republic"
+            ],
+            [
+              "Age 60 Years",
+              "Official Retirement Age",
+              "Mandatory retirement age for government and public sector civil servants; pension entitlement"
+            ]
+          ],
+          "extra_bullets": [
+            "Key Distinction: Age 18 = Criminal Adulthood (Full criminal liability); Age 21 = Civil Adulthood (Financial & civil capacity)."
           ]
         },
         "images": [
           {
-            "url": "images/upper_limb_epiphysis_diagram.jpg",
-            "caption": "التحام مشاشات الطرف العلوي ومفصل الكوع: 14 سنة (بكرة ورؤيس)، 15 سنة (التحام بعضد العضد)، و16 و17 سنة"
+            "url": "images/mli_adult_table.jpg",
+            "caption": "Adult medico-legal and civic milestones: age 18 (criminal adulthood), 21 (civil majority), 30 (Senate), 60 (pension)"
           }
         ],
-        "notes": "مفصل الكوع هو ميزان محكمة الأحداث بين سن 14 و 15 و 16 و 17 سنة."
-      },
-      {
-        "type": "anatomy",
-        "title": "Epiphyseal Union II: Pelvis, Lower Limb & Axial Skeleton (6y to 70y)",
-        "content": {
-          "cards": [
-            {
-              "badge": "PELVIS & HIP",
-              "theme": "cyan",
-              "icon": "🦴",
-              "title": "عظام الحوض ومفصل الفخذ",
-              "items": [
-                "Age 6y: Pubic ramus unites with ischial ramus (ischiopubic union)",
-                "Age 15y: Ilium, ischium & pubis form acetabulum (Y-cartilage closes)",
-                "Age 21y: Ischial tuberosity unites with ischium",
-                "Age 23y: Iliac crest unites with ilium"
-              ]
-            },
-            {
-              "badge": "LOWER LIMB & KNEE",
-              "theme": "emerald",
-              "icon": "🦵",
-              "title": "الطرف السفلي ومفصل الركبة",
-              "items": [
-                "Age 18y: Lower ends of tibia and fibula unite with shafts",
-                "Age 21y: Lower femur + Upper tibia/fibula unite (Knee Joint Milestone)",
-                "Age 23y: Sternal end of clavicle + Basiocciput with basisphenoid"
-              ]
-            },
-            {
-              "badge": "AXIAL SKELETON",
-              "theme": "amber",
-              "icon": "💀",
-              "title": "القص واللامي والجمجمة",
-              "items": [
-                "Age 30y: Sagittal suture closure",
-                "Age 40y: Xiphoid process + Coronal suture closure",
-                "Age 50y: Greater cornu of hyoid + Lambdoid suture closure",
-                "Age 60y: Manubrium sterni with body (Pension Milestone)",
-                "Age 70y: All sutures closed (except temporoparietal)"
-              ]
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/lower_limb_epiphysis_diagram.jpg",
-            "caption": "التحام مشاشات الحوض والطرف السفلي: غضروف الحُق Y-shaped عند 15 سنة، ومفصل الركبة عند 21 سنة، وعظم الترقوة عند 23 سنة"
-          }
-        ],
-        "notes": "عظمة القص تحكي عمر الإنسان البالغ: الخنجري عند 40 سنة وقبضة القص عند 60 سنة."
-      },
-      {
-        "type": "concept",
-        "title": "The Female Lead Rule: Advanced Ossification by 1 to 2 Years",
-        "content": {
-          "cards": [
-            {
-              "badge": "UNIVERSAL LAW",
-              "theme": "rose",
-              "icon": "♀️",
-              "title": "قاعدة تقدم الإناث بسنة إلى سنتين",
-              "items": [
-                "All mentioned epiphyseal union ages are EARLIER by 1 to 2 years in females!",
-                "Biological Cause: Early pubertal surge & estrogenic stimulation of epiphyseal plate fusion",
-                "Mandatory Rule: NEVER estimate age from bone X-rays without establishing biological SEX first!"
-              ]
-            },
-            {
-              "badge": "LEGAL CONVERSIONS",
-              "theme": "purple",
-              "icon": "⚖️",
-              "title": "التحويلات الجنائية لسن 16 و18 سنة",
-              "items": [
-                "At Age 16y in Females: Metacarpals already united (equals 18y in males!)",
-                "At Age 18y in Females: Lower radius & ulna united (equals 20y in males!)",
-                "At Age 15y in Females: Lateral epicondyle already united"
-              ]
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/pelvis_age_female_rule.jpg",
-            "caption": "القاعدة النسائية في الطب الشرعي: تقدم الإناث في التحام المشاشات بسنة إلى سنتين عن الذكور في جميع المفاصل"
-          }
-        ],
-        "notes": "قاعدة ذهبية: لا تقدر سن هيكل عظمي من المشاشات قبل أن تحدد جنسه أولاً، لأن الأنثى تسبق الذكر بسنة لسنتين!"
-      },
-      {
-        "type": "anatomy",
-        "title": "Medico-Legal Importance (MLI) Table: Ages 6, 7, 12, 14, 15, 16 Years",
-        "content": {
-          "timeline": [
-            {
-              "age": "6 Years",
-              "icon": "🏫",
-              "title": "سن التعليم (Age of Education)",
-              "desc": "1st permanent molar erupts; ischiopubic ramus unites"
-            },
-            {
-              "age": "7 Years",
-              "icon": "⚖️",
-              "title": "سن التمييز (Age of Discrimination)",
-              "desc": "Under 7y guardian liable; above 7y Child Court trial WITHOUT punishment until 12y; central incisors"
-            },
-            {
-              "age": "12 Years",
-              "icon": "🛠️",
-              "title": "حظر التدريب والمسؤولية الجزئية",
-              "desc": "Work training illegal under 12y; partly responsible (punished in juvenile reformatory, NO prison); 2nd molar"
-            },
-            {
-              "age": "14 Years",
-              "icon": "🚫",
-              "title": "استحالة الاغتصاب وحظر العمل",
-              "desc": "Cannot commit rape under 14y; child labor strictly illegal; trochlea + capitulum union"
-            },
-            {
-              "age": "15 Years",
-              "icon": "🛡️",
-              "title": "انتهاء الحضانة وتخفيف العقوبات",
-              "desc": "Mother custody ends; adult court with REDUCED sanctions (NO execution, life sentence, hard labor); lower humerus + acetabulum"
-            },
-            {
-              "age": "16 Years",
-              "icon": "🪪",
-              "title": "بطاقة الرقم القومي وحظر مصانع البطاريات",
-              "desc": "National ID cards; prohibited from hazardous duties (batteries factories!); lateral epicondyle in males / metacarpals in females"
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/dr_shereen_framework.jpg",
-            "caption": "جدول الأهمية الطبية الشرعية للطفولة والأحداث: سن التمييز 7، وحظر التدريب 12، وحظر العمل 14، وتخفيف العقوبات 15، وبطاقة الرقم القومي 16"
-          }
-        ],
-        "notes": "محطات الطفولة والأحداث ترسم بدقة حدود المسؤولية الجنائية وقوانين العمل من 6 إلى 16 سنة."
-      },
-      {
-        "type": "concept",
-        "title": "Medico-Legal Importance (MLI) Table: Ages 18, 21, 30, 35, 60 Years",
-        "content": {
-          "cards": [
-            {
-              "badge": "AGE 18: MILESTONE",
-              "theme": "rose",
-              "icon": "⚖️",
-              "title": "أم المحطات — سن 18 سنة",
-              "items": [
-                "Legal age of marriage",
-                "Legal age for sexual consent in rape trials",
-                "Voting & political franchise rights",
-                "Governmental employment & civil service",
-                "Private vehicle driving license",
-                "FULL CRIMINAL RESPONSIBILITY (Adult felony court, execution & life imprisonment applicable!)",
-                "Military conscription recruitment"
-              ],
-              "highlight": "العلامة العظمية: أمشاط اليد في الذكور، وأسفل الكعبرة والزند في الإناث."
-            },
-            {
-              "badge": "CONSTITUTIONAL AGES",
-              "theme": "purple",
-              "icon": "🏛️",
-              "title": "أعمار الدستور والتقاعد",
-              "items": [
-                "21 Years: Full civil rights (الأهلية المدنية وإدارة الأموال); Knee joint X-ray",
-                "30 Years: People's Assembly membership (مجلس النواب); Sagittal suture",
-                "35 Years: President of the Republic eligibility (رئيس الجمهورية)",
-                "60 Years: Retirement pension (سن المعاش); Manubrium sterni with body union"
-              ],
-              "highlight": "سن 60 سنة: التحام قبضة القص بجسم القص يحدد استحقاق المعاش."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/teeth_and_hyoid_sternum.jpg",
-            "caption": "المحطات الجنائية والدستورية الكبرى: 18 سنة (المسؤولية الجنائية الكاملة والإعدام)، 21 (الأهلية المدنية)، 30 (البرلمان)، 35 (الرئاسة)، و60 (سن المعاش)"
-          }
-        ],
-        "notes": "سن 18 هو أهم سن جنائي في القانون المصري؛ وسن 60 يحدد المعاش بالتحام قبضة القص بجسم القص."
+        "notes": "الفرق الجوهري بين سن 18 (الرشد الجنائي وإمكانية الإعدام) وسن 21 (الرشد المدني وإدارة الأموال)."
       },
       {
         "type": "summary",
-        "title": "Episode 2 Summary: Chronological Master Matrix & Oral Exam Traps",
+        "title": "Episode 2 Master Matrix: Teeth, Epiphyses & Legal Ages Summary",
         "content": {
-          "flowchart": [
-            {
-              "step": "6y",
-              "icon": "🏫",
-              "title": "School Age",
-              "desc": "1st molar + Ischiopubic"
-            },
-            {
-              "step": "7y",
-              "icon": "⚖️",
-              "title": "Discrimination",
-              "desc": "Central incisors"
-            },
-            {
-              "step": "12y",
-              "icon": "🛠️",
-              "title": "Partial Resp.",
-              "desc": "2nd molar"
-            },
-            {
-              "step": "14y",
-              "icon": "🚫",
-              "title": "No Rape",
-              "desc": "Trochlea + Capitulum"
-            },
-            {
-              "step": "15y",
-              "icon": "🛡️",
-              "title": "No Execution",
-              "desc": "Humerus + Acetabulum"
-            },
-            {
-              "step": "16y",
-              "icon": "🪪",
-              "title": "National ID",
-              "desc": "Battery ban"
-            },
-            {
-              "step": "18y",
-              "icon": "⚖️",
-              "title": "Adulthood",
-              "desc": "Execution eligible"
-            },
-            {
-              "step": "21y",
-              "icon": "📜",
-              "title": "Civil Rights",
-              "desc": "Knee joint"
-            },
-            {
-              "step": "60y",
-              "icon": "👴",
-              "title": "Pension",
-              "desc": "Sternum union"
-            }
+          "bullets": [
+            "1. Deciduous Teeth (20): Lower centrals (6-8m) → Upper centrals (7-9m) → Laterals (10-12m) → Molars 1 (12-14m) → Canines (16-20m) → Molars 2 (20-24m)",
+            "2. Permanent Teeth (32): 1st Molar (6y) → Centrals (7y) → Laterals (8y) → Premolar 1 (9y) → Premolar 2 (10y) → Canine (11y) → 2nd Molar (12y) → 3rd Molar (18-25y)",
+            "3. Ossific Centers (1 to 6y): 1y Heads (hum/fem/tib) → 2y Low radius/tib → 3y PATELLA (Trap!) → 4y Up fibula/Gt trochanter → 5y Low fibula → 6y Head radius/Low ulna",
+            "4. Elbow Scissors (14 to 17y): 14y Trochlea-Capitulum → 15y Shaft fusion → 16y Lateral epicondyle → 17y Medial epicondyle (Elbow complete)",
+            "5. Landmark Closures: Pelvis Y-cartilage (16y) → Ankle (18y) → Knee & Wrist (20-21y) → Sternal Clavicle (21-25y) → Sternum Body (40-60y)",
+            "6. Female Lead Rule: Females advance 1 to 2 years ahead of males in ossification and epiphyseal closure",
+            "7. Cardinal Legal Ages: Age 7 (No liability) → Age 16 (National ID) → Age 18 (Criminal adult / Death penalty) → Age 21 (Civil majority)"
           ]
         },
         "images": [
           {
-            "url": "images/dr_shereen_framework.jpg",
-            "caption": "المصفوفة الشاملة لقطار الأعمار الجنائية: ربط التسنين والمشاشات بالمواد القانونية والدستورية"
+            "url": "images/epiphyses_summary_deck.jpg",
+            "caption": "Comprehensive chronological master matrix for age estimation in Ain Shams forensic examinations"
           }
         ],
-        "notes": "هذه المصفوفة هي الخلاصة الشاملة لجدول صفحة 47 و 48 في كتاب قسم الطب الشرعي بعين شمس."
+        "notes": "الجدول النهائي الشامل لجميع تواريخ الأسنان والعظام والأعمار القانونية المقررة في امتحان عين شمس."
       }
     ]
   },
   {
     "title": "Prints & DNA Profiling: Dactylography, Forensic Loci & Typing",
-    "description": "Dactylography (1 in 64B, epidermis vs dermis), DNA double helix, 90% silent regions, 16 forensic loci, Amelogenin sex marker, Y-chromosome, mtDNA, 6 steps of typing, and paternity.",
+    "description": "Ain Shams forensic genetics: Dactylography (Galton rules, 1 in 64B, epidermis vs dermis), double helix biology, 90% silent regions, 16 forensic loci, Amelogenin sex marker, Y-chromosome, mtDNA, 6 steps of typing, and paternity.",
     "slides": [
       {
         "type": "title",
         "title": "The Immortal Code — Dactylography, The 90% Silent DNA & Forensic Typing",
         "content": {
           "bullets": [
-            "Faculty of Medicine, Ain Shams University · Chapter 3 (Pages 48–52)",
-            "Episode 3 · Ain Shams Forensic Trilogy (The Finale)",
-            "Presented by Dr. Tarek (Forensic Consultant) & Dr. Atef (Resident)",
-            "Visual Learning Edition: Genomic Paradox, 16 Forensic Loci, Y-STR vs mtDNA, 6-Step Lab Flow, and Page 52 Exam Solutions"
+            "Faculty of Medicine, Ain Shams University · Forensic Medicine Department",
+            "Chapter 3: Identification & DNA Typing (Pages 45–52)",
+            "Dactylography, Friction Ridges, Non-Coding DNA, 16 Forensic Loci & Paternity",
+            "Presented by MedDuo Forensic Team"
           ]
         },
         "images": [],
-        "notes": "مرحباً بكم في الحلقة الثالثة والختامية من ثلاثية منهج طب عين شمس. نناقش في هذه الحلقة علم البصمات وتفاصيل البصمة الوراثية وتطبيقاتها القضائية."
-      },
-      {
-        "type": "case",
-        "title": "Case: The Diplomat's Villa Heist, Identical Twins & The Mixed Semen",
-        "content": {
-          "cards": [
-            {
-              "badge": "CRIME 1",
-              "theme": "rose",
-              "icon": "🖐️",
-              "title": "تشويه بصمات البرنس",
-              "items": [
-                "كوى باطن أصابعه بالنار وموس الحلاقة لمسح البصمة",
-                "السؤال: هل ينجح في الإفلات أم صنع ندبة إدانة أبدية؟"
-              ],
-              "highlight": "تدمير الأدمة يصنع ندبة تمييز إضافية."
-            },
-            {
-              "badge": "CRIME 2",
-              "theme": "purple",
-              "icon": "🧬",
-              "title": "خليط السائل المنوي (Mixed Semen)",
-              "items": [
-                "اعتداء جنسي جماعي شارك فيه اثنان من الذكور",
-                "السؤال: كيف نفصل شفرة كل جاني من الخليط المعقد؟"
-              ],
-              "highlight": "كروموسوم Y هو مفتاح فك اشتباك الاغتصاب الجماعي."
-            },
-            {
-              "badge": "LEGAL DILEMMA",
-              "theme": "amber",
-              "icon": "👥",
-              "title": "لغز التوأم المتطابق (Uniovular Twins)",
-              "items": [
-                "المتهم المقبوض عليه له توأم متطابق يشاركه نفس الـ DNA تماماً",
-                "السؤال: ما هو الدليل القاطع للفصل بين التوأمين؟"
-              ],
-              "highlight": "بصمات الأصابع الجلدية تختلف حتى في التوائم المتطابقة."
-            },
-            {
-              "badge": "CIVIL LAWSUIT",
-              "theme": "cyan",
-              "icon": "👶",
-              "title": "قضية إثبات نسب المليونير",
-              "items": [
-                "سيدة تدعي أن الدبلوماسي المتوفى والد طفلها الرضيع",
-                "الورثة يطالبون بفصائل الدم ABO والطب الشرعي ينتدب للـ DNA"
-              ],
-              "highlight": "فصائل الدم تنفي فقط، بينما الـ DNA قطعي الإثبات والنفي."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/el_prince_illustration.jpg",
-            "caption": "المتهم 'البرنس': شوه باطن أصابعه بالنار والموس لمسح البصمة، فوقع في فخ الندوب الدائمة وعلامات الإدانة الإضافية"
-          }
-        ],
-        "notes": "هذه القضية تجمع كل معضلات البصمات والـ DNA، وتوضح لماذا تفصل البصمة بين التوائم، وكيف يفصل Y-chromosome خليط السائل المنوي."
-      },
-      {
-        "type": "anatomy",
-        "title": "Dactylography I: Papillary Ridges, 1 in 64 Billion & The Dual Shield",
-        "content": {
-          "cards": [
-            {
-              "badge": "1 IN 64 BILLION",
-              "theme": "cyan",
-              "icon": "🌍",
-              "title": "الانفراد الكوني (Cosmic Singularity)",
-              "items": [
-                "Chance of two identical fingerprints: 1 in 64,000,000,000!",
-                "Earth Population: ~8 billion humans $\\rightarrow$ Absolute individuality",
-                "Papillary ridges with sweat gland ducts opening on ridge summits"
-              ]
-            },
-            {
-              "badge": "DUAL ANCHOR",
-              "theme": "emerald",
-              "icon": "🛡️",
-              "title": "الحصن المزدوج (Epidermis + Dermis)",
-              "items": [
-                "Ridges originate in dermal papillae and project through epidermis",
-                "Permanent structural configuration unchanged from womb to tomb",
-                "Even severe desquamation leaves the deep template intact"
-              ]
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "تشريح بصمات الأصابع: خطوط راحة اليد وفتحات مسام العرق، ونسبة الانفراد الكوني (1 في 64 مليار)"
-          }
-        ],
-        "notes": "انتبه للأرقام: احتمال تطابق البصمات هو 1 في 64 مليار؛ وتواجدها في طبقتي البشرة والأدمة يجعلها ثابتة مدى الحياة."
+        "notes": "الحلقة الثالثة: البصمات، الحمض النووي الصامت، الخطوات الست للتحليل، وقضايا إثبات النسب والجنايات."
       },
       {
         "type": "concept",
-        "title": "Dactylography II: Mutilation Attempts, Scars & Pathological Atrophy",
+        "title": "Fingerprints & DNA: 4 Cardinal Diagnostic Dilemmas",
         "content": {
-          "cards": [
-            {
-              "badge": "MUTILATION ATTEMPTS",
-              "theme": "rose",
-              "icon": "🔥",
-              "title": "محاولات طمس وتشويه البصمات",
-              "items": [
-                "Epidermis Only Destroyed: Re-epithelializes with NO alteration in ridge pattern!",
-                "Dermis Destroyed: Heals by fibrous scar creating ADDITIONAL POINTS OF IDENTIFICATION!"
-              ],
-              "highlight": "المتهم الذي يحرق الأدمة يصنع ختم إدانة إضافي مستحيل يتكرر!"
-            },
-            {
-              "badge": "PATHOLOGY",
-              "theme": "amber",
-              "icon": "🩺",
-              "title": "الأمراض وتلف البصمات",
-              "items": [
-                "Reversible Atrophy (ضمور مؤقت مسترد): Celiac Disease (حساسية القمح) & Dermatitis",
-                "Permanent Impairment (تلف دائم): Leprosy (مرض الجذام) & Exposure to Radiation"
-              ],
-              "highlight": "حساسية القمح والإكزيما تعود طبيعية؛ والجذام والإشعاع تلف دائم."
-            }
+          "bullets": [
+            "1. Intentional Mutilation of Friction Ridges: Suspect burning fingertips with acid/heat to obliterate fingerprints",
+            "2. The Monozygotic (Identical) Twin Defense: Armed robbery suspect claiming crime scene DNA could belong to his innocent twin",
+            "3. Rootless Biological Traces: A shed hair shaft without follicular root left at crime scene requiring specialized DNA typing",
+            "4. Disputed Paternity with Significant Inheritance: Mother claiming child paternity against denying putative father",
+            "Diagnostic Power: Dactylography distinguishes identical twins; DNA typing provides 1 in 10^15 statistical individuality"
           ]
         },
         "images": [
           {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "محاولات طمس البصمات: تدمير البشرة يعود كما كان، وتدمير الأدمة يصنع ندبة تمييز إضافية؛ والضمور المؤقت في حساسية القمح والدائم في الجذام"
+            "url": "images/dna_gel_electrophoresis.jpg",
+            "caption": "Forensic laboratory identification utilizing friction ridge analysis and STR DNA typing multiplexes"
           }
         ],
-        "notes": "سؤال شفوي متكرر: ما أثر حرق البشرة فقط مقارنة بالأدمة؟ وما هي الأمراض التي تسبب ضموراً مؤقتاً أو تلفاً دائماً للبصمات؟"
+        "notes": "السيناريوهات الأربعة: محاولة طمس البصمات، معضلة التوأم المتطابق، الشعرة بدون بصيلة، وقضية إثبات النسب."
       },
       {
         "type": "concept",
-        "title": "DNA Profiling: The Double Helix & The 90% Silent Genome Paradox",
+        "title": "Dactylography: Galton's Principles of Friction Ridge Biology",
         "content": {
-          "cards": [
-            {
-              "badge": "10% CODING",
-              "theme": "amber",
-              "icon": "⚙️",
-              "title": "الجينات المشفرة (Genes for Proteins)",
-              "items": [
-                "Only 10% of total DNA used for genetic coding",
-                "Synthesizes structural and metabolic proteins",
-                "Highly conserved and shared across all human populations"
-              ]
-            },
-            {
-              "badge": "90% SILENT",
-              "theme": "cyan",
-              "icon": "💎",
-              "title": "المناطق الصامتة (Forensics Goldmine)",
-              "items": [
-                "90% of DNA has NO known protein synthesis function",
-                "Hypervariable sequences (extreme polymorphism)",
-                "Constant throughout life in every nucleated cell",
-                "Strictly inherited from biological parents to children"
-              ],
-              "highlight": "الـ 90% الصامتة هي سر تفرد البصمة الوراثية لكل بني آدم على الكوكب!"
-            }
+          "bullets": [
+            "1. Definition: The study of epidermal papillary friction ridges on the palmar surface of hands and plantar surface of feet",
+            "2. Galton's Cardinal Principles of Dactylography:",
+            "   • Absolute Individuality: Probability of two identical prints is 1 in 64 billion (exceeds global human population)",
+            "   • Permanent Immutability: Formed in the 4th month of intrauterine life and remain unchanged until post-mortem decomposition",
+            "   • Monozygotic Distinction: Even identical twins (with identical DNA) possess distinct, unique fingerprint patterns!",
+            "3. Anatomical Architecture (The Dual Shield):",
+            "   • Epidermal Layer: Superficial ridges replicated faithfully by underlying dermal papillae",
+            "   • Papillary Dermis: Generative basement matrix; contains tactile receptors and sweat gland ducts",
+            "4. Ridge Pattern Classification (Galton / Henry System):",
+            "   • Loops: ~65% of all patterns (Ulnar and Radial loops)",
+            "   • Whorls: ~30% of patterns (Circular or spiral ridges with two deltas)",
+            "   • Arches: ~5% of patterns (Plain and Tented arches; no delta)",
+            "   • Composites: Rare complex combinations (Central pocket, lateral pocket, accidental)"
           ]
         },
         "images": [
           {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "شريط الـ DNA الحلزوني المزدوج: 10% فقط جينات مشفرة، و90% مناطق صامتة متباينة وهي كنز الطب الشرعي"
+            "url": "images/fingerprint_patterns.jpg",
+            "caption": "Fingerprint ridge patterns: Loops (65%), Whorls (30%), Arches (5%), and Henry ridge characteristics"
           }
         ],
-        "notes": "الـ 90% الصامتة هي أساس الاستعراف الشرعي لأنها شديدة التباين بين البشر، وثابتة للشخص نفسه، وتورث من الوالدين."
+        "notes": "مبادئ جالتون: الانفرادية المطلقة (1 في 64 مليار)، الثبات الدائم من الشهر الرابع جنينياً، واختلاف بصمات التوأم المتطابق."
+      },
+      {
+        "type": "table",
+        "title": "Fingerprint Alterations: Trauma, Chemical Burns & Pathological Conditions",
+        "content": {
+          "headers": [
+            "Condition / Injury",
+            "Depth of Tissue Involvement",
+            "Effect on Friction Ridges",
+            "Forensic / Medico-Legal Outcome"
+          ],
+          "rows": [
+            [
+              "Superficial Abrasion / Scald",
+              "Epidermis only (Stratum corneum)",
+              "Ridges regenerate completely without distortion within weeks",
+              "Original fingerprint pattern is 100% restored"
+            ],
+            [
+              "Deep Incision / Acid Burn",
+              "Extends into Papillary Dermis (>1-2 mm)",
+              "Destroys dermal papillae; heals by fibrous cicatrix (scar)",
+              "Permanent scar creates an ADDITIONAL unique identifying mark!"
+            ],
+            [
+              "Surgical Skin Grafting",
+              "Full-thickness excision and graft",
+              "Replaced by smooth non-ridge skin",
+              "Readily recognized as intentional mutilation; raises criminal suspicion"
+            ],
+            [
+              "Senile Atrophy",
+              "Dermal thinning in elderly",
+              "Ridges become faint, shallow, and difficult to record",
+              "Requires special oblique lighting or chemical enhancement"
+            ],
+            [
+              "Pathological Skin Diseases",
+              "Scleroderma, Leprosy, Chronic Eczema",
+              "Causes permanent atrophy, ulceration, or loss of ridge detail",
+              "Documented as pathological dermatological condition"
+            ]
+          ],
+          "extra_bullets": [
+            "Forensic Rule: You cannot erase a fingerprint—superficial damage regrows, and deep damage creates an incriminating permanent scar!"
+          ]
+        },
+        "images": [
+          {
+            "url": "images/mutilation_scars_dermis.jpg",
+            "caption": "Epidermis vs Dermis damage: superficial regeneration vs permanent scar formation creating an additional identifying mark"
+          }
+        ],
+        "notes": "استحالة طمس البصمة: الحرق السطحي يعود كما كان، والحرق العميق في الأدمة يترك ندبة دائمة تصبح دليلاً إضافياً ضد المجرم!"
       },
       {
         "type": "concept",
-        "title": "Genetic Probabilities & The Uniovular Identical Twins Paradox",
+        "title": "DNA Biology: The 90% Non-Coding Genome & Forensic Polymorphism",
         "content": {
-          "cards": [
-            {
-              "badge": "PROBABILITY SCALE",
-              "theme": "purple",
-              "icon": "🎲",
-              "title": "احتمالات التطابق الوراثي",
-              "items": [
-                "Between 2 Unrelated Persons: 1 in a Million Billion (1 in 10¹⁵)",
-                "Among Biological Siblings (الأشقاء): 1 in Ten Thousand Billion (1 in 10¹³)",
-                "Uniovular (Identical) Twins: 100% IDENTICAL DNA!"
-              ]
-            },
-            {
-              "badge": "THE TWIN SOLUTION",
-              "theme": "emerald",
-              "icon": "🖐️",
-              "title": "حل معضلة التوأم المتطابق",
-              "items": [
-                "Uniovular twins share the exact same fertilized ovum DNA",
-                "DNA Profiling CANNOT distinguish identical twins in court",
-                "THE JUDICIAL SAVIOR: DACTYLOGRAPHY (FINGERPRINTS)!",
-                "Intrauterine fluid pressures create unique fingerprints even for identical twins!"
-              ],
-              "highlight": "البصمات الجلدية هي الدليل البيولوجي الوحيد الذي يفصل بين التوأمين المتطابقين."
-            }
+          "bullets": [
+            "1. Nuclear DNA Architecture:",
+            "   • Double helix composed of 3.2 billion base pairs packaged into 23 pairs of chromosomes (46 total)",
+            "   • Identical in every nucleated cell of a single human individual (blood, semen, saliva, skin, bone, tooth pulp)",
+            "2. The 90% Non-Coding (Silent) Genome Paradox:",
+            "   • Only ~1% to 2% of human DNA codes for functional proteins (Exons)",
+            "   • Over 90% consists of non-coding, silent intronic sequences ('Junk DNA')",
+            "   • Why Forensics Uses Non-Coding Regions:",
+            "     - Immune from natural selection pressure, accumulating vast hypervariable mutations across generations",
+            "     - Contains polymorphic Short Tandem Repeats (STRs: 2 to 6 base pair repeats)",
+            "     - Highly individualistic: Length polymorphisms generate unique individual profiles without revealing medical disease traits"
           ]
         },
         "images": [
           {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "مفارقة التوأم المتطابق: يشتركان في الـ DNA بنسبة 100%، بينما تفصل بينهما بصمات الأصابع الجلدية بشكل قاطع"
+            "url": "images/dna_silent_regions.jpg",
+            "caption": "The human genome: ~1-2% coding genes vs >90% non-coding silent intronic DNA harboring polymorphic STR repeats"
           }
         ],
-        "notes": "التوأم أحادي الزيجوت هو الاستثناء الوحيد في تطابق الـ DNA الكامل؛ والفيصل الحاسم بينهما في مسرح الجريمة هو بصمات الأصابع."
+        "notes": "الـ 90% DNA الصامت: لا يشفر بروتينات، غني بالتكرارات المترادفة القصيرة (STRs)، وهو كنز البصمة الوراثية الشرعية."
       },
       {
-        "type": "anatomy",
-        "title": "The 16 Forensic Loci & The Amelogenin Sex Marker",
+        "type": "table",
+        "title": "DNA vs Fingerprints: Probability Metrics & Identical Twins Resolution",
         "content": {
-          "cards": [
-            {
-              "badge": "15 AUTOSOMAL LOCI",
-              "theme": "cyan",
-              "icon": "🧬",
-              "title": "15 موقعاً على كروموسومات جسدية",
-              "items": [
-                "Located on intergenic silent areas of autosomal chromosomes",
-                "Provides discrimination power exceeding 1 in 10¹⁵",
-                "Standard international profiling set (CODIS / Interpol loci)"
-              ]
-            },
-            {
-              "badge": "1 SEX LOCUS: AMELOGENIN",
-              "theme": "rose",
-              "icon": "⚧",
-              "title": "موقع الأميلوجينين لتحديد الجنس",
-              "items": [
-                "Located on sex chromosomes (X and Y)",
-                "Codes for tooth enamel matrix protein with different sequence sizes",
-                "Interpretation: XX profile = Female (أنثى) | XY profile = Male (ذكر)",
-                "Definitively identifies sex from charred fragments & decomposed bones"
-              ]
-            }
+          "headers": [
+            "Parameter",
+            "Forensic DNA Profiling",
+            "Dactylography (Fingerprints)",
+            "Diagnostic Resolution / Court Value"
+          ],
+          "rows": [
+            [
+              "Random Match Probability",
+              "1 in 10^15 to 1 in 10^18 (with 15 STR loci)",
+              "1 in 64 Billion (Galton calculation)",
+              "Both astronomical; virtually impossible for unrelated individuals to match"
+            ],
+            [
+              "Monozygotic (Identical) Twins",
+              "100% IDENTICAL DNA profile",
+              "TOTALLY DISTINCT fingerprint patterns",
+              "Fingerprints resolve twin crimes where DNA is inconclusive!"
+            ],
+            [
+              "Mechanism of Variance",
+              "Inherited parental genomic alleles",
+              "Intrauterine random micro-forces & volar pad tension",
+              "Ridge patterns develop epigenetically in 10th-16th week I.U."
+            ],
+            [
+              "Biological Substrate",
+              "Any nucleated cell (even microscopic trace)",
+              "Palmar and plantar skin ridges only",
+              "DNA enables microscopic trace analysis (LCN DNA)"
+            ],
+            [
+              "Degradation Resistance",
+              "Susceptible to heat, humidity, UV light, nucleases",
+              "Physical print vanishes if skin decomposes",
+              "Bone and teeth preserve DNA for centuries"
+            ]
+          ],
+          "extra_bullets": [
+            "Golden Rule: Fingerprints and DNA are complementary—fingerprints defeat twin defenses, DNA solves trace and skeletonized cases."
           ]
         },
         "images": [
           {
-            "url": "images/cranial_race_identification.jpg",
-            "caption": "المواقع الوراثية الـ 16 في الطب الشرعي: 15 موقعاً على كروموسومات جسدية وموقع الأميلوجينين لتحديد الجنس (X أو Y)"
+            "url": "images/identical_twins_dna_vs_prints.jpg",
+            "caption": "Identical twins dilemma: 100% identical DNA profile vs completely distinct fingerprint friction ridge patterns"
           }
         ],
-        "notes": "موقع Amelogenin هو المسؤول عن تحديد جنس صاحب العينة البيولوجية على الكروموسومات الجنسية."
-      },
-      {
-        "type": "anatomy",
-        "title": "Specialized DNA: Y-Chromosome (Gang Rape) vs mtDNA (Hair Shafts)",
-        "content": {
-          "cards": [
-            {
-              "badge": "Y-CHROMOSOME (Y-STR)",
-              "theme": "cyan",
-              "icon": "♂️",
-              "title": "كروموسوم الذكورة (Paternal Lineage)",
-              "items": [
-                "Inherited strictly from biological father to sons",
-                "Linked with male surname (اسم ولقب العائلة)",
-                "FORENSIC SUPERPOWER: Crimes of Multiple / Gang Rape!",
-                "Untangles mixed semen stains containing traces from multiple men"
-              ],
-              "highlight": "يفصل السائل المنوي المختلط في قضايا الاغتصاب الجماعي."
-            },
-            {
-              "badge": "MITOCHONDRIAL DNA (mtDNA)",
-              "theme": "rose",
-              "icon": "♀️",
-              "title": "حمض الميتوكوندريا (Maternal Lineage)",
-              "items": [
-                "Located in cytoplasm outside the nucleus (mitochondria)",
-                "Found in NON-NUCLEATED samples: Hair shafts without root, Nails, RBCs",
-                "Transmitted exclusively through the maternal ovum",
-                "Identifies maternal origin only (سلالة الأم فقط)"
-              ],
-              "highlight": "يحل لغز ساق الشعرة المكسورة بدون بصيلة والأظافر."
-            }
-          ]
-        },
-        "images": [
-          {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "كروموسوم Y (توارث أبوي، اسم العائلة، وفصل السائل المنوي المختلط) مقابل حمض الميتوكوندريا (سيتوبلازمي، الخلايا عديمة الأنوية، وتوارث أمومي)"
-          }
-        ],
-        "notes": "كروموسوم Y يحل ألغاز الاغتصاب الجماعي ويرتبط بلقب العائلة؛ والـ mtDNA يحل ألغاز الشعر عديم الجذور ويورث من الأم فقط."
+        "notes": "التوأم المتطابق له نفس الحمض النووي 100%، لكن بصمات أصابعه مختلفة تماماً، وبذلك تحسم البصمات قضايا التوأم."
       },
       {
         "type": "concept",
-        "title": "The 6 Steps of DNA Typing: From Biological Trace to Laser Camera",
+        "title": "The Standard 16 Forensic Loci & The Amelogenin Sex Marker",
         "content": {
-          "flowchart": [
-            {
-              "step": "STEP 1",
-              "icon": "🧪",
-              "title": "Collection",
-              "desc": "From nucleated cells (semen, hair root, WBCs). Handle with sterile precautions against contamination"
-            },
-            {
-              "step": "STEP 2",
-              "icon": "❄️",
-              "title": "Preservation",
-              "desc": "Preserve fresh samples at -20°C/-80°C to prevent enzymatic and bacterial degradation"
-            },
-            {
-              "step": "STEP 3",
-              "icon": "🔬",
-              "title": "Extraction",
-              "desc": "Chemical lysis and purification of pristine DNA strands from cellular matrices"
-            },
-            {
-              "step": "STEP 4",
-              "icon": "⚡",
-              "title": "PCR Amplification",
-              "desc": "Polymerase Chain Reaction creates millions of copies of the 16 target loci"
-            },
-            {
-              "step": "STEP 5",
-              "icon": "📊",
-              "title": "Agar Electrophoresis",
-              "desc": "Electric voltage separates amplified DNA fragments by molecular size & charge"
-            },
-            {
-              "step": "STEP 6",
-              "icon": "📸",
-              "title": "Laser Camera",
-              "desc": "Laser camera connected to computer documents, compares, and stores band profiles"
-            }
+          "bullets": [
+            "1. Standard Forensic Multiplex (The 16-Loci System):",
+            "   • 15 Autosomal STR Loci: Spread across different non-homologous chromosomes (e.g. D8S1179, D21S11, D18S51, vWA, FGA, TH01)",
+            "   • Under Hardy-Weinberg equilibrium, multiplying allele frequencies yields match probability < 1 in 10^15",
+            "2. The 16th Locus: Amelogenin (Sex Determination Gene):",
+            "   • Gene codes for tooth enamel protein; located on both X and Y chromosomes",
+            "   • Structural Difference: X-chromosome amelogenin has a 6-base-pair deletion compared to Y-chromosome amelogenin",
+            "   • Electropherogram Peak Interpretation:",
+            "     - Female (XX): Single peak at 106 bp (homozygous for X)",
+            "     - Male (XY): Two distinct peaks at 106 bp and 112 bp (heterozygous for X and Y)",
+            "Forensic Utility: Instantly identifies sex from minute blood drops, bone dust, or sexual assault swabs"
           ]
         },
         "images": [
           {
-            "url": "images/fingerprint_patterns_dna.jpg",
-            "caption": "المراحل الست لفحص البصمة الوراثية: 1. الجمع، 2. الحفظ بالتبريد، 3. الاستخلاص، 4. تكبير الـ PCR، 5. الترحيل الكهربائي، 6. التوثيق بالليزر"
+            "url": "images/amelogenin_sex_marker.jpg",
+            "caption": "Amelogenin sex-typing locus: single peak (XX, female) vs two distinct peaks (XY, male) on capillary electropherogram"
           }
         ],
-        "notes": "سؤال تحريري سنوي: اذكر خطوات فحص البصمة الوراثية بالترتيب. احفظ السلسلة: Collection, Preservation, Extraction, PCR, Electrophoresis, Laser."
+        "notes": "الـ 16 Loci القياسية: 15 موقعاً على كروموسومات جسدية + موقع الأميلوجينين (قمتين للذكر وقمة واحدة للأنثى)."
+      },
+      {
+        "type": "table",
+        "title": "Specialized DNA Profiling: Y-Chromosome STRs vs Mitochondrial DNA",
+        "content": {
+          "headers": [
+            "Feature",
+            "Y-Chromosome STRs (Y-STR)",
+            "Mitochondrial DNA (mtDNA)",
+            "Primary Forensic Applications"
+          ],
+          "rows": [
+            [
+              "Location & Copy Number",
+              "Non-recombining region of Y chromosome (1 copy/cell)",
+              "Mitochondria in cytoplasm (1,000 to 10,000 copies/cell)",
+              "Y-STR: Male traces · mtDNA: Highly degraded remains"
+            ],
+            [
+              "Mode of Inheritance",
+              "Strictly Paternal (father to sons unchanged)",
+              "Strictly Maternal (mother to all children)",
+              "Y-STR: Paternal pedigree · mtDNA: Maternal pedigree"
+            ],
+            [
+              "Power of Discrimination",
+              "Moderate (all male relatives share same haplotype)",
+              "Moderate (all maternal relatives share same sequence)",
+              "Exclude non-relatives; corroborate lineage"
+            ],
+            [
+              "Mixed Sample Utility",
+              "Detects tiny male DNA trace amidst huge female excess",
+              "Not suitable for male-female mixtures",
+              "Y-STR is gold standard in gang rape & sexual assault!"
+            ]
+          ],
+          "extra_bullets": [
+            "Specialized Application: mtDNA is the gold standard for analyzing shed hair shafts lacking a follicular root."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/specialized_dna_ystr_mtdna.jpg",
+            "caption": "Specialized forensic DNA: paternal Y-STR transmission vs maternal mtDNA inheritance across generations"
+          }
+        ],
+        "notes": "الـ Y-STR للذكور وقضايا الاغتصاب المتعدد، والـ mtDNA للأنساب من جهة الأم وخصلات الشعر بدون جذر."
+      },
+      {
+        "type": "table",
+        "title": "The 6 Standard Steps of DNA Typing: From Crime Scene to Profile",
+        "content": {
+          "headers": [
+            "Step Number",
+            "Laboratory Procedure",
+            "Technical Method / Equipment",
+            "Key Precautions / Objectives"
+          ],
+          "rows": [
+            [
+              "Step 1: Collection",
+              "Gathering biological evidence at scene",
+              "Sterile swabs, forceps, paper envelopes",
+              "Strict chain of custody; avoid plastic bags (mold growth)"
+            ],
+            [
+              "Step 2: Preservation",
+              "Transport and biological storage",
+              "Dry preservation; freezing at -20°C to -80°C",
+              "Prevents enzymatic nuclease degradation & bacterial decay"
+            ],
+            [
+              "Step 3: Extraction",
+              "Isolating pure DNA from cellular matrix",
+              "Organic (Phenol-Chloroform) or Chelex / Silica columns",
+              "Lyses cell membranes, removes proteins and PCR inhibitors"
+            ],
+            [
+              "Step 4: PCR Amplification",
+              "Enzymatic exponential replication",
+              "Thermal cycler (Taq polymerase, primers, dNTPs)",
+              "Amplifies target 16 STR loci millions of times from picograms"
+            ],
+            [
+              "Step 5: Electrophoresis",
+              "Separation of STR fragments by size",
+              "Capillary electrophoresis with polymer matrix",
+              "Sizing fragments down to single base-pair resolution"
+            ],
+            [
+              "Step 6: Detection",
+              "Laser excitation & profile generation",
+              "Fluorescent CCD camera & GeneMapper software",
+              "Generates electropherogram peaks showing STR alleles"
+            ]
+          ],
+          "extra_bullets": [
+            "Official Textbook Step Sequence: Collection → Preservation → Extraction → Amplification → Separation → Detection."
+          ]
+        },
+        "images": [
+          {
+            "url": "images/dna_typing_6steps.jpg",
+            "caption": "The 6 laboratory steps of DNA typing: Collection, Preservation, Extraction, PCR Amplification, Electrophoresis, Laser Detection"
+          }
+        ],
+        "notes": "خطوات فحص الـ DNA الست: الجمع، الحفظ بالتجميد، الاستخلاص، التضخيم بالـ PCR، الفصل الكهربائي، والكشف بالليزر."
       },
       {
         "type": "concept",
-        "title": "Medicolegal Applications: Disputed Paternity & Forensic Uses",
+        "title": "Medico-Legal Applications of DNA Profiling in Civil & Criminal Law",
         "content": {
-          "cards": [
-            {
-              "badge": "DEFINITIVE TEST",
-              "theme": "emerald",
-              "icon": "⚖️",
-              "title": "قضايا النسب (Disputed Paternity)",
-              "items": [
-                "ABO Blood Groups: Good Negative ONLY (Can exclude paternity, CANNOT prove it!)",
-                "DNA Typing: DEFINITIVE PATERNITY TEST (Both positive confirmation and exclusion!)",
-                "Child inherits 50% from mother and 50% from biological father"
-              ],
-              "highlight": "اختبار قطعي بنسبة تفوق 99.999% لحسم قضايا النسب والميراث."
-            },
-            {
-              "badge": "CRIMINAL & DVI",
-              "theme": "cyan",
-              "icon": "🔍",
-              "title": "الجنايات واستعراف الرفات والكوارث",
-              "items": [
-                "Identification or elimination of crime suspects in Murder, Robbery, Rape",
-                "Identification of body remains (DVI) in plane crashes, explosions, charred bodies",
-                "Sex & Species identification via polymorphism in non-coding satellite sequences"
-              ]
-            }
+          "bullets": [
+            "1. Criminal Investigation & Forensic Casework:",
+            "   • Linking suspect biological traces (blood, semen, saliva, skin cells) to crime scenes",
+            "   • Exonerating falsely accused innocent suspects (cold case reviews & innocence projects)",
+            "2. Mass Disasters & Skeletonized Remains Identification:",
+            "   • Identifying victims of airplane crashes, fires, wars, and tsunamis by matching against family reference profiles",
+            "3. Disputed Parentage (Paternity & Maternity Testing):",
+            "   • Genetic Principle: A child inherits exactly 50% of autosomal alleles from mother and 50% from biological father",
+            "   • Rule of Exclusion: If a child possesses an obligate paternal allele absent in the alleged father across 2 or more loci, paternity is EXCLUDED 100%!",
+            "   • Rule of Inclusion: If the alleged father possesses all obligate paternal alleles across all 15 STR loci, paternity is PROVEN with statistical probability > 99.999%"
           ]
         },
         "images": [
           {
-            "url": "images/charred_skull_forensics.jpg",
-            "caption": "التطبيقات القضائية للبصمة الوراثية: استعراف المشتبه بهم، قضايا النسب كاختبار قطعي إيجابي، واستعراف الأشلاء والكوارث الجماعية"
+            "url": "images/disputed_paternity_ruling.jpg",
+            "caption": "Disputed paternity analysis: obligate paternal alleles inheritance establishing 100% exclusion or >99.999% inclusion"
           }
         ],
-        "notes": "لماذا يعد الـ DNA اختباراً قطعياً للنسب بينما فصائل الدم اختبارات سلبية فقط؟ لأن فصائل الدم تنفي فقط، بينما الـ DNA ينفي ويثبت بنسبة 99.999%."
+        "notes": "تطبيقات الـ DNA القضائية: الجنايات، الكوارث الكبرى، وقضايا النسب (النفي قطعي 100%، والإثبات احتمالي يفوق 99.999%)."
       },
       {
-        "type": "summary",
+        "type": "table",
         "title": "Official Chapter 3 Review Questions: Model Answers (Page 52)",
         "content": {
-          "cards": [
-            {
-              "badge": "Q1 & Q2",
-              "theme": "cyan",
-              "icon": "📝",
-              "title": "العظام عند 16 سنة والأهمية الجنائية لـ 18 سنة",
-              "items": [
-                "Q1 (Age 16y): Lateral epicondyle + upper ulna + lesser trochanter (male) / Distal metacarpals (female)",
-                "Q2 (Age 18y): Marriage, rape consent, voting, driving, civil service, military, FULL adult criminal responsibility & execution"
-              ]
-            },
-            {
-              "badge": "Q3 & Q4",
-              "theme": "amber",
-              "icon": "📝",
-              "title": "مذكرة البصمات وخطوات فحص الـ DNA",
-              "items": [
-                "Q3 (Dactylography): Ridges with sweat pores; 1 in 64B; epidermis + dermis; celiac/dermatitis reversible; leprosy permanent; scars add points of ID",
-                "Q4 (DNA Steps): 1. Collection, 2. Preservation, 3. Extraction, 4. PCR, 5. Electrophoresis, 6. Laser imaging"
-              ]
-            },
-            {
-              "badge": "Q5",
-              "theme": "emerald",
-              "icon": "📝",
-              "title": "تطبيقات الـ DNA القضائية",
-              "items": [
-                "1. Suspect identification & elimination",
-                "2. Definitive paternity test",
-                "3. Body remains & disaster victim identification (DVI)",
-                "4. Sex & species determination"
-              ]
-            }
+          "headers": [
+            "Question #",
+            "Official Examination Question",
+            "Core Model Answer Points (High-Yield Ain Shams Criteria)"
+          ],
+          "rows": [
+            [
+              "Question 1",
+              "Skeletal changes at 16 years",
+              "1. Y-cartilage of acetabulum fuses · 2. Conjoined trochlea-capitulum fuses with humerus · 3. Lateral epicondyle fuses with humerus · 4. Olecranon fuses with ulna"
+            ],
+            [
+              "Question 2",
+              "MLI of age 18 years",
+              "1. Death penalty and life imprisonment become legally applicable · 2. Full adult criminal responsibility (Child Law expires) · 3. Driver's license eligible"
+            ],
+            [
+              "Question 3",
+              "Short notes on Dactylography",
+              "1. Galton principles (1 in 64B uniqueness, permanent from 4th month I.U.) · 2. Patterns: Loops (65%), Whorls (30%), Arches (5%) · 3. Deep scars create new mark"
+            ],
+            [
+              "Question 4",
+              "Steps of DNA typing",
+              "1. Collection · 2. Preservation (-20°C) · 3. Extraction · 4. PCR Amplification · 5. Capillary Electrophoresis · 6. Laser Detection"
+            ],
+            [
+              "Question 5",
+              "Medico-legal uses of DNA",
+              "1. Crime scene suspect identification · 2. Exoneration of innocent suspects · 3. Mass disaster victim ID · 4. Disputed paternity (exclusion 100%, inclusion >99.999%)"
+            ]
+          ],
+          "extra_bullets": [
+            "Source: Official End-of-Chapter Review Questions, Forensic Medicine Department, Ain Shams University."
           ]
         },
         "images": [
           {
-            "url": "images/dr_shereen_framework.jpg",
-            "caption": "نموذج الإجابة الرسمي للأسئلة الخمسة بنهاية الباب الثالث في كتاب قسم الطب الشرعي بجامعة عين شمس"
+            "url": "images/dna_gel_electrophoresis.jpg",
+            "caption": "Model answers for official Chapter 3 examination questions (Ain Shams Faculty of Medicine, page 52)"
           }
         ],
-        "notes": "الأسئلة الخمسة بنهاية الفصل هي أسئلة امتحانات الفاينال المجمعة لكتاب قسم الطب الشرعي بعين شمس."
+        "notes": "إجابات الأسئلة الرسمية الخمسة لنهاية الباب الثالث في كتاب عين شمس ص 52."
       }
     ]
   }
 ];
 
-/* ════════════════════════════════════
-   MUST SLIDE DATA (The Bone Code · 8 Episodes)
-   ════════════════════════════════════ */
+
 window.MUST_SLIDES_DATA = [
 
   {
@@ -3221,6 +3011,18 @@ const initialUrlTrack = new URLSearchParams(window.location.search).get('track')
 const initialStoredTrack = localStorage.getItem('medduo_selected_track');
 const defaultTrack = (initialUrlTrack === 'must' || (!initialUrlTrack && initialStoredTrack === 'must')) ? 'must' : 'ain_shams';
 
+
+// ── BUILD VERSION CACHE BUSTER ──
+const SLIDES_BUILD_VERSION = '2026-11-17-v3-academic';
+if (localStorage.getItem('medduo_slides_version') !== SLIDES_BUILD_VERSION) {
+  for (let ep = 0; ep < 10; ep++) {
+    localStorage.removeItem(`medduo_slides_edits_ain_shams_${ep}`);
+    localStorage.removeItem(`medduo_slides_edits_must_${ep}`);
+    localStorage.removeItem(`medduo_slides_edits_${ep}`);
+  }
+  localStorage.setItem('medduo_slides_version', SLIDES_BUILD_VERSION);
+}
+
 window.SLIDES_DATA = (defaultTrack === 'must') ? window.MUST_SLIDES_DATA : window.AIN_SHAMS_SLIDES_DATA;
 
 const state = {
@@ -4485,9 +4287,19 @@ function startEdit(idx) {
     });
 
   } else {
-    // title type or unknown
+    // title type, bullets or general slide
+    const bLabel = document.createElement('label');
+    bLabel.className = 'edit-label';
+    bLabel.textContent = 'Slide Points / Bullets (one per line, leading spaces = sub-bullet)';
+    const bTA = document.createElement('textarea');
+    bTA.className = 'edit-textarea';
+    bTA.value = (content.bullets || []).join('\n');
+    body.appendChild(bLabel);
+    body.appendChild(bTA);
+
     addEditActions(body, () => {
       slide.title = titleInput.value;
+      slide.content = Object.assign({}, slide.content, { bullets: bTA.value.split('\n') });
       slides[idx] = slide;
       saveEpSlides(state.epIdx, slides);
       renderSlide();
@@ -5643,6 +5455,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-print').addEventListener('click', printEpisode);
   document.getElementById('btn-reset-ep').addEventListener('click', () => {
     if (!confirm(`Reset Episode ${state.epIdx + 1} to the latest official version with all diagrams and mnemonics? This will replace your local edits.`)) return;
+    localStorage.removeItem(`medduo_slides_edits_${state.track}_${state.epIdx}`);
     localStorage.removeItem(`medduo_slides_edits_${state.epIdx}`);
     for (let i = 0; i < 25; i++) {
       for (let j = 0; j < 10; j++) {
