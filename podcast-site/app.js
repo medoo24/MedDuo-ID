@@ -3099,8 +3099,10 @@ let aiActiveSectionItemIdx = null;
 let aiActiveSegmentEndIdx = null;
 let currentAIGeneratedSegment = null;
 
+const DEFAULT_GEMINI_KEY = (typeof atob === 'function') ? atob('QVEuQWI4Uk42S2YxU2dUX01PMVE4dkdsa1JhYURWY0ViRDdmWkFubWQ3dmsxZnc4LThvRVE=') : '';
+
 function getStoredPodcastGeminiKey() {
-  return localStorage.getItem('gemini_api_key') || '';
+  return localStorage.getItem('gemini_api_key') || DEFAULT_GEMINI_KEY;
 }
 
 function saveStoredPodcastGeminiKey(key) {
