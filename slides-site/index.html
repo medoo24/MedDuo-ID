@@ -33,6 +33,7 @@
       <button class="nav-btn" id="btn-home" title="Home">🏠 Home</button>
       <button class="nav-btn fav-btn" id="btn-favorites" title="Favorites">★ Favorites</button>
       <button class="nav-btn stash-btn" id="btn-stash" title="Cloned & Stashed Slides">📋 Slide Stash (<span id="stash-count">0</span>)</button>
+      <button class="nav-btn ai-settings-btn" id="btn-ai-settings" title="Gemini AI API Settings" style="background:linear-gradient(135deg, #0284C7, #6366F1);color:#fff;font-weight:700;">🤖 AI Settings</button>
     </nav>
   </div>
 </header>
@@ -128,6 +129,7 @@
     <label>Title<input type="text" id="new-slide-title" placeholder="Slide title…" /></label>
     <label>Type
       <select id="new-slide-type">
+        <option value="blank">⚪ Blank Slide (Free Canvas)</option>
         <option value="concept">Concept</option>
         <option value="case">Case</option>
         <option value="table">Table</option>
@@ -176,18 +178,188 @@
   </div>
 </div>
 
-<!-- Forensic Image Gallery Modal -->
+<!-- Enhanced Forensic Image Gallery & Online Search Modal -->
 <div id="modal-gallery" class="modal-overlay hidden">
-  <div class="modal-box" style="max-width:850px;width:95vw;max-height:88vh;display:flex;flex-direction:column">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #E2E8F0;padding-bottom:10px">
+  <div class="modal-box" style="max-width:920px;width:95vw;max-height:90vh;display:flex;flex-direction:column">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #E2E8F0;padding-bottom:10px">
       <div>
-        <h3 style="margin:0;font-family:Poppins,sans-serif;color:#0F172A">🖼 Forensic Medical Image Gallery</h3>
-        <span style="font-size:0.8rem;color:#64748B">Click any diagram to attach it to the current slide with its pre-formatted caption.</span>
+        <h3 style="margin:0;font-family:Poppins,sans-serif;color:#0F172A">🖼 Image Gallery & Online Search</h3>
+        <span style="font-size:0.8rem;color:#64748B">Choose from 74 forensic atlas diagrams, search millions of Wikimedia images, or paste an image URL.</span>
       </div>
       <button class="tool-btn" id="modal-gallery-close">✕ Close</button>
     </div>
-    <div id="gallery-container" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:18px;padding-right:6px">
-      <!-- dynamically populated -->
+
+    <!-- Gallery Tabs -->
+    <div class="gallery-tab-nav">
+      <button class="gallery-tab-btn active" id="tab-btn-atlas" data-tab="atlas">🏛️ Atlas & Diagrams (74)</button>
+      <button class="gallery-tab-btn" id="tab-btn-online" data-tab="online">🌐 Online Search (Wikimedia)</button>
+      <button class="gallery-tab-btn" id="tab-btn-url" data-tab="url">🔗 Direct Image URL</button>
+    </div>
+
+    <!-- TAB 1: Built-in Atlas & Diagrams -->
+    <div id="gallery-tab-atlas" class="gallery-tab-content" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <input type="text" id="gallery-search-input" class="gallery-filter-input" placeholder="🔍 Filter 74 forensic atlas images by keyword (e.g. skull, pelvis, femur, prince, bite)..." />
+      </div>
+      <div class="gallery-chips-wrap" id="gallery-filter-chips">
+        <button class="gallery-chip active" data-filter="all">All (74)</button>
+        <button class="gallery-chip" data-filter="photos">📷 Case Photos (51)</button>
+        <button class="gallery-chip" data-filter="diagrams">🎨 Diagrams (23)</button>
+        <button class="gallery-chip" data-filter="skull">💀 Skull & Mandible</button>
+        <button class="gallery-chip" data-filter="pelvis">🦴 Pelvis & Sexing</button>
+        <button class="gallery-chip" data-filter="epiphysis">📈 Age & Epiphyses</button>
+        <button class="gallery-chip" data-filter="odontology">🦷 Odontology & DNA</button>
+        <button class="gallery-chip" data-filter="prince">⚖️ El-Prince Case</button>
+      </div>
+      <div id="gallery-container" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:18px;padding-right:6px">
+        <!-- dynamically populated -->
+      </div>
+    </div>
+
+    <!-- TAB 2: Wikimedia Commons Online Search -->
+    <div id="gallery-tab-online" class="gallery-tab-content" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+      <div class="online-search-bar">
+        <input type="text" id="online-search-input" class="gallery-filter-input" placeholder="Search Wikimedia Commons (e.g. skull anatomy, femur fracture, dental forensics)..." style="flex:1;" />
+        <button class="tool-btn" id="btn-run-online-search" style="background:#0284C7;color:#fff;font-weight:700;white-space:nowrap;padding:0 18px;">🔍 Search</button>
+      </div>
+      <div class="gallery-chips-wrap">
+        <span style="font-size:0.75rem;color:#64748B;align-self:center;">Quick suggestions:</span>
+        <button class="gallery-chip online-quick-tag" data-query="human skull anatomy">Human Skull</button>
+        <button class="gallery-chip online-quick-tag" data-query="forensic odontology teeth">Forensic Teeth</button>
+        <button class="gallery-chip online-quick-tag" data-query="pelvis bone anatomy">Pelvis Bone</button>
+        <button class="gallery-chip online-quick-tag" data-query="femur growth plate xray">Femur X-ray</button>
+        <button class="gallery-chip online-quick-tag" data-query="hyoid bone fracture">Hyoid Bone</button>
+        <button class="gallery-chip online-quick-tag" data-query="fingerprint forensic science">Fingerprints</button>
+        <button class="gallery-chip online-quick-tag" data-query="cranial sutures fusion">Cranial Sutures</button>
+      </div>
+      <div id="online-search-status" style="font-size:0.8rem;color:#64748B;margin-bottom:6px;"></div>
+      <div id="online-results-grid" class="online-results-grid">
+        <!-- Dynamically filled with search results -->
+      </div>
+    </div>
+
+    <!-- TAB 3: Direct Image URL -->
+    <div id="gallery-tab-url" class="gallery-tab-content" style="display:none;flex-direction:column;gap:14px;padding:12px 4px;overflow-y:auto;">
+      <div>
+        <label style="display:block;font-size:0.82rem;font-weight:700;color:#1E293B;margin-bottom:4px;">Direct Image Web Address (URL):</label>
+        <input type="url" id="direct-img-url" class="gallery-filter-input" placeholder="https://example.com/forensic_specimen.jpg" />
+      </div>
+      <div>
+        <label style="display:block;font-size:0.82rem;font-weight:700;color:#1E293B;margin-bottom:4px;">Image Caption / Description:</label>
+        <input type="text" id="direct-img-caption" class="gallery-filter-input" placeholder="Description of the image for presentation..." />
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="tool-btn" id="btn-preview-url" style="background:#F1F5F9;color:#0F172A;font-weight:600;">👁 Preview Image</button>
+        <button class="tool-btn" id="btn-insert-url-img" style="background:#0284C7;color:#fff;font-weight:700;">➕ Attach to Slide</button>
+      </div>
+      <div id="url-img-preview-box" style="border:1.5px dashed #CBD5E1;border-radius:8px;padding:14px;min-height:160px;display:flex;align-items:center;justify-content:center;background:#F8FAFC;">
+        <span style="font-size:0.8rem;color:#94A3B8;">Image preview will appear here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ AI SLIDE ASSISTANT MODAL ══════════════════════════════════ -->
+<div id="modal-ai-slide" class="modal-overlay hidden">
+  <div class="modal-box" style="max-width:760px;width:95vw;max-height:90vh;display:flex;flex-direction:column;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #E2E8F0;padding-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="background:linear-gradient(135deg, #0284C7, #6366F1);color:#fff;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">✨</div>
+        <div>
+          <h3 style="margin:0;font-family:Poppins,sans-serif;color:#0F172A;font-size:1.1rem;">Gemini AI Slide Architect</h3>
+          <span style="font-size:0.75rem;color:#64748B" id="ai-slide-target-label">Enhancing Slide #1</span>
+        </div>
+      </div>
+      <button class="tool-btn" id="modal-ai-slide-close">✕ Close</button>
+    </div>
+
+    <div style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:14px;padding-right:4px;">
+      <!-- Quick AI Actions Pills -->
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:#475569;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">⚡ One-Click AI Transformations:</label>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <button class="gallery-chip ai-quick-action" data-action="cards">🃏 2x2 Mindmap Cards Grid</button>
+          <button class="gallery-chip ai-quick-action" data-action="flowchart">🔀 Step-by-Step Flowchart</button>
+          <button class="gallery-chip ai-quick-action" data-action="table">📊 High-Yield Comparison Table</button>
+          <button class="gallery-chip ai-quick-action" data-action="trap">⚠️ Add Forensic Exam Trap</button>
+          <button class="gallery-chip ai-quick-action" data-action="academic">🇬🇧 Academic English Polish</button>
+          <button class="gallery-chip ai-quick-action" data-action="bullets">💡 Distill to Key Takeaways</button>
+          <button class="gallery-chip ai-quick-action" data-action="match_image">🖼 Auto-Match Best Atlas Image</button>
+        </div>
+      </div>
+
+      <!-- Custom AI Prompt -->
+      <div>
+        <label for="ai-slide-prompt" style="display:block;font-size:0.82rem;font-weight:700;color:#1E293B;margin-bottom:6px;">Custom Prompt / Guidance (Arabic or English):</label>
+        <textarea id="ai-slide-prompt" class="edit-textarea" rows="3" placeholder="e.g. حول الشريحة لنقاط سريعة مع مصيدة امتحانات عن عظم اللامي والربط بقضية كفر الشيخ... أو Make it concise academic English with 4 themed cards"></textarea>
+      </div>
+
+      <!-- Controls row -->
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:8px 12px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:0.78rem;font-weight:600;color:#64748B;">Model:</span>
+          <select id="ai-slide-model" style="padding:4px 8px;border:1px solid #CBD5E1;border-radius:6px;font-size:0.78rem;background:#fff;">
+            <option value="gemini-3.8-flash">Gemini 3.8 Flash (Ultra-Fast & Smart)</option>
+            <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+            <option value="gemini-flash-latest">Gemini Flash Latest</option>
+          </select>
+        </div>
+        <button class="tool-btn" id="btn-run-ai-slide" style="background:linear-gradient(135deg, #0284C7, #6366F1);color:#fff;font-weight:700;padding:6px 16px;border-radius:6px;">✨ Generate with AI</button>
+      </div>
+
+      <!-- Loading / Status indicator -->
+      <div id="ai-slide-loading" style="display:none;text-align:center;padding:16px;background:#F0F9FF;border:1px solid #BAE6FD;border-radius:8px;">
+        <div style="font-size:1.2rem;margin-bottom:4px;">⏳</div>
+        <div style="font-weight:700;color:#0284C7;font-size:0.88rem;" id="ai-slide-loading-text">Gemini is structuring your slide with cards and components...</div>
+      </div>
+
+      <!-- AI Result Preview Box -->
+      <div id="ai-slide-preview-wrap" style="display:none;flex-direction:column;gap:10px;">
+        <label style="display:block;font-size:0.78rem;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:0.5px;">✓ Generated Slide Structure Preview:</label>
+        <div id="ai-slide-preview-box" style="background:#FFFFFF;border:1.5px solid #10B981;border-radius:8px;padding:16px;max-height:280px;overflow-y:auto;">
+          <!-- Preview will be rendered here -->
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;">
+          <button class="tool-btn" id="btn-discard-ai-slide" style="background:#F1F5F9;color:#64748B;">Discard</button>
+          <button class="tool-btn" id="btn-apply-ai-slide" style="background:#10B981;color:#fff;font-weight:700;">✓ Apply to Slide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ AI API SETTINGS MODAL ══════════════════════════════════ -->
+<div id="modal-ai-settings" class="modal-overlay hidden">
+  <div class="modal-box" style="max-width:540px;width:95vw;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #E2E8F0;padding-bottom:10px;">
+      <h3 style="margin:0;font-family:Poppins,sans-serif;color:#0F172A;">⚙️ Gemini AI API Configuration</h3>
+      <button class="tool-btn" id="modal-ai-settings-close">✕ Close</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <p style="font-size:0.82rem;color:#64748B;line-height:1.45;margin:0;">
+        Enter your Google Gemini API key to enable instant AI slide restructuring, forensic image recommendation, and podcast scene rewriting. Your key is stored securely in your browser's <code style="background:#F1F5F9;padding:2px 4px;border-radius:4px;">localStorage</code> and never sent to external servers.
+      </p>
+
+      <div>
+        <label for="input-gemini-key" style="display:block;font-size:0.82rem;font-weight:700;color:#1E293B;margin-bottom:4px;">Gemini API Key:</label>
+        <div style="display:flex;gap:6px;">
+          <input type="password" id="input-gemini-key" class="gallery-filter-input" placeholder="AIzaSy..." style="flex:1;" />
+          <button class="tool-btn" id="btn-toggle-key-vis" style="padding:0 10px;">👁</button>
+        </div>
+        <span style="font-size:0.72rem;color:#64748B;margin-top:4px;display:block;">
+          Don't have a key? Get one free at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#0284C7;text-decoration:underline;">Google AI Studio</a>.
+        </span>
+      </div>
+
+      <div id="key-test-status" style="font-size:0.8rem;font-weight:600;min-height:20px;"></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+        <button class="tool-btn danger-btn" id="btn-clear-gemini-key" style="font-size:0.75rem;">Clear Key</button>
+        <div style="display:flex;gap:8px;">
+          <button class="tool-btn" id="btn-test-gemini-key" style="background:#F1F5F9;color:#0F172A;font-weight:600;">Test Connection</button>
+          <button class="tool-btn" id="btn-save-gemini-key" style="background:#0284C7;color:#fff;font-weight:700;">💾 Save Key</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

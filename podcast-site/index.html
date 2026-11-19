@@ -54,6 +54,10 @@
           <span class="icon">📖</span>
           <span class="label">قراءة</span>
         </button>
+        <button id="btn-ai-settings-podcast" class="ctrl-btn" title="إعدادات الذكاء الاصطناعي (Gemini AI)">
+          <span class="icon">🤖</span>
+          <span class="label">إعدادات AI</span>
+        </button>
         <button id="btn-dark-mode" class="ctrl-btn" title="الوضع الليلي">
           <span class="icon">🌙</span>
           <span class="label">ليلي</span>
@@ -311,6 +315,108 @@
       <div class="modal-footer">
         <button id="btn-do-import" class="btn-primary">📥 استيراد وتطبيق الآن</button>
         <button class="btn-cancel" data-close="modal-import">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: AI SCENE / SEGMENT ASSISTANT -->
+  <div id="modal-ai-segment" class="modal-overlay" style="display:none;">
+    <div class="modal-card modal-card-wide" style="max-width:820px;">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="background:linear-gradient(135deg, #6366F1, #8B5CF6);color:#fff;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">✨</div>
+          <div>
+            <h3 class="modal-title">تطوير المشهد بالذكاء الاصطناعي (Gemini AI)</h3>
+            <span id="ai-segment-title-label" style="font-size:0.8rem;color:var(--text-secondary);">المشهد الحالي...</span>
+          </div>
+        </div>
+        <button class="modal-close" data-close="modal-ai-segment">✕</button>
+      </div>
+      <div class="modal-body" style="display:flex;flex-direction:column;gap:14px;">
+        <!-- Quick Recipe Pills -->
+        <div>
+          <label class="form-label" style="margin-bottom:6px;">⚡ تطويرات سريعة جاهزة بضغطة واحدة:</label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;" id="ai-podcast-quick-actions">
+            <button class="ai-podcast-chip" data-action="shereen">🎭 إضافة تحشيشات وتشبيهات د. شيرين</button>
+            <button class="ai-podcast-chip" data-action="humor">⚡ زيادة المناكفة والقفشات الذكية بين د. طارق وعاطف</button>
+            <button class="ai-podcast-chip" data-action="egyptian">🗣️ تنعيم اللهجة العامية المصرية وتقليل التقعر</button>
+            <button class="ai-podcast-chip" data-action="accuracy">⚖️ تدقيق المعلومات الطبية والشرعية ومنع التأليف</button>
+            <button class="ai-podcast-chip" data-action="plot">🔍 ربط المشهد بذكاء مع القضية الجنائية والحل المفاجئ</button>
+          </div>
+        </div>
+
+        <!-- Custom Prompt -->
+        <div class="form-group">
+          <label for="ai-segment-prompt" class="form-label">أو اكتب توجيهاتك المخصصة للمشهد (عربي أو إنجليزي):</label>
+          <textarea id="ai-segment-prompt" class="form-textarea" rows="3" placeholder="مثلاً: اجعل عاطف يسأل عن لغز كسر العظم اللامي في الخنق، ود. طارق يشرحها بمثال تشبيهي عملي ويدخل قفشة خفيفة..."></textarea>
+        </div>
+
+        <!-- Model selection & run -->
+        <div style="display:flex;justify-content:space-between;align-items:center;background:var(--card-bg, #1A1F26);border:1px solid var(--card-border, #2E3846);border-radius:8px;padding:8px 14px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">الموديل:</span>
+            <select id="ai-podcast-model" class="form-input" style="padding:4px 8px;font-size:0.8rem;width:auto;">
+              <option value="gemini-3.8-flash">Gemini 3.8 Flash (فائق السرعة والذكاء)</option>
+              <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+              <option value="gemini-flash-latest">Gemini Flash Latest</option>
+            </select>
+          </div>
+          <button id="btn-run-ai-segment" class="btn-primary" style="background:linear-gradient(135deg, #6366F1, #8B5CF6);border:none;white-space:nowrap;">✨ توليد التعديل بالذكاء الاصطناعي</button>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="ai-segment-loading" style="display:none;text-align:center;padding:20px;background:rgba(99,102,241,0.1);border-radius:8px;border:1px solid rgba(99,102,241,0.3);">
+          <div style="font-size:1.3rem;margin-bottom:6px;">⏳</div>
+          <div style="font-weight:700;color:#A78BFA;font-size:0.9rem;" id="ai-segment-loading-text">جاري إعادة صياغة الحوار بذكاء وإضافة التحشيشات والقفشات...</div>
+        </div>
+
+        <!-- Preview Box -->
+        <div id="ai-segment-preview-wrap" style="display:none;flex-direction:column;gap:10px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:0.85rem;color:#10B981;">✓ معاينة حوار المشهد المطور:</strong>
+            <span id="ai-preview-count-chip" style="font-size:0.75rem;color:var(--text-secondary);"></span>
+          </div>
+          <div id="ai-segment-preview-list" class="ai-segment-preview-list">
+            <!-- Dynamically populated with preview bubbles -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:space-between;">
+        <button class="btn-cancel" data-close="modal-ai-segment">إلغاء</button>
+        <button id="btn-apply-ai-segment" class="btn-primary" style="background:#10B981;border:none;display:none;">✓ تطبيق التعديل على المشهد</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: AI SETTINGS (API KEY) -->
+  <div id="modal-ai-settings-podcast" class="modal-overlay" style="display:none;">
+    <div class="modal-card" style="max-width:540px;">
+      <div class="modal-header">
+        <h3 class="modal-title">⚙️ إعدادات الذكاء الاصطناعي (Gemini AI API)</h3>
+        <button class="modal-close" data-close="modal-ai-settings-podcast">✕</button>
+      </div>
+      <div class="modal-body" style="display:flex;flex-direction:column;gap:14px;">
+        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.5;margin:0;">
+          أدخل مفتاح Google Gemini API لتفعيل التعديل الذكي للمشاهد والتحشيشات وإعادة الصياغة. المفتاح يُحفظ في متصفحك محلياً (<code style="background:rgba(255,255,255,0.06);padding:2px 4px;border-radius:4px;">localStorage</code>) ولا يتم إرساله لأي خوادم خارجية.
+        </p>
+        <div class="form-group">
+          <label for="input-gemini-key-podcast" class="form-label">Gemini API Key:</label>
+          <div style="display:flex;gap:6px;">
+            <input type="password" id="input-gemini-key-podcast" class="form-input" placeholder="AIzaSy..." style="flex:1;" />
+            <button id="btn-toggle-key-vis-podcast" class="btn-secondary" style="padding:0 12px;">👁</button>
+          </div>
+          <span style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;display:block;">
+            يمكنك استخراج مفتاح مجاني من <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--cyan);text-decoration:underline;">Google AI Studio</a>.
+          </span>
+        </div>
+        <div id="key-test-status-podcast" style="font-size:0.82rem;font-weight:700;min-height:22px;"></div>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:space-between;">
+        <button id="btn-clear-gemini-key-podcast" class="btn-danger" style="font-size:0.8rem;">مسح المفتاح</button>
+        <div style="display:flex;gap:8px;">
+          <button id="btn-test-gemini-key-podcast" class="btn-secondary">اختبار الاتصال</button>
+          <button id="btn-save-gemini-key-podcast" class="btn-primary">💾 حفظ المفتاح</button>
+        </div>
       </div>
     </div>
   </div>
